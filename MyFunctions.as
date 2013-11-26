@@ -4,9 +4,10 @@
 	public class MyFunctions {
 
 		public function MyFunctions() {
-			// constructor code
+			//This is just a collection of static functions
 		}
 
+		//Calculate the angle between vectorA and vectorB
 		public static function getAngle(_sentVecAX:Number, _sentVecAY:Number, _sentVecBX:Number = 1, _sentVecBY:Number = 0, _maxAngle:Number = 360):Number {
 			var formu1:Number;
 			var formu2:Number;
@@ -52,13 +53,14 @@
 			return calAngle;
 		}
 		
-		public static function getColor(_index:int, _startColor:uint = 0x0077F9):uint {
+		//Generate a color according to the index and starting color
 		public static function genColor(_index:int, _startColor:uint = 0x0077F9):uint {
 			var shift:Number = 0;
 			var nextH:Number = 37;
 			return changeColorByHSV(_startColor, (nextH * _index) + (_index/(360/nextH +1))*shift, 0, 0);
 		}
 		
+		//Change in input color by the specific amount of hue, saturation and value
 		public static function changeColorByHSV(_originalColor:uint, _deltaH:Number, _deltaS:Number, _deltaV:Number):uint {
 			var colorInHSV:Array = MyFunctions.hexToHsv(_originalColor);
 			var H:Number, S:Number, V:Number;
