@@ -1,20 +1,21 @@
 <DOMDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" width="1280" height="720" frameRate="60" currentTimeline="1" xflVersion="2.2" creatorInfo="Adobe Flash Professional CS6" platform="Macintosh" versionInfo="Saved by Adobe Flash Macintosh 12.0 build 537" majorVersion="12" buildNumber="537" viewAngle3D="100.925968316201" nextSceneIdentifier="2" playOptionsPlayLoop="false" playOptionsPlayPages="false" playOptionsPlayFrameActions="false" autoSaveEnabled="true" autoSaveHasPrompted="true">
      <media>
-          <DOMBitmapItem name="Bitmap 1.png" itemID="52859cc5-00000bc8" sourceExternalFilepath="../BioCycle/BioCycleProgram/LIBRARY/Bitmap 1.png" sourceLastImported="1384488133" sourcePlatform="macintosh" externalFileCRC32="4101121944" externalFileSize="247552" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="Bitmap 1.png" bitmapDataHRef="M 1 1384488086.dat" frameRight="49600" frameBottom="37680"/>
+          <DOMBitmapItem name="Vignette.png" itemID="5294b857-000002af" sourceExternalFilepath="/Users/shunghsiyu/Documents/Flash Projects/TheCycleProgram/TheCycle/LIBRARY/Vignette.png" sourceLastImported="1385478231" sourcePlatform="macintosh" externalFileCRC32="4101121944" externalFileSize="247552" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="Vignette.png" bitmapDataHRef="M 1 1384488086.dat" frameRight="49600" frameBottom="37680"/>
      </media>
      <symbols>
           <Include href="ChemLabel.xml" itemID="5283f1aa-000004fd" lastModified="1384475356"/>
           <Include href="Cycle.xml" itemID="52770114-00000524" lastModified="1385414806"/>
-          <Include href="Symbol 1.xml" loadImmediate="false" itemID="52859cf9-00000bca" lastModified="1384488185"/>
+          <Include href="CycleGroup.xml" itemID="5294b89d-000002b1" lastModified="1385478301"/>
+          <Include href="Vignette.xml" loadImmediate="false" itemID="5294b838-000002ac" lastModified="1385478200"/>
      </symbols>
      <timelines>
           <DOMTimeline name="Scene 1">
                <layers>
-                    <DOMLayer name="Layer 1" color="#4FFF4F">
+                    <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
                          <frames>
                               <DOMFrame index="0" keyMode="9728">
                                    <elements>
-                                        <DOMSymbolInstance libraryItemName="Symbol 1" centerPoint3DX="640.15" centerPoint3DY="360.05">
+                                        <DOMSymbolInstance libraryItemName="Vignette" name="cycleGroup" centerPoint3DX="640.15" centerPoint3DY="360.05">
                                              <matrix>
                                                   <Matrix tx="-599.85" ty="-205.1"/>
                                              </matrix>
@@ -25,47 +26,12 @@
                                                   <Color alphaMultiplier="0.69140625"/>
                                              </color>
                                         </DOMSymbolInstance>
+                                        <DOMSymbolInstance libraryItemName="CycleGroup" name="cycleGroup" selected="true">
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
                                    </elements>
-                              </DOMFrame>
-                         </frames>
-                    </DOMLayer>
-                    <DOMLayer name="Actionscript" color="#4FFF4F" current="true" isSelected="true" autoNamed="false">
-                         <frames>
-                              <DOMFrame index="0" keyMode="9728">
-                                   <Actionscript>
-                                        <script><![CDATA[import flash.display.MovieClip;
-import flash.events.Event;
-
-var krebCycleLabels:Array = ["Citrate","cis-Aconitate", "D-Isocitrate", "\u03B1-KetoGlutarate", "Succinyl-CoA", "Succinate", "Fumarate", "Malate", "Oxaloacetate"];
-var krebCycle:MovieClip = new Cycle(krebCycleLabels, true, MyFunctions.getColor(0));
-this.addChild(krebCycle);
-krebCycle.scaleX = krebCycle.scaleY = 0.5;
-krebCycle.x = 200;
-krebCycle.y = 360;
-
-var arginineCycleLabels:Array = ["Arginine", "Omithine", "Citrulline", "Argininosuccinate"];
-for(var i = 0; i < 8; i++) {
-var arginineCycle:MovieClip = new Cycle(arginineCycleLabels, true, MyFunctions.getColor(i+1));
-this.addChild(arginineCycle);
-arginineCycle.scaleX = arginineCycle.scaleY = 0.5;
-arginineCycle.x = krebCycle.x + (i+1)*100;
-arginineCycle.y = 360;
-}
-
-var calvinCycleLabels:Array = ["Ribulose 1,5-bisphosphate", "3-phosphoglycerate", "1,3-bisphosphoglycerate", "Glyceraldehyde 3-phosphate", "Ribulose 5-phosphate"];
-var calvinCycle:MovieClip = new Cycle(calvinCycleLabels, false, MyFunctions.getColor(9));
-this.addChild(calvinCycle);
-calvinCycle.scaleX = calvinCycle.scaleY = 0.5;
-calvinCycle.x = 1080;
-calvinCycle.y = 360;
-
-this.addEventListener(Event.ENTER_FRAME, changeColor);
-function changeColor(e:Event):void {
-	calvinCycle.setColor(MyFunctions.changeColorByHSV(calvinCycle.color, 1, -1, 0));
-}
-]]></script>
-                                   </Actionscript>
-                                   <elements/>
                               </DOMFrame>
                          </frames>
                     </DOMLayer>
@@ -78,6 +44,10 @@ function changeColor(e:Event):void {
      </persistentData>
      <PrinterSettings platform="macintosh"/>
      <publishHistory>
+          <PublishItem publishSize="222605" publishTime="1385478721" publishDebug="true"/>
+          <PublishItem publishSize="222219" publishTime="1385478370" publishDebug="true"/>
+          <PublishItem publishSize="222171" publishTime="1385478360" publishDebug="true"/>
+          <PublishItem publishSize="222158" publishTime="1385478337" publishDebug="true"/>
           <PublishItem publishSize="222097" publishTime="1385419917" publishDebug="true"/>
           <PublishItem publishSize="222111" publishTime="1385419859" publishDebug="true"/>
           <PublishItem publishSize="222111" publishTime="1385419783" publishDebug="true"/>
@@ -94,9 +64,5 @@ function changeColor(e:Event):void {
           <PublishItem publishSize="222070" publishTime="1385418974" publishDebug="true"/>
           <PublishItem publishSize="222063" publishTime="1385418938" publishDebug="true"/>
           <PublishItem publishSize="221815" publishTime="1385418330" publishDebug="true"/>
-          <PublishItem publishSize="221797" publishTime="1385418198" publishDebug="true"/>
-          <PublishItem publishSize="221801" publishTime="1385418171" publishDebug="true"/>
-          <PublishItem publishSize="221800" publishTime="1385418157" publishDebug="true"/>
-          <PublishItem publishSize="221804" publishTime="1385418089" publishDebug="true"/>
      </publishHistory>
 </DOMDocument>
