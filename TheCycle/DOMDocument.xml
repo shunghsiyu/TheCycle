@@ -3,10 +3,10 @@
           <DOMBitmapItem name="Vignette.png" itemID="5294b857-000002af" sourceExternalFilepath="/Users/shunghsiyu/Documents/Flash Projects/TheCycleProgram/TheCycle/LIBRARY/Vignette.png" sourceLastImported="1385478231" sourcePlatform="macintosh" externalFileCRC32="4101121944" externalFileSize="247552" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="Vignette.png" bitmapDataHRef="M 1 1384488086.dat" frameRight="49600" frameBottom="37680"/>
      </media>
      <symbols>
-          <Include href="ChemLabel.xml" itemID="5283f1aa-000004fd" lastModified="1385491594"/>
+          <Include href="ChemLabel.xml" itemID="5283f1aa-000004fd" lastModified="1385495065"/>
           <Include href="Cycle.xml" itemID="52770114-00000524" lastModified="1385414806"/>
           <Include href="CycleGroup.xml" itemID="5294b89d-000002b1" lastModified="1385478301"/>
-          <Include href="Label.xml" itemID="5294ee51-00000353" lastModified="1385492049"/>
+          <Include href="Label.xml" itemID="5294ee51-00000353" lastModified="1385494976"/>
           <Include href="Vignette.xml" loadImmediate="false" itemID="5294b838-000002ac" lastModified="1385478200"/>
      </symbols>
      <timelines>
@@ -45,25 +45,25 @@
      </persistentData>
      <PrinterSettings platform="macintosh"/>
      <publishHistory>
-          <PublishItem publishSize="222697" publishTime="1385494395" publishDebug="true"/>
-          <PublishItem publishSize="222708" publishTime="1385494392" publishDebug="true"/>
-          <PublishItem publishSize="222707" publishTime="1385494338" publishDebug="true"/>
-          <PublishItem publishSize="222710" publishTime="1385494160" publishDebug="true"/>
-          <PublishItem publishSize="222692" publishTime="1385494157" publishDebug="true"/>
-          <PublishItem publishSize="222716" publishTime="1385494132" publishDebug="true"/>
-          <PublishItem publishSize="222696" publishTime="1385494130" publishDebug="true"/>
-          <PublishItem publishSize="222694" publishTime="1385493961" publishDebug="true"/>
-          <PublishItem publishSize="222672" publishTime="1385493954" publishDebug="true"/>
-          <PublishItem publishSize="222669" publishTime="1385493776" publishDebug="true"/>
-          <PublishItem publishSize="222678" publishTime="1385493644" publishDebug="true"/>
-          <PublishItem publishSize="222679" publishTime="1385493639" publishDebug="true"/>
-          <PublishItem publishSize="222669" publishTime="1385493593" publishDebug="true"/>
-          <PublishItem publishSize="222663" publishTime="1385493589" publishDebug="true"/>
-          <PublishItem publishSize="222677" publishTime="1385493569" publishDebug="true"/>
-          <PublishItem publishSize="222667" publishTime="1385493566" publishDebug="true"/>
-          <PublishItem publishSize="222645" publishTime="1385493187" publishDebug="true"/>
-          <PublishItem publishSize="222639" publishTime="1385493170" publishDebug="true"/>
-          <PublishItem publishSize="222627" publishTime="1385493166" publishDebug="true"/>
-          <PublishItem publishSize="222629" publishTime="1385493144" publishDebug="true"/>
+          <PublishItem publishSize="222422" publishTime="1385496705" publishDebug="true"/>
+          <PublishItem publishSize="222408" publishTime="1385496698" publishDebug="true"/>
+          <PublishItem publishSize="222421" publishTime="1385496679" publishDebug="true"/>
+          <PublishItem publishSize="222406" publishTime="1385496654" publishDebug="true"/>
+          <PublishItem publishSize="157661" publishTime="1385496646" publishDebug="true"/>
+          <PublishItem publishSize="222418" publishTime="1385496534" publishDebug="true"/>
+          <PublishItem publishSize="222406" publishTime="1385496531" publishDebug="true"/>
+          <PublishItem publishSize="222452" publishTime="1385496508" publishDebug="true"/>
+          <PublishItem publishSize="222450" publishTime="1385496502" publishDebug="true"/>
+          <PublishItem publishSize="222628" publishTime="1385496486" publishDebug="true"/>
+          <PublishItem publishSize="157656" publishTime="1385496480" publishDebug="true"/>
+          <PublishItem publishSize="222620" publishTime="1385496425" publishDebug="true"/>
+          <PublishItem publishSize="157660" publishTime="1385496420" publishDebug="true"/>
+          <PublishItem publishSize="222659" publishTime="1385496331" publishDebug="true"/>
+          <PublishItem publishSize="157660" publishTime="1385496292" publishDebug="true"/>
+          <PublishItem publishSize="222704" publishTime="1385496272" publishDebug="true"/>
+          <PublishItem publishSize="222713" publishTime="1385496264" publishDebug="true"/>
+          <PublishItem publishSize="222691" publishTime="1385496249" publishDebug="true"/>
+          <PublishItem publishSize="222701" publishTime="1385496246" publishDebug="true"/>
+          <PublishItem publishSize="157659" publishTime="1385496234" publishDebug="true"/>
      </publishHistory>
 </DOMDocument>

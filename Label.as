@@ -20,7 +20,7 @@
 		}
 		
 		//Initialize the label after it is added to the stage
-		private function initialize(e:Event):void {
+		protected function initialize(e:Event):void {
 			this.addEventListener(Event.ENTER_FRAME, counterRotates, false, 0, true);
 			this.labelNameField.text = labelName;
 			this.labelNameField.textColor = getTextColor();
@@ -29,7 +29,7 @@
 		}
 		
 		//keep the label horizontal even when the cycle rotates
-		private function counterRotates(e:Event):void {
+		protected function counterRotates(e:Event):void {
 			//this.rotation = -parent.rotation;
 		}
 		
@@ -41,7 +41,7 @@
 		}
 		
 		//Call other methods that draws the background
-		private function drawBG():void {
+		protected function drawBG():void {
 			var drawWidth:int, drawHeight:int;
 			
 			drawHeight = rectHeight;
@@ -54,10 +54,10 @@
 		}
 		
 		//Draws the background rectangle
-		private function drawBGRect(_rectWidth:int, _rectHeight:int, _fill:Boolean = true):void {
+		protected function drawBGRect(_rectWidth:int, _rectHeight:int, _fill:Boolean = true):void {
 			var bgColor:uint = 0xFFFFFF;
 			rect.graphics.clear();
-			rect.graphics.lineStyle(8, this.color, 1);
+			rect.graphics.lineStyle(8, color, 1);
 			if (_fill) rect.graphics.beginFill(bgColor, 1);
 			rect.graphics.drawRoundRect(-_rectWidth/2, -_rectHeight/2, _rectWidth, _rectHeight, 
 										_rectWidth < _rectHeight ? _rectWidth:_rectHeight, 
@@ -67,22 +67,22 @@
 		}
 		
 		//Get the color of the text according to the color of this label
-		private function getTextColor():uint {
+		protected function getTextColor():uint {
 			return MyFunctions.changeColorByHSV(color, -5, 0, -10);
 		}
 		
 		public function getColor():uint {return color;}
 		
 		//The dimension of the background rectangle
-		private static const rectWidth:Number = 150, rectHeight:Number = 50;
+		public static const rectWidth:Number = 150, rectHeight:Number = 50;
 		//Determines the way the background rectangle expand to fit the text
 		private static const minLengthToAdjust:int = 7, expandPerChar:int = 14;
 		//the text to display in the label
-		private var labelName:String;
+		protected var labelName:String;
 		//Object for drawing the background rectangel
-		private var rect:Shape = new Shape();
+		protected var rect:Shape = new Shape();
 		//The color of this label
-		private var color:uint;
+		protected var color:uint;
 		//The textfield for the label name
 		private var labelNameField:TLFTextField = new TLFTextField();
 	}
