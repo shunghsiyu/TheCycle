@@ -1,4 +1,4 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="ChemLabel" itemID="5283f1aa-000004fd" linkageExportForAS="true" linkageClassName="ChemLabel" lastModified="1384475356">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="ChemLabel" itemID="5283f1aa-000004fd" linkageExportForAS="true" linkageClassName="ChemLabel" lastModified="1385491594">
   <timeline>
     <DOMTimeline name="ChemLabel">
       <layers>
@@ -6,14 +6,14 @@
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMTLFText name="chemName" selected="true" top="-40" left="-40" right="6920" bottom="716">
+                <DOMTLFText name="labelNameField" selected="true" top="-40" left="-40" right="6920" bottom="716">
                   <matrix>
                     <Matrix tx="-172" ty="-17"/>
                   </matrix>
                   <tlfFonts>
                     <TLFFont platformName="Tahoma" psName="Tahoma"/>
                   </tlfFonts>
-                  <markup><tlfTextObject type="Paragraph" editPolicy="readOnly" columnCount="auto" columnGap="20" verticalAlign="top" firstBaselineOffset="auto" paddingLeft="2" paddingTop="2" paddingRight="2" paddingBottom="2" background="false" backgroundColor="#ffffff" backgroundAlpha="1" border="false" borderColor="#000000" borderAlpha="1" borderWidth="1" paddingLock="false" multiline="true" antiAliasType="normal" embedFonts="false"><TextFlow lineBreak="toFit" locale="en_IL" whiteSpaceCollapse="preserve" version="2.0.0" xmlns="http://ns.adobe.com/textLayout/2008"><p direction="ltr" paragraphEndIndent="0" paragraphStartIndent="0" textAlign="center" textIndent="0" xmlns="http://ns.adobe.com/textLayout/2008"><span baselineShift="-4" color="#00ccff" fontFamily="Tahoma" fontSize="28" fontStyle="normal" fontWeight="normal" kerning="auto" lineHeight="191.428571%" trackingRight="0.000000%" xmlns="http://ns.adobe.com/textLayout/2008">Text</span></p></TextFlow></tlfTextObject></markup>
+                  <markup><tlfTextObject type="Paragraph" editPolicy="readOnly" columnCount="auto" columnGap="20" verticalAlign="top" firstBaselineOffset="auto" paddingLeft="2" paddingTop="2" paddingRight="2" paddingBottom="2" background="false" backgroundColor="#ffffff" backgroundAlpha="1" border="false" borderColor="#000000" borderAlpha="1" borderWidth="1" paddingLock="false" multiline="true" antiAliasType="normal" embedFonts="false"><TextFlow lineBreak="toFit" locale="en_IL" whiteSpaceCollapse="preserve" version="2.0.0" xmlns="http://ns.adobe.com/textLayout/2008"><p direction="ltr" paragraphEndIndent="0" paragraphStartIndent="0" textAlign="center" textIndent="0"><span baselineShift="-4" color="#00ccff" fontFamily="Tahoma" fontSize="28" fontStyle="normal" fontWeight="normal" kerning="auto" lineHeight="191.428571%" trackingRight="0.000000%">Text</span></p></TextFlow></tlfTextObject></markup>
                 </DOMTLFText>
               </elements>
             </DOMFrame>

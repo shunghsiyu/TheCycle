@@ -6,11 +6,11 @@
 	import flash.events.Event;
 	import flash.events.MouseEvent;
 	
-	public class ChemLabel extends MovieClip {
+	public class ChemLabel extends Label {
 		
 		public function ChemLabel(_labelName:String, _color:uint = 0x000000) {
 			// constructor code
-			super();
+			super(_labelName, _color);
 			labelName = _labelName;
 			color = _color;
 			this.addEventListener(Event.ADDED_TO_STAGE, initialize, false, 0, true);
@@ -23,8 +23,8 @@
 			this.addEventListener(MouseEvent.MOUSE_DOWN, on_MouseDown, false, 0, true);
 			this.stage.addEventListener(MouseEvent.MOUSE_UP, on_MouseUp, false, 0, true);
 			this.addEventListener(MouseEvent.MOUSE_OVER, onMouseOver, false, 0, true);
-			this.chemName.text = labelName;
-			this.chemName.textColor = getTextColor();
+			this.labelNameField.text = labelName;
+			this.labelNameField.textColor = getTextColor();
 			
 			this.removeEventListener(Event.ADDED_TO_STAGE, initialize);
 		}
@@ -102,9 +102,9 @@
 		}
 		
 		//Change the color of the label
-		public function setColor(_color:uint):void {
+		override public function setColor(_color:uint):void {
 			color = _color;
-			this.chemName.textColor = getTextColor();
+			this.labelNameField.textColor = getTextColor();
 			drawBG();
 		}
 		
@@ -138,8 +138,6 @@
 		private function getTextColor():uint {
 			return MyFunctions.changeColorByHSV(color, -5, 0, -10);
 		}
-		
-		public function getColor():uint {return color;}
 		
 		//The dimension of the background rectangle
 		private static const rectWidth:Number = 150, rectHeight:Number = 50;
