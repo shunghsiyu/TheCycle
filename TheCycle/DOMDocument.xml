@@ -1,0 +1,102 @@
+<DOMDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" width="1280" height="720" frameRate="60" currentTimeline="1" xflVersion="2.2" creatorInfo="Adobe Flash Professional CS6" platform="Macintosh" versionInfo="Saved by Adobe Flash Macintosh 12.0 build 537" majorVersion="12" buildNumber="537" viewAngle3D="100.925968316201" nextSceneIdentifier="2" playOptionsPlayLoop="false" playOptionsPlayPages="false" playOptionsPlayFrameActions="false" autoSaveEnabled="true" autoSaveHasPrompted="true">
+     <media>
+          <DOMBitmapItem name="Bitmap 1.png" itemID="52859cc5-00000bc8" sourceExternalFilepath="../BioCycle/BioCycleProgram/LIBRARY/Bitmap 1.png" sourceLastImported="1384488133" sourcePlatform="macintosh" externalFileCRC32="4101121944" externalFileSize="247552" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="Bitmap 1.png" bitmapDataHRef="M 1 1384488086.dat" frameRight="49600" frameBottom="37680"/>
+     </media>
+     <symbols>
+          <Include href="ChemLabel.xml" itemID="5283f1aa-000004fd" lastModified="1384475356"/>
+          <Include href="Cycle.xml" itemID="52770114-00000524" lastModified="1385414806"/>
+          <Include href="Symbol 1.xml" loadImmediate="false" itemID="52859cf9-00000bca" lastModified="1384488185"/>
+     </symbols>
+     <timelines>
+          <DOMTimeline name="Scene 1">
+               <layers>
+                    <DOMLayer name="Layer 1" color="#4FFF4F">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="Symbol 1" centerPoint3DX="640.15" centerPoint3DY="360.05">
+                                             <matrix>
+                                                  <Matrix tx="-599.85" ty="-205.1"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point x="1240" y="565.15"/>
+                                             </transformationPoint>
+                                             <color>
+                                                  <Color alphaMultiplier="0.69140625"/>
+                                             </color>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="Actionscript" color="#4FFF4F" current="true" isSelected="true" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <Actionscript>
+                                        <script><![CDATA[import flash.display.MovieClip;
+import flash.events.Event;
+
+var krebCycleLabels:Array = ["Citrate","cis-Aconitate", "D-Isocitrate", "\u03B1-KetoGlutarate", "Succinyl-CoA", "Succinate", "Fumarate", "Malate", "Oxaloacetate"];
+var krebCycle:MovieClip = new Cycle(krebCycleLabels, true, MyFunctions.getColor(0));
+this.addChild(krebCycle);
+krebCycle.scaleX = krebCycle.scaleY = 0.5;
+krebCycle.x = 200;
+krebCycle.y = 360;
+
+var arginineCycleLabels:Array = ["Arginine", "Omithine", "Citrulline", "Argininosuccinate"];
+for(var i = 0; i < 8; i++) {
+var arginineCycle:MovieClip = new Cycle(arginineCycleLabels, true, MyFunctions.getColor(i+1));
+this.addChild(arginineCycle);
+arginineCycle.scaleX = arginineCycle.scaleY = 0.5;
+arginineCycle.x = krebCycle.x + (i+1)*100;
+arginineCycle.y = 360;
+}
+
+var calvinCycleLabels:Array = ["Ribulose 1,5-bisphosphate", "3-phosphoglycerate", "1,3-bisphosphoglycerate", "Glyceraldehyde 3-phosphate", "Ribulose 5-phosphate"];
+var calvinCycle:MovieClip = new Cycle(calvinCycleLabels, false, MyFunctions.getColor(9));
+this.addChild(calvinCycle);
+calvinCycle.scaleX = calvinCycle.scaleY = 0.5;
+calvinCycle.x = 1080;
+calvinCycle.y = 360;
+
+this.addEventListener(Event.ENTER_FRAME, changeColor);
+function changeColor(e:Event):void {
+	calvinCycle.setColor(MyFunctions.changeColorByHSV(calvinCycle.color, 1, -1, 0));
+}
+]]></script>
+                                   </Actionscript>
+                                   <elements/>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+               </layers>
+          </DOMTimeline>
+     </timelines>
+     <persistentData>
+          <PD n="CreateJSToolkit_data" v="version&#xA;0.1&#xA;libraryPath&#xA;libs/&#xA;createjsNS&#xA;createjs&#xA;exportHTML&#xA;true&#xA;frameBounds&#xA;false&#xA;includeHiddenLayers&#xA;true&#xA;preview&#xA;true&#xA;imagesPath&#xA;images/&#xA;soundsPath&#xA;sounds/&#xA;compactPaths&#xA;true&#xA;imagesNS&#xA;images&#xA;exportSounds&#xA;true&#xA;exportLibs&#xA;true&#xA;exportImages&#xA;true&#xA;hostedLibs&#xA;true&#xA;outputPath&#xA;./CreatJS/&#xA;libNS&#xA;lib"/>
+          <PD n="CreateJSToolkit_timelinedata" v="version&#xA;0.1&#xA;loop&#xA;false"/>
+     </persistentData>
+     <PrinterSettings platform="macintosh"/>
+     <publishHistory>
+          <PublishItem publishSize="222097" publishTime="1385419917" publishDebug="true"/>
+          <PublishItem publishSize="222111" publishTime="1385419859" publishDebug="true"/>
+          <PublishItem publishSize="222111" publishTime="1385419783" publishDebug="true"/>
+          <PublishItem publishSize="222104" publishTime="1385419701" publishDebug="true"/>
+          <PublishItem publishSize="222115" publishTime="1385419664" publishDebug="true"/>
+          <PublishItem publishSize="222124" publishTime="1385419642" publishDebug="true"/>
+          <PublishItem publishSize="222136" publishTime="1385419618" publishDebug="true"/>
+          <PublishItem publishSize="222141" publishTime="1385419605" publishDebug="true"/>
+          <PublishItem publishSize="222069" publishTime="1385419467" publishDebug="true"/>
+          <PublishItem publishSize="222065" publishTime="1385419383" publishDebug="true"/>
+          <PublishItem publishSize="222098" publishTime="1385419117" publishDebug="true"/>
+          <PublishItem publishSize="222062" publishTime="1385419055" publishDebug="true"/>
+          <PublishItem publishSize="222067" publishTime="1385419026" publishDebug="true"/>
+          <PublishItem publishSize="222070" publishTime="1385418974" publishDebug="true"/>
+          <PublishItem publishSize="222063" publishTime="1385418938" publishDebug="true"/>
+          <PublishItem publishSize="221815" publishTime="1385418330" publishDebug="true"/>
+          <PublishItem publishSize="221797" publishTime="1385418198" publishDebug="true"/>
+          <PublishItem publishSize="221801" publishTime="1385418171" publishDebug="true"/>
+          <PublishItem publishSize="221800" publishTime="1385418157" publishDebug="true"/>
+          <PublishItem publishSize="221804" publishTime="1385418089" publishDebug="true"/>
+     </publishHistory>
+</DOMDocument>
