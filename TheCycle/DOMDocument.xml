@@ -44,6 +44,8 @@
      </persistentData>
      <PrinterSettings platform="macintosh"/>
      <publishHistory>
+          <PublishItem publishSize="221940" publishTime="1385480793" publishDebug="true"/>
+          <PublishItem publishSize="221957" publishTime="1385480752" publishDebug="true"/>
           <PublishItem publishSize="372266" publishTime="1385479686"/>
           <PublishItem publishSize="221936" publishTime="1385479622" publishDebug="true"/>
           <PublishItem publishSize="221926" publishTime="1385479613" publishDebug="true"/>
@@ -62,7 +64,5 @@
           <PublishItem publishSize="222141" publishTime="1385419605" publishDebug="true"/>
           <PublishItem publishSize="222069" publishTime="1385419467" publishDebug="true"/>
           <PublishItem publishSize="222065" publishTime="1385419383" publishDebug="true"/>
-          <PublishItem publishSize="222098" publishTime="1385419117" publishDebug="true"/>
-          <PublishItem publishSize="222062" publishTime="1385419055" publishDebug="true"/>
      </publishHistory>
 </DOMDocument>
