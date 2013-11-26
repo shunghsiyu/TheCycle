@@ -53,6 +53,7 @@
 		}
 		
 		public static function getColor(_index:int, _startColor:uint = 0x0077F9):uint {
+		public static function genColor(_index:int, _startColor:uint = 0x0077F9):uint {
 			var shift:Number = 0;
 			var nextH:Number = 37;
 			return changeColorByHSV(_startColor, (nextH * _index) + (_index/(360/nextH +1))*shift, 0, 0);
