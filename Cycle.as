@@ -11,10 +11,11 @@ package  {
 	
 	public class Cycle extends MovieClip {
 		
-		public function Cycle(_names:Array = null, _canRotate:Boolean = false, _color:uint = 0x0077F9) {
+		public function Cycle(_cycleName:String, _names:Array = null, _canRotate:Boolean = false, _color:uint = 0x0077F9) {
 			// constructor code
 			super();
 			labelNames = _names;
+			cycleName = _cycleName;
 			canRotate = _canRotate;
 			color = _color;
 			this.addEventListener(Event.ADDED_TO_STAGE, initialize, false, 0, true);
@@ -25,8 +26,8 @@ package  {
 		public function initialize(e:Event):void {
 			
 			//Add this name of the cycle
-			cycleName = new Label("The Name of the Cycle");
-			this.addChild(cycleName);
+			cycleNameLabel = new Label(cycleName, color);
+			this.addChild(cycleNameLabel);
 			
 			//Add the ChemLabel
 			for (var i:int = 0, cycleWidth:int = circleOuterRadius*2, cycleHeight:int = circleOuterRadius*2; i < labelNames.length; i++) {
@@ -109,8 +110,11 @@ package  {
 			lastX = this.x + Math.cos((-90+this.rotation+mouseAngleDiff)*Math.PI/180);
 			lastY = this.y + Math.sin((-90+this.rotation+mouseAngleDiff)*Math.PI/180);
 			
-			/* TEST */
-			cycleName.rotation = -this.rotation;
+			updateAfterRotate();
+		}
+		
+		private function updateAfterRotate():void {
+			cycleNameLabel.rotation = -this.rotation;
 		}
 
 		//get the color that the labels should be set to 
@@ -122,6 +126,7 @@ package  {
 		//change the color of this cycle and its labels
 		public function setColor(_color:uint):void {
 			color = _color;
+			//cycleNameLabel.setColor(color);
 			for (var i:int = 0; i < chemLabels.length; i++) {
 				chemLabels[i].setColor(getLabelColor());
 			}
@@ -165,7 +170,8 @@ package  {
 		private var circle:Shape = new Shape();	
 		
 		/* TEST */
-		private var cycleName:MovieClip;
+		private var cycleName:String;
+		private var cycleNameLabel:MovieClip;
 	}
 	
 }

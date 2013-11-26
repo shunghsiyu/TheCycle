@@ -101,8 +101,38 @@
 			this.scaleY = this.scaleY + _changeAmount;
 		}
 		
+		override protected function drawBG():void {
+			var drawWidth:int, drawHeight:int;
+			
+			drawHeight = rectHeight;
+			if (labelName.length > minLengthToAdjust)
+				drawWidth = expandPerChar*(labelName.length - minLengthToAdjust) + rectWidth;
+			else
+				drawWidth = rectWidth;
+			
+			drawBGRect(drawWidth, drawHeight, true);
+		}
+		
+		override protected function drawBGRect(_rectWidth:int, _rectHeight:int, _fill:Boolean = true):void {
+			var bgColor:uint = 0xFFFFFF;
+			rect.graphics.clear();
+			rect.graphics.lineStyle(rectThickness, color, 1);
+			if (_fill) rect.graphics.beginFill(bgColor, 1);
+			rect.graphics.drawRoundRect(-_rectWidth/2, -_rectHeight/2, _rectWidth, _rectHeight, 
+				_rectWidth < _rectHeight ? _rectWidth:_rectHeight, 
+				_rectWidth < _rectHeight ? _rectWidth:_rectHeight);
+			rect.graphics.endFill();
+			this.addChildAt(rect, 0);
+		}
+		
+		override public function setColor(_color:uint):void {
+			color = _color;
+			labelNameField.textColor = getTextColor();
+			drawBG();
+		}
+		
 		//The dimension of the background rectangle
-		public static const rectWidth:Number = 150, rectHeight:Number = 50;
+		public static const rectWidth:Number = 150, rectHeight:Number = 50, rectThickness:Number = 8;
 		//Determines the way the background rectangle expand to fit the text
 		private static const minLengthToAdjust:int = 7, expandPerChar:int = 14;
 		//Controls the size and rate of scaling when mouse is over

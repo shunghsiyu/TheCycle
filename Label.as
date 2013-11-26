@@ -7,6 +7,9 @@
 	import flash.display.Stage;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
+	import flash.text.TextFieldAutoSize;
+	import flash.text.TextFormat;
+	import flash.text.TextFormatAlign;
 	
 	public class Label extends MovieClip {
 		
@@ -22,8 +25,19 @@
 		//Initialize the label after it is added to the stage
 		protected function initialize(e:Event):void {
 			this.addEventListener(Event.ENTER_FRAME, counterRotates, false, 0, true);
-			this.labelNameField.text = labelName;
-			this.labelNameField.textColor = getTextColor();
+			
+			/* SHOULD BE CLEANED */
+			//set up the cycle name label
+			labelNameField.text = labelName;
+			labelNameField.setTextFormat(labelNameFieldFormat);
+			labelNameField.textColor = 0x000000;
+			labelNameField.selectable = false;
+			labelNameField.width = 300;
+			labelNameField.height = 70;
+			labelNameField.autoSize = flash.text.TextFieldAutoSize.CENTER;
+			labelNameField.x = -labelNameField.width/2;
+			labelNameField.y = -labelNameField.height/2;
+			addChild(labelNameField);
 			
 			this.removeEventListener(Event.ADDED_TO_STAGE, initialize);
 		}
@@ -36,7 +50,7 @@
 		//Change the color of the label
 		public function setColor(_color:uint):void {
 			color = _color;
-			this.labelNameField.textColor = getTextColor();
+			labelNameField.textColor = getTextColor();
 			drawBG();
 		}
 		
@@ -57,7 +71,7 @@
 		protected function drawBGRect(_rectWidth:int, _rectHeight:int, _fill:Boolean = true):void {
 			var bgColor:uint = 0xFFFFFF;
 			rect.graphics.clear();
-			rect.graphics.lineStyle(8, color, 1);
+			//rect.graphics.lineStyle(rectThickness, color, 1);
 			if (_fill) rect.graphics.beginFill(bgColor, 1);
 			rect.graphics.drawRoundRect(-_rectWidth/2, -_rectHeight/2, _rectWidth, _rectHeight, 
 										_rectWidth < _rectHeight ? _rectWidth:_rectHeight, 
@@ -74,7 +88,7 @@
 		public function getColor():uint {return color;}
 		
 		//The dimension of the background rectangle
-		public static const rectWidth:Number = 150, rectHeight:Number = 50;
+		public static const rectWidth:Number = 150, rectHeight:Number = 100, rectThickness:Number = 0;
 		//Determines the way the background rectangle expand to fit the text
 		private static const minLengthToAdjust:int = 7, expandPerChar:int = 14;
 		//the text to display in the label
@@ -85,6 +99,7 @@
 		protected var color:uint;
 		//The textfield for the label name
 		private var labelNameField:TLFTextField = new TLFTextField();
+		protected var labelNameFieldFormat:TextFormat = new TextFormat("Tahoma", 35, null, true, null, null, null, null, TextFormatAlign.CENTER);
 	}
 	
 }
