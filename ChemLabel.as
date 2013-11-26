@@ -125,13 +125,14 @@
 			return MyFunctions.changeColorByHSV(color, -5, 0, -10);
 		}
 		
+		public function getColor():uint {return color;}
 		private static const rectWidth:Number = 150, rectHeight:Number = 50;
 		private static const minLengthToAdjust:int = 7, expandPerChar:int = 14;
 		private var mouseIsDown:Boolean, scaling:Boolean;
 		private var labelName:String;
 		private var rect:Shape = new Shape();
-		
-		public var color:uint;
+		//The color of this label
+		private var color:uint;
 	}
 	
 }

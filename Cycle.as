@@ -1,12 +1,13 @@
 package  {
 	
+	import fl.motion.Color;
+	
 	import flash.display.MovieClip;
-	import flash.events.MouseEvent;
+	import flash.display.Shape;
 	import flash.events.Event;
+	import flash.events.MouseEvent;
 	import flash.text.TextField;
 	import flash.text.TextFieldAutoSize;
-	import fl.motion.Color;
-	import flash.display.Shape;
 	
 	public class Cycle extends MovieClip {
 		
@@ -133,6 +134,8 @@ package  {
 			circle.graphics.drawCircle(0, 0, circleInnerRadius);
 			this.addChildAt(circle, 0);
 		}
+		
+		public function getColor():uint {return color;}
 
 		//the name of all the labels in this cycle
 		public var labelNames:Array;
@@ -143,7 +146,7 @@ package  {
 		//the dimension of the cycle
 		private static const circleOuterRadius:Number = 350, circleInnerRadius:Number = 280;
 		//the color of this cycle
-		public var color:uint;
+		private var color:uint;
 		private var canRotate:Boolean;
 		//the poisition of the mouse at the frame before
 		//used to calculate the angle for method 'rotating'

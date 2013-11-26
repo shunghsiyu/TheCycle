@@ -36,7 +36,7 @@ package
 			
 			this.addEventListener(Event.ENTER_FRAME, changeColor);
 			function changeColor(e:Event):void {
-				calvinCycle.setColor(MyFunctions.changeColorByHSV(calvinCycle.color, 1, -1, 0));
+				calvinCycle.setColor(MyFunctions.changeColorByHSV(calvinCycle.getColor(), 1, -1, 0));
 			}
 			
 			this.removeEventListener(Event.ADDED_TO_STAGE, initialize);
