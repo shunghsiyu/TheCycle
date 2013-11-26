@@ -24,7 +24,11 @@ package  {
 		//Initialize cycle after it is added to the stage
 		public function initialize(e:Event):void {
 			
-			//Add the labels
+			//Add this name of the cycle
+			cycleName = new Label("The Name of the Cycle");
+			this.addChild(cycleName);
+			
+			//Add the ChemLabel
 			for (var i:int = 0, cycleWidth:int = circleOuterRadius*2, cycleHeight:int = circleOuterRadius*2; i < labelNames.length; i++) {
 				var chemLabel:MovieClip = new ChemLabel(labelNames[i], getLabelColor());
 				var correction:Number = 0.10*(cycleWidth+cycleHeight)/4;
@@ -104,6 +108,9 @@ package  {
 			// for the next frame
 			lastX = this.x + Math.cos((-90+this.rotation+mouseAngleDiff)*Math.PI/180);
 			lastY = this.y + Math.sin((-90+this.rotation+mouseAngleDiff)*Math.PI/180);
+			
+			/* TEST */
+			cycleName.rotation = -this.rotation;
 		}
 
 		//get the color that the labels should be set to 
@@ -155,7 +162,10 @@ package  {
 		//stores the angle of difference between this frame and last frame
 		private var mouseAngleDiff:Number;
 		//for drawing the background circle
-		private var circle:Shape = new Shape();		
+		private var circle:Shape = new Shape();	
+		
+		/* TEST */
+		private var cycleName:MovieClip;
 	}
 	
 }

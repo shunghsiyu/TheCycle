@@ -30,7 +30,7 @@
 		
 		//keep the label horizontal even when the cycle rotates
 		private function counterRotates(e:Event):void {
-			this.rotation = -parent.rotation;
+			//this.rotation = -parent.rotation;
 		}
 		
 		//Change the color of the label
