@@ -23,14 +23,12 @@
 		}
 		
 		//Initialize the label after it is added to the stage
-		protected function initialize(e:Event):void {
-			this.addEventListener(Event.ENTER_FRAME, counterRotates, false, 0, true);
-			
+		protected function initialize(e:Event):void {			
 			/* SHOULD BE CLEANED */
 			//set up the cycle name label
 			labelNameField.text = labelName;
 			labelNameField.setTextFormat(labelNameFieldFormat);
-			labelNameField.textColor = 0x000000;
+			labelNameField.textColor = color;
 			labelNameField.selectable = false;
 			labelNameField.width = 300;
 			labelNameField.height = 70;
@@ -40,11 +38,6 @@
 			addChild(labelNameField);
 			
 			this.removeEventListener(Event.ADDED_TO_STAGE, initialize);
-		}
-		
-		//keep the label horizontal even when the cycle rotates
-		protected function counterRotates(e:Event):void {
-			//this.rotation = -parent.rotation;
 		}
 		
 		//Change the color of the label
@@ -64,7 +57,7 @@
 			else
 				drawWidth = rectWidth;
 		
-			drawBGRect(drawWidth, drawHeight, true);
+			drawBGRect(drawWidth, drawHeight, false);
 		}
 		
 		//Draws the background rectangle

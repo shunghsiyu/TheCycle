@@ -1,12 +1,13 @@
 <DOMDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" width="1280" height="720" frameRate="60" currentTimeline="1" xflVersion="2.2" creatorInfo="Adobe Flash Professional CS6" platform="Macintosh" versionInfo="Saved by Adobe Flash Macintosh 12.0 build 537" majorVersion="12" buildNumber="537" viewAngle3D="100.925968316201" nextSceneIdentifier="2" playOptionsPlayLoop="false" playOptionsPlayPages="false" playOptionsPlayFrameActions="false" autoSaveEnabled="true" autoSaveHasPrompted="true">
      <media>
-          <DOMBitmapItem name="Vignette.png" itemID="5294b857-000002af" sourceExternalFilepath="/Users/shunghsiyu/Documents/Flash Projects/TheCycleProgram/TheCycle/LIBRARY/Vignette.png" sourceLastImported="1385478231" sourcePlatform="macintosh" externalFileCRC32="4101121944" externalFileSize="247552" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="Vignette.png" bitmapDataHRef="M 1 1384488086.dat" frameRight="49600" frameBottom="37680"/>
+          <DOMBitmapItem name="Vignette.png" itemID="5294b857-000002af" sourceLastImported="1385523567" sourcePlatform="macintosh" externalFileCRC32="4101121944" externalFileSize="247552" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="Vignette.png" bitmapDataHRef="M 1 1384488086.dat" frameRight="49600" frameBottom="37680"/>
      </media>
      <symbols>
           <Include href="ChemLabel.xml" itemID="5283f1aa-000004fd" lastModified="1385495065"/>
-          <Include href="Cycle.xml" itemID="52770114-00000524" lastModified="1385414806"/>
-          <Include href="CycleGroup.xml" itemID="5294b89d-000002b1" lastModified="1385478301"/>
-          <Include href="Label.xml" itemID="5294ee51-00000353" lastModified="1385492049"/>
+          <Include href="Cycle.xml" itemID="52770114-00000524" lastModified="1385564644"/>
+          <Include href="CycleGroup.xml" itemID="5294b89d-000002b1" lastModified="1385564651"/>
+          <Include href="Label.xml" itemID="5294ee51-00000353" lastModified="1385564708"/>
+          <Include href="ModeQuitButton.xml" itemID="5296165f-0000026e" lastModified="1385568220"/>
           <Include href="Vignette.xml" loadImmediate="false" itemID="5294b838-000002ac" lastModified="1385478200"/>
      </symbols>
      <timelines>
@@ -16,7 +17,7 @@
                          <frames>
                               <DOMFrame index="0" keyMode="9728">
                                    <elements>
-                                        <DOMSymbolInstance libraryItemName="Vignette" name="cycleGroup" selected="true" centerPoint3DX="640.15" centerPoint3DY="360.05">
+                                        <DOMSymbolInstance libraryItemName="Vignette" name="vignette" centerPoint3DX="640.15" centerPoint3DY="360.05">
                                              <matrix>
                                                   <Matrix tx="-599.85" ty="-205.1"/>
                                              </matrix>
@@ -41,29 +42,30 @@
      </timelines>
      <persistentData>
           <PD n="CreateJSToolkit_data" v="version&#xA;0.1&#xA;libraryPath&#xA;libs/&#xA;createjsNS&#xA;createjs&#xA;exportHTML&#xA;true&#xA;frameBounds&#xA;false&#xA;includeHiddenLayers&#xA;true&#xA;preview&#xA;true&#xA;imagesPath&#xA;images/&#xA;soundsPath&#xA;sounds/&#xA;compactPaths&#xA;true&#xA;imagesNS&#xA;images&#xA;exportSounds&#xA;true&#xA;exportLibs&#xA;true&#xA;exportImages&#xA;true&#xA;hostedLibs&#xA;true&#xA;outputPath&#xA;./CreatJS/&#xA;libNS&#xA;lib"/>
+          <PD n="DartToolkit_data" v="version&#xA;0.1&#xA;exportImages&#xA;true&#xA;exportSounds&#xA;true&#xA;libNS&#xA;lib&#xA;maxPng&#xA;1024&#xA;soundsPath&#xA;sounds/&#xA;imagesNS&#xA;images&#xA;imagesPath&#xA;images/&#xA;libraryPath&#xA;libs/&#xA;webNS&#xA;web&#xA;preview&#xA;true&#xA;includeHiddenLayers&#xA;true&#xA;outputPath&#xA;./&#xA;compactPaths&#xA;true&#xA;autoAtlas&#xA;true&#xA;&#xA;undefined&#xA;exportHTML&#xA;true&#xA;maxAtlas&#xA;2048"/>
           <PD n="CreateJSToolkit_timelinedata" v="version&#xA;0.1&#xA;loop&#xA;false"/>
      </persistentData>
      <PrinterSettings platform="macintosh"/>
      <publishHistory>
-          <PublishItem publishSize="222825" publishTime="1385500156" publishDebug="true"/>
-          <PublishItem publishSize="222841" publishTime="1385500149" publishDebug="true"/>
-          <PublishItem publishSize="222843" publishTime="1385500084" publishDebug="true"/>
-          <PublishItem publishSize="222848" publishTime="1385500081" publishDebug="true"/>
-          <PublishItem publishSize="222835" publishTime="1385500017" publishDebug="true"/>
-          <PublishItem publishSize="222835" publishTime="1385500014" publishDebug="true"/>
-          <PublishItem publishSize="157650" publishTime="1385499982" publishDebug="true"/>
-          <PublishItem publishSize="157649" publishTime="1385499978" publishDebug="true"/>
-          <PublishItem publishSize="157650" publishTime="1385499972" publishDebug="true"/>
-          <PublishItem publishSize="157651" publishTime="1385499884" publishDebug="true"/>
-          <PublishItem publishSize="222813" publishTime="1385499819" publishDebug="true"/>
-          <PublishItem publishSize="222802" publishTime="1385499816" publishDebug="true"/>
-          <PublishItem publishSize="222813" publishTime="1385499772" publishDebug="true"/>
-          <PublishItem publishSize="222790" publishTime="1385499740" publishDebug="true"/>
-          <PublishItem publishSize="222803" publishTime="1385499734" publishDebug="true"/>
-          <PublishItem publishSize="222821" publishTime="1385499600" publishDebug="true"/>
-          <PublishItem publishSize="222810" publishTime="1385499597" publishDebug="true"/>
-          <PublishItem publishSize="222823" publishTime="1385499585" publishDebug="true"/>
-          <PublishItem publishSize="222801" publishTime="1385499525" publishDebug="true"/>
-          <PublishItem publishSize="222810" publishTime="1385499523" publishDebug="true"/>
+          <PublishItem publishSize="223736" publishTime="1385571803" publishDebug="true"/>
+          <PublishItem publishSize="223723" publishTime="1385571762" publishDebug="true"/>
+          <PublishItem publishSize="223723" publishTime="1385571602" publishDebug="true"/>
+          <PublishItem publishSize="223728" publishTime="1385571580" publishDebug="true"/>
+          <PublishItem publishSize="223716" publishTime="1385571566" publishDebug="true"/>
+          <PublishItem publishSize="223725" publishTime="1385571527" publishDebug="true"/>
+          <PublishItem publishSize="223716" publishTime="1385571522" publishDebug="true"/>
+          <PublishItem publishSize="223722" publishTime="1385571493" publishDebug="true"/>
+          <PublishItem publishSize="223656" publishTime="1385571428" publishDebug="true"/>
+          <PublishItem publishSize="223655" publishTime="1385571423" publishDebug="true"/>
+          <PublishItem publishSize="157860" publishTime="1385571395" publishDebug="true"/>
+          <PublishItem publishSize="157861" publishTime="1385571377" publishDebug="true"/>
+          <PublishItem publishSize="223662" publishTime="1385571328" publishDebug="true"/>
+          <PublishItem publishSize="157859" publishTime="1385571283" publishDebug="true"/>
+          <PublishItem publishSize="223501" publishTime="1385571212" publishDebug="true"/>
+          <PublishItem publishSize="223490" publishTime="1385570683" publishDebug="true"/>
+          <PublishItem publishSize="223496" publishTime="1385570663" publishDebug="true"/>
+          <PublishItem publishSize="157858" publishTime="1385570635" publishDebug="true"/>
+          <PublishItem publishSize="157859" publishTime="1385570607" publishDebug="true"/>
+          <PublishItem publishSize="157862" publishTime="1385570554" publishDebug="true"/>
      </publishHistory>
 </DOMDocument>

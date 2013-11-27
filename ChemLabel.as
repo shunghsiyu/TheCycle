@@ -8,30 +8,37 @@
 	
 	public class ChemLabel extends Label {
 		
-		public function ChemLabel(_labelName:String, _color:uint = 0x000000) {
+		public function ChemLabel(_labelName:String, _color:uint = 0x000000, _active = false) {
 			// constructor code
 			super(_labelName, _color);
 			labelName = _labelName;
 			color = _color;
+			isEnable = _active;
 			this.addEventListener(Event.ADDED_TO_STAGE, initialize, false, 0, true);
 			drawBG();
 		}
 		
 		//Initialize the label after it is added to the stage
 		override protected function initialize(e:Event):void {
-			this.addEventListener(Event.ENTER_FRAME, counterRotates, false, 0, true);
-			this.addEventListener(MouseEvent.MOUSE_DOWN, on_MouseDown, false, 0, true);
-			this.stage.addEventListener(MouseEvent.MOUSE_UP, on_MouseUp, false, 0, true);
-			this.addEventListener(MouseEvent.MOUSE_OVER, onMouseOver, false, 0, true);
+			setActive(isEnable);
 			this.labelNameField.text = labelName;
 			this.labelNameField.textColor = getTextColor();
 			
 			this.removeEventListener(Event.ADDED_TO_STAGE, initialize);
 		}
 		
-		//keep the label horizontal even when the cycle rotates
-		override protected function counterRotates(e:Event):void {
-			this.rotation = -parent.rotation;
+		public function setActive(_enable:Boolean):void {
+			if (_enable) {
+				this.addEventListener(MouseEvent.MOUSE_DOWN, on_MouseDown, false, 0, true);
+				this.stage.addEventListener(MouseEvent.MOUSE_UP, on_MouseUp, false, 0, true);
+				this.addEventListener(MouseEvent.MOUSE_OVER, onMouseOver, false, 0, true);
+			}
+			else {
+				if (this.hasEventListener(MouseEvent.MOUSE_DOWN) ) this.removeEventListener(MouseEvent.MOUSE_DOWN, on_MouseDown);
+				/*MIGHT CAUSE TROUBLE*/
+				if (this.stage.hasEventListener(MouseEvent.MOUSE_UP) ) this.stage.removeEventListener(MouseEvent.MOUSE_UP, on_MouseUp);
+				if (this.hasEventListener(MouseEvent.MOUSE_OVER) ) this.removeEventListener(MouseEvent.MOUSE_OVER, onMouseOver);
+			}
 		}
 		
 		//scale up when mouse is over the label
@@ -139,6 +146,8 @@
 		private static const scaleRate:Number = 0.02, scaleMax:Number = 0.15;
 		//Variables to prevent scaling up happening at the same time as scaling down
 		private var mouseIsDown:Boolean, scaling:Boolean;
+		//Variable that tells whether or not the label is active
+		private var isEnable:Boolean;
 	}
 	
 }
