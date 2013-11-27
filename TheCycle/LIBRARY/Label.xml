@@ -1,6 +1,6 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Cycle" itemID="52770114-00000524" linkageExportForAS="true" linkageClassName="Cycle" lastModified="1385564644">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Label" itemID="5294ee51-00000353" linkageExportForAS="true" linkageClassName="Label" lastModified="1385564708">
   <timeline>
-    <DOMTimeline name="Cycle">
+    <DOMTimeline name="Label">
       <layers>
         <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
           <frames>

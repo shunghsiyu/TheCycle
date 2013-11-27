@@ -6,32 +6,39 @@
 	import flash.events.Event;
 	import flash.events.MouseEvent;
 	
-	public class ChemLabel extends MovieClip {
+	public class ChemLabel extends Label {
 		
-		public function ChemLabel(_labelName:String, _color:uint = 0x000000) {
+		public function ChemLabel(_labelName:String, _color:uint = 0x000000, _active = false) {
 			// constructor code
-			super();
+			super(_labelName, _color);
 			labelName = _labelName;
 			color = _color;
+			isEnable = _active;
 			this.addEventListener(Event.ADDED_TO_STAGE, initialize, false, 0, true);
 			drawBG();
 		}
 		
 		//Initialize the label after it is added to the stage
-		private function initialize(e:Event):void {
-			this.addEventListener(Event.ENTER_FRAME, counterRotates, false, 0, true);
-			this.addEventListener(MouseEvent.MOUSE_DOWN, on_MouseDown, false, 0, true);
-			this.stage.addEventListener(MouseEvent.MOUSE_UP, on_MouseUp, false, 0, true);
-			this.addEventListener(MouseEvent.MOUSE_OVER, onMouseOver, false, 0, true);
-			this.chemName.text = labelName;
-			this.chemName.textColor = getTextColor();
+		override protected function initialize(e:Event):void {
+			setActive(isEnable);
+			this.labelNameField.text = labelName;
+			this.labelNameField.textColor = getTextColor();
 			
 			this.removeEventListener(Event.ADDED_TO_STAGE, initialize);
 		}
 		
-		//keep the label horizontal even when the cycle rotates
-		private function counterRotates(e:Event):void {
-			this.rotation = -parent.rotation;
+		public function setActive(_enable:Boolean):void {
+			if (_enable) {
+				this.addEventListener(MouseEvent.MOUSE_DOWN, on_MouseDown, false, 0, true);
+				this.stage.addEventListener(MouseEvent.MOUSE_UP, on_MouseUp, false, 0, true);
+				this.addEventListener(MouseEvent.MOUSE_OVER, onMouseOver, false, 0, true);
+			}
+			else {
+				if (this.hasEventListener(MouseEvent.MOUSE_DOWN) ) this.removeEventListener(MouseEvent.MOUSE_DOWN, on_MouseDown);
+				/*MIGHT CAUSE TROUBLE*/
+				if (this.stage.hasEventListener(MouseEvent.MOUSE_UP) ) this.stage.removeEventListener(MouseEvent.MOUSE_UP, on_MouseUp);
+				if (this.hasEventListener(MouseEvent.MOUSE_OVER) ) this.removeEventListener(MouseEvent.MOUSE_OVER, onMouseOver);
+			}
 		}
 		
 		//scale up when mouse is over the label
@@ -101,15 +108,7 @@
 			this.scaleY = this.scaleY + _changeAmount;
 		}
 		
-		//Change the color of the label
-		public function setColor(_color:uint):void {
-			color = _color;
-			this.chemName.textColor = getTextColor();
-			drawBG();
-		}
-		
-		//Call other methods that draws the background
-		private function drawBG():void {
+		override protected function drawBG():void {
 			var drawWidth:int, drawHeight:int;
 			
 			drawHeight = rectHeight;
@@ -117,44 +116,38 @@
 				drawWidth = expandPerChar*(labelName.length - minLengthToAdjust) + rectWidth;
 			else
 				drawWidth = rectWidth;
-		
+			
 			drawBGRect(drawWidth, drawHeight, true);
 		}
 		
-		//Draws the background rectangle
-		private function drawBGRect(_rectWidth:int, _rectHeight:int, _fill:Boolean = true):void {
+		override protected function drawBGRect(_rectWidth:int, _rectHeight:int, _fill:Boolean = true):void {
 			var bgColor:uint = 0xFFFFFF;
 			rect.graphics.clear();
-			rect.graphics.lineStyle(8, this.color, 1);
+			rect.graphics.lineStyle(rectThickness, color, 1);
 			if (_fill) rect.graphics.beginFill(bgColor, 1);
 			rect.graphics.drawRoundRect(-_rectWidth/2, -_rectHeight/2, _rectWidth, _rectHeight, 
-										_rectWidth < _rectHeight ? _rectWidth:_rectHeight, 
-										_rectWidth < _rectHeight ? _rectWidth:_rectHeight);
+				_rectWidth < _rectHeight ? _rectWidth:_rectHeight, 
+				_rectWidth < _rectHeight ? _rectWidth:_rectHeight);
 			rect.graphics.endFill();
 			this.addChildAt(rect, 0);
 		}
 		
-		//Get the color of the text according to the color of this label
-		private function getTextColor():uint {
-			return MyFunctions.changeColorByHSV(color, -5, 0, -10);
+		override public function setColor(_color:uint):void {
+			color = _color;
+			labelNameField.textColor = getTextColor();
+			drawBG();
 		}
 		
-		public function getColor():uint {return color;}
-		
 		//The dimension of the background rectangle
-		private static const rectWidth:Number = 150, rectHeight:Number = 50;
+		public static const rectWidth:Number = 150, rectHeight:Number = 50, rectThickness:Number = 8;
 		//Determines the way the background rectangle expand to fit the text
 		private static const minLengthToAdjust:int = 7, expandPerChar:int = 14;
 		//Controls the size and rate of scaling when mouse is over
 		private static const scaleRate:Number = 0.02, scaleMax:Number = 0.15;
 		//Variables to prevent scaling up happening at the same time as scaling down
 		private var mouseIsDown:Boolean, scaling:Boolean;
-		//the text to display in the label
-		private var labelName:String;
-		//Object for drawing the background rectangel
-		private var rect:Shape = new Shape();
-		//The color of this label
-		private var color:uint;
+		//Variable that tells whether or not the label is active
+		private var isEnable:Boolean;
 	}
 	
 }

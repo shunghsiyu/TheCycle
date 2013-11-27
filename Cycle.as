@@ -11,10 +11,11 @@ package  {
 	
 	public class Cycle extends MovieClip {
 		
-		public function Cycle(_names:Array = null, _canRotate:Boolean = false, _color:uint = 0x0077F9) {
+		public function Cycle(_cycleName:String, _names:Array = null,  _color:uint = 0x0077F9, _canRotate:Boolean = false) {
 			// constructor code
 			super();
 			labelNames = _names;
+			cycleName = _cycleName;
 			canRotate = _canRotate;
 			color = _color;
 			this.addEventListener(Event.ADDED_TO_STAGE, initialize, false, 0, true);
@@ -24,7 +25,11 @@ package  {
 		//Initialize cycle after it is added to the stage
 		public function initialize(e:Event):void {
 			
-			//Add the labels
+			//Add this name of the cycle
+			cycleNameLabel = new Label(cycleName, 0x000000);
+			this.addChild(cycleNameLabel);
+			
+			//Add the ChemLabel
 			for (var i:int = 0, cycleWidth:int = circleOuterRadius*2, cycleHeight:int = circleOuterRadius*2; i < labelNames.length; i++) {
 				var chemLabel:MovieClip = new ChemLabel(labelNames[i], getLabelColor());
 				var correction:Number = 0.10*(cycleWidth+cycleHeight)/4;
@@ -44,12 +49,20 @@ package  {
 		//Control whether or not the cycle can rotate
 		public function setRotate(_canRotate:Boolean):void {
 			if (_canRotate) {
-				this.addEventListener(MouseEvent.MOUSE_DOWN, startRotate, false, 0, true);
-				this.stage.addEventListener(MouseEvent.MOUSE_UP, stopRotate, false, 0, true);
+				this.mouseChildren = true;
+				this.addEventListener(MouseEvent.MOUSE_DOWN, startRotate);
+				this.stage.addEventListener(MouseEvent.MOUSE_UP, stopRotate);
+				for (var i:int = 0; i < chemLabels.length; i++) {
+					chemLabels[i].setActive(true);
+				}
 			}
 			else {
+				this.mouseChildren = false;
 				this.removeEventListener(MouseEvent.MOUSE_DOWN, startRotate);
 				this.stage.removeEventListener(MouseEvent.MOUSE_UP, stopRotate);
+				for (var j:int = 0; j < chemLabels.length; j++) {
+					chemLabels[i].setActive(false);
+				}
 			}
 		}
 		
@@ -104,6 +117,16 @@ package  {
 			// for the next frame
 			lastX = this.x + Math.cos((-90+this.rotation+mouseAngleDiff)*Math.PI/180);
 			lastY = this.y + Math.sin((-90+this.rotation+mouseAngleDiff)*Math.PI/180);
+			
+			updateAfterRotate();
+		}
+		
+		//keep the labels horizontal even when the cycle rotates
+		private function updateAfterRotate():void {
+			cycleNameLabel.rotation = -this.rotation;
+			for (var i:int = 0; i < chemLabels.length; i++) {
+				chemLabels[i].rotation = -this.rotation;
+			}
 		}
 
 		//get the color that the labels should be set to 
@@ -115,6 +138,7 @@ package  {
 		//change the color of this cycle and its labels
 		public function setColor(_color:uint):void {
 			color = _color;
+			//cycleNameLabel.setColor(color);
 			for (var i:int = 0; i < chemLabels.length; i++) {
 				chemLabels[i].setColor(getLabelColor());
 			}
@@ -144,7 +168,7 @@ package  {
 		
 		
 		//the dimension of the cycle
-		private static const circleOuterRadius:Number = 350, circleInnerRadius:Number = 280;
+		public static const circleOuterRadius:Number = 350, circleInnerRadius:Number = 280;
 		//the color of this cycle
 		private var color:uint;
 		private var canRotate:Boolean;
@@ -155,7 +179,10 @@ package  {
 		//stores the angle of difference between this frame and last frame
 		private var mouseAngleDiff:Number;
 		//for drawing the background circle
-		private var circle:Shape = new Shape();		
+		private var circle:Shape = new Shape();	
+		//Variables for displaying the name of the cycle
+		private var cycleName:String;
+		private var cycleNameLabel:MovieClip;
 	}
 	
 }
