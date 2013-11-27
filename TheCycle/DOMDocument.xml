@@ -1,6 +1,6 @@
 <DOMDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" width="1280" height="720" frameRate="60" currentTimeline="1" xflVersion="2.2" creatorInfo="Adobe Flash Professional CS6" platform="Macintosh" versionInfo="Saved by Adobe Flash Macintosh 12.0 build 537" majorVersion="12" buildNumber="537" viewAngle3D="100.925968316201" nextSceneIdentifier="2" playOptionsPlayLoop="false" playOptionsPlayPages="false" playOptionsPlayFrameActions="false" autoSaveEnabled="true" autoSaveHasPrompted="true">
      <media>
-          <DOMBitmapItem name="Vignette.png" itemID="5294b857-000002af" sourceLastImported="1385523567" sourcePlatform="macintosh" externalFileCRC32="4101121944" externalFileSize="247552" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="Vignette.png" bitmapDataHRef="M 1 1384488086.dat" frameRight="49600" frameBottom="37680"/>
+          <DOMBitmapItem name="Vignette.png" itemID="52962990-000002a0" sourceExternalFilepath="/Users/shunghsiyu/Documents/Flash Projects/TheCycleProgram/TheCycle/LIBRARY/Vignette.png" sourceLastImported="1385572101" sourcePlatform="macintosh" externalFileCRC32="4101121944" externalFileSize="247552" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="Vignette.png" bitmapDataHRef="M 1 1384488086.dat" frameRight="49600" frameBottom="37680"/>
      </media>
      <symbols>
           <Include href="ChemLabel.xml" itemID="5283f1aa-000004fd" lastModified="1385495065"/>
@@ -47,6 +47,15 @@
      </persistentData>
      <PrinterSettings platform="macintosh"/>
      <publishHistory>
+          <PublishItem publishSize="223710" publishTime="1385572775" publishDebug="true"/>
+          <PublishItem publishSize="157858" publishTime="1385572710" publishDebug="true"/>
+          <PublishItem publishSize="223725" publishTime="1385572540" publishDebug="true"/>
+          <PublishItem publishSize="223724" publishTime="1385572419" publishDebug="true"/>
+          <PublishItem publishSize="157859" publishTime="1385572176" publishDebug="true"/>
+          <PublishItem publishSize="223730" publishTime="1385572169" publishDebug="true"/>
+          <PublishItem publishSize="157859" publishTime="1385572128" publishDebug="true"/>
+          <PublishItem publishSize="223722" publishTime="1385572112" publishDebug="true"/>
+          <PublishItem publishSize="223723" publishTime="1385571825" publishDebug="true"/>
           <PublishItem publishSize="223736" publishTime="1385571803" publishDebug="true"/>
           <PublishItem publishSize="223723" publishTime="1385571762" publishDebug="true"/>
           <PublishItem publishSize="223723" publishTime="1385571602" publishDebug="true"/>
@@ -58,14 +67,5 @@
           <PublishItem publishSize="223656" publishTime="1385571428" publishDebug="true"/>
           <PublishItem publishSize="223655" publishTime="1385571423" publishDebug="true"/>
           <PublishItem publishSize="157860" publishTime="1385571395" publishDebug="true"/>
-          <PublishItem publishSize="157861" publishTime="1385571377" publishDebug="true"/>
-          <PublishItem publishSize="223662" publishTime="1385571328" publishDebug="true"/>
-          <PublishItem publishSize="157859" publishTime="1385571283" publishDebug="true"/>
-          <PublishItem publishSize="223501" publishTime="1385571212" publishDebug="true"/>
-          <PublishItem publishSize="223490" publishTime="1385570683" publishDebug="true"/>
-          <PublishItem publishSize="223496" publishTime="1385570663" publishDebug="true"/>
-          <PublishItem publishSize="157858" publishTime="1385570635" publishDebug="true"/>
-          <PublishItem publishSize="157859" publishTime="1385570607" publishDebug="true"/>
-          <PublishItem publishSize="157862" publishTime="1385570554" publishDebug="true"/>
      </publishHistory>
 </DOMDocument>
