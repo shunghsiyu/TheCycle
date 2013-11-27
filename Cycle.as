@@ -182,7 +182,7 @@ package  {
 		private var circle:Shape = new Shape();	
 		//Variables for displaying the name of the cycle
 		private var cycleName:String;
-		private var cycleNameLabel:MovieClip;
+		public var cycleNameLabel:MovieClip;
 	}
 	
 }
