@@ -15,17 +15,17 @@
     <flashDefaultName>0</flashDefaultName>
     <projectorWinDefaultName>1</projectorWinDefaultName>
     <projectorMacDefaultName>1</projectorMacDefaultName>
-    <htmlDefaultName>1</htmlDefaultName>
+    <htmlDefaultName>0</htmlDefaultName>
     <gifDefaultName>1</gifDefaultName>
     <jpegDefaultName>1</jpegDefaultName>
     <pngDefaultName>1</pngDefaultName>
     <qtDefaultName>1</qtDefaultName>
     <rnwkDefaultName>1</rnwkDefaultName>
     <swcDefaultName>1</swcDefaultName>
-    <flashFileName>./TheCycle.swf</flashFileName>
+    <flashFileName>./bin/TheCycle.swf</flashFileName>
     <projectorWinFileName>TheCycle.exe</projectorWinFileName>
     <projectorMacFileName>TheCycle.app</projectorMacFileName>
-    <htmlFileName>TheCycle.html</htmlFileName>
+    <htmlFileName>./bin/TheCycle.html</htmlFileName>
     <gifFileName>TheCycle.gif</gifFileName>
     <jpegFileName>TheCycle.jpg</jpegFileName>
     <pngFileName>TheCycle.png</pngFileName>
