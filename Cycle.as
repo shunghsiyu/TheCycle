@@ -180,7 +180,7 @@ package  {
 		//for drawing the background circle
 		private var circle:Shape = new Shape();	
 		//Variables for displaying the name of the cycle
-		private var cycleName:String;
+		public var cycleName:String;
 		public var cycleNameLabel:MovieClip;
 	}
 	

@@ -26,24 +26,18 @@
 			
 			//Adjust cycle posisiton and add to display list
 			for (var j:int = 0; j < cycleArray.length; j++) {
-				cycleArray[j].scaleX = cycleScale;
-				cycleArray[j].scaleY = cycleScale;
 				var correction:Number = 0.10*cycleGroupRadius;
-				setVirtual3DCoord(cycleArray[j], (cycleGroupRadius - correction) * Math.sin((-90+j * (360/cycleArray.length) )*Math.PI/180), 0, (cycleGroupRadius - correction) * Math.cos((-90+j * (360/cycleArray.length) )*Math.PI/180) );
+				virtual3D.addObject(cycleArray[j], (cycleGroupRadius - correction) * Math.sin((-90+j * (360/cycleArray.length) )*Math.PI/180), 0, (cycleGroupRadius - correction) * Math.cos((-90+j * (360/cycleArray.length) )*Math.PI/180) );
 				addChild(cycleArray[j]);
 			}
+			
+			virtual3D.update();
 			
 			this.addEventListener(MouseEvent.MOUSE_DOWN, turnOnCycle, false, 1);
 			this.stage.addEventListener(MouseEvent.MOUSE_DOWN, startRotate, false, 0);
 			this.stage.addEventListener(MouseEvent.MOUSE_UP, stopRotate, false, 0);
 			
 			this.removeEventListener(Event.ADDED_TO_STAGE, initialize);
-		}
-		
-		private function setVirtual3DCoord(_cycle:Cycle, _x:Number, _y:Number, _z:Number) {
-			var coord:Array = MyFunctions.project3D(_x, _y, _z);
-			_cycle.x = coord[0];
-			_cycle.y = coord[1];
 		}
 		
 		private function startRotate(e:MouseEvent):void {
@@ -58,10 +52,7 @@
 		}
 		
 		private function rotate(e:Event):void {
-			this.rotationY += 1;
-			for (var j:int = 0; j < cycleArray.length; j++) {
-				cycleArray[j].rotationY = -this.rotationY;
-			}
+			virtual3D.rotate(0, 1, 0);
 		}
 		
 		private function turnOnCycle(e:MouseEvent):void {
@@ -76,8 +67,8 @@
 					}
 				}
 				setChildIndex(lastActiveCycle, lastActiveCycleIndex);
-				lastActiveCycle.scaleX = cycleScale;
-				lastActiveCycle.scaleY = cycleScale;
+				lastActiveCycle.scaleX = lastActiveCycle.scaleX - cycleScaleUp;
+				lastActiveCycle.scaleY = lastActiveCycle.scaleY - cycleScaleUp;
 				lastActiveCycle.setRotate(false);
 				lastActiveCycle = null;
 				cycleMode = false;
@@ -95,7 +86,6 @@
 				quitButton.scaleY = cycleClicked.scaleY * scaleMutiplier;
 				quitButton.x = cycleClicked.x;
 				quitButton.y = cycleClicked.y;
-				quitButton.z = cycleClicked.z;
 				quitButton.rotationY = cycleClicked.rotationY;
 				this.addChildAt(quitButton, numChildren);
 				
@@ -107,14 +97,15 @@
 				}
 				
 				setChildIndex(cycleClicked, numChildren-1);
-				cycleClicked.scaleX = cycleScale + cycleScaleUp;
-				cycleClicked.scaleY = cycleScale + cycleScaleUp;
+				cycleClicked.scaleX = cycleClicked.scaleX + cycleScaleUp;
+				cycleClicked.scaleY = cycleClicked.scaleY + cycleScaleUp;
 				cycleClicked.setRotate(true);
 			}
 		}
 		
-		public static const cycleGroupRadius:Number = 360;
-		public static const cycleScale:Number = 0.5, cycleScaleUp:Number = 0.01;
+		public static const cycleGroupRadius:Number = 500;
+		public static const cycleScaleRate:Number = 0.5, cycleScaleUp:Number = 0.01;
+		private var virtual3D:Virtual3D = new Virtual3D();
 		private var cycleMode:Boolean = false;
 		private var input:String;
 		private var cycleArray:Array = new Array();

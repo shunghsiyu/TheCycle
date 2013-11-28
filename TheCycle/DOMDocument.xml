@@ -18,16 +18,16 @@
                               <DOMFrame index="0" keyMode="9728">
                                    <Actionscript>
                                         <script><![CDATA[var input:String = "";
-input += "Kreb Cycle: Citrate,cis-Aconitate, D-Isocitrate, \u03B1-KetoGlutarate, Succinyl-CoA, Succinate, Fumarate, Malate, Oxaloacetate\n";
-input += "Arginine Cycle: Arginine, Omithine, Citrulline, Argininosuccinate\n";
-input += "Arginine Cycle: Arginine, Omithine, Citrulline, Argininosuccinate\n";
-input += "Arginine Cycle: Arginine, Omithine, Citrulline, Argininosuccinate\n";
-input += "Arginine Cycle: Arginine, Omithine, Citrulline, Argininosuccinate\n";
-input += "Arginine Cycle: Arginine, Omithine, Citrulline, Argininosuccinate\n";
-input += "Arginine Cycle: Arginine, Omithine, Citrulline, Argininosuccinate\n";
-input += "Arginine Cycle: Arginine, Omithine, Citrulline, Argininosuccinate\n";
-input += "Arginine Cycle: Arginine, Omithine, Citrulline, Argininosuccinate\n";
-input += "Calvin Cycle: Ribulose 1,5-bisphosphate, 3-phosphoglycerate, 1,3-bisphosphoglycerate, Glyceraldehyde 3-phosphate, Ribulose 5-phosphate\n";
+input += "Kreb Cycle: Citrate;cis-Aconitate; D-Isocitrate; \u03B1-KetoGlutarate; Succinyl-CoA; Succinate; Fumarate; Malate; Oxaloacetate\n";
+input += "Arginine Cycle 1: Arginine; Omithine; Citrulline; Argininosuccinate\n";
+input += "Arginine Cycle 2: Arginine; Omithine; Citrulline; Argininosuccinate\n";
+input += "Arginine Cycle 3: Arginine; Omithine; Citrulline; Argininosuccinate\n";
+input += "Arginine Cycle 4: Arginine; Omithine; Citrulline; Argininosuccinate\n";
+input += "Arginine Cycle 5: Arginine; Omithine; Citrulline; Argininosuccinate\n";
+input += "Arginine Cycle 6: Arginine; Omithine; Citrulline; Argininosuccinate\n";
+input += "Arginine Cycle 7: Arginine; Omithine; Citrulline; Argininosuccinate\n";
+input += "Arginine Cycle 8: Arginine; Omithine; Citrulline; Argininosuccinate\n";
+input += "Calvin Cycle: Ribulose 1,5-bisphosphate; 3-phosphoglycerate; 1,3-bisphosphoglycerate; Glyceraldehyde 3-phosphate; Ribulose 5-phosphate\n";
 
 
 var cycleGroup:CycleGroup = new CycleGroup(input);
@@ -37,7 +37,7 @@ this.addChild(cycleGroup);
 ]]></script>
                                    </Actionscript>
                                    <elements>
-                                        <DOMSymbolInstance libraryItemName="Vignette" name="vignette" selected="true" centerPoint3DX="1880" centerPoint3DY="925.15">
+                                        <DOMSymbolInstance libraryItemName="Vignette" name="vignette" centerPoint3DX="1880" centerPoint3DY="925.15">
                                              <matrix>
                                                   <Matrix tx="640" ty="360"/>
                                              </matrix>
@@ -62,25 +62,25 @@ this.addChild(cycleGroup);
      </persistentData>
      <PrinterSettings platform="macintosh"/>
      <publishHistory>
-          <PublishItem publishSize="152330" publishTime="1385670026" publishDebug="true"/>
-          <PublishItem publishSize="152331" publishTime="1385669985" publishDebug="true"/>
-          <PublishItem publishSize="152329" publishTime="1385669940" publishDebug="true"/>
-          <PublishItem publishSize="152336" publishTime="1385669891" publishDebug="true"/>
-          <PublishItem publishSize="152311" publishTime="1385669805" publishDebug="true"/>
-          <PublishItem publishSize="152289" publishTime="1385669710" publishDebug="true"/>
-          <PublishItem publishSize="152277" publishTime="1385669557" publishDebug="true"/>
-          <PublishItem publishSize="152300" publishTime="1385669475" publishDebug="true"/>
-          <PublishItem publishSize="152162" publishTime="1385669213" publishDebug="true"/>
-          <PublishItem publishSize="152171" publishTime="1385669151" publishDebug="true"/>
-          <PublishItem publishSize="152139" publishTime="1385666770" publishDebug="true"/>
-          <PublishItem publishSize="152093" publishTime="1385666638" publishDebug="true"/>
-          <PublishItem publishSize="152047" publishTime="1385666374" publishDebug="true"/>
-          <PublishItem publishSize="152056" publishTime="1385666344" publishDebug="true"/>
-          <PublishItem publishSize="152069" publishTime="1385666306" publishDebug="true"/>
-          <PublishItem publishSize="152011" publishTime="1385666004" publishDebug="true"/>
-          <PublishItem publishSize="152063" publishTime="1385665567" publishDebug="true"/>
-          <PublishItem publishSize="152051" publishTime="1385665489" publishDebug="true"/>
-          <PublishItem publishSize="152038" publishTime="1385665416" publishDebug="true"/>
-          <PublishItem publishSize="152043" publishTime="1385665396" publishDebug="true"/>
+          <PublishItem publishSize="153047" publishTime="1385677495" publishDebug="true"/>
+          <PublishItem publishSize="153028" publishTime="1385677469" publishDebug="true"/>
+          <PublishItem publishSize="153038" publishTime="1385677320" publishDebug="true"/>
+          <PublishItem publishSize="153053" publishTime="1385677283" publishDebug="true"/>
+          <PublishItem publishSize="153009" publishTime="1385677115" publishDebug="true"/>
+          <PublishItem publishSize="153033" publishTime="1385677022" publishDebug="true"/>
+          <PublishItem publishSize="152978" publishTime="1385676908" publishDebug="true"/>
+          <PublishItem publishSize="152947" publishTime="1385676727" publishDebug="true"/>
+          <PublishItem publishSize="152950" publishTime="1385676632" publishDebug="true"/>
+          <PublishItem publishSize="152545" publishTime="1385672612" publishDebug="true"/>
+          <PublishItem publishSize="152556" publishTime="1385672549" publishDebug="true"/>
+          <PublishItem publishSize="152494" publishTime="1385672249" publishDebug="true"/>
+          <PublishItem publishSize="152559" publishTime="1385672091" publishDebug="true"/>
+          <PublishItem publishSize="152502" publishTime="1385671712" publishDebug="true"/>
+          <PublishItem publishSize="152312" publishTime="1385670992" publishDebug="true"/>
+          <PublishItem publishSize="152320" publishTime="1385670871" publishDebug="true"/>
+          <PublishItem publishSize="152304" publishTime="1385670535" publishDebug="true"/>
+          <PublishItem publishSize="152302" publishTime="1385670471" publishDebug="true"/>
+          <PublishItem publishSize="152316" publishTime="1385670372" publishDebug="true"/>
+          <PublishItem publishSize="152319" publishTime="1385670309" publishDebug="true"/>
      </publishHistory>
 </DOMDocument>

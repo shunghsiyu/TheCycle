@@ -31,10 +31,11 @@
 		
 		public function getElementContent():Array {
 			check();
+			//NEED TO AVOID SPACES INSIDE A WORD
 			var spaces:RegExp = / /gi;
 			var temp:String = working.substring(working.indexOf(":") + 1, working.length);
 			temp = temp.replace(spaces, '');
-			return temp.split(",");
+			return temp.split(";");
 		}
 		
 		private function check():void {
