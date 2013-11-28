@@ -1,4 +1,4 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Vignette" itemID="5294b838-000002ac" lastModified="1385478200">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Vignette" itemID="5294b838-000002ac" lastModified="1385664444">
   <timeline>
     <DOMTimeline name="Vignette">
       <layers>
@@ -6,12 +6,12 @@
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMBitmapInstance selected="true" libraryItemName="Vignette.png">
+                <DOMBitmapInstance libraryItemName="Vignette.png">
                   <matrix>
-                    <Matrix d="0.5999755859375"/>
+                    <Matrix a="0.642562866210938" d="0.642852783203125" tx="-640" ty="-360"/>
                   </matrix>
                   <transformationPoint>
-                    <Point x="1240" y="942.05"/>
+                    <Point x="1240.05" y="942.05"/>
                   </transformationPoint>
                 </DOMBitmapInstance>
               </elements>

@@ -53,6 +53,11 @@
 			return calAngle;
 		}
 		
+		public static function project3D(_x:Number, _y:Number, _z:Number):Array {
+			var coord:Array = [_x, _y];
+			return coord;
+		}
+		
 		//Generate a color according to the index and starting color
 		public static function genColor(_index:int, _startColor:uint = 0x0077F9):uint {
 			var shift:Number = 0;

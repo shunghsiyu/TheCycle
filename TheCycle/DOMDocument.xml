@@ -1,6 +1,6 @@
-<DOMDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" width="1280" height="720" frameRate="60" currentTimeline="1" xflVersion="2.2" creatorInfo="Adobe Flash Professional CS6" platform="Macintosh" versionInfo="Saved by Adobe Flash Macintosh 12.0 build 537" majorVersion="12" buildNumber="537" viewAngle3D="100.925968316201" nextSceneIdentifier="2" playOptionsPlayLoop="false" playOptionsPlayPages="false" playOptionsPlayFrameActions="false" autoSaveEnabled="true" autoSaveHasPrompted="true">
+<DOMDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" width="1280" height="720" frameRate="60" currentTimeline="1" xflVersion="2.2" creatorInfo="Adobe Flash Professional CS6" platform="Macintosh" versionInfo="Saved by Adobe Flash Macintosh 12.0 build 537" majorVersion="12" buildNumber="537" viewAngle3D="100.925968316201" vanishingPoint3DX="640" vanishingPoint3DY="360" nextSceneIdentifier="2" playOptionsPlayLoop="false" playOptionsPlayPages="false" playOptionsPlayFrameActions="false" autoSaveEnabled="true" autoSaveHasPrompted="true">
      <media>
-          <DOMBitmapItem name="Vignette.png" itemID="52962990-000002a0" sourceExternalFilepath="/Users/shunghsiyu/Documents/Flash Projects/TheCycleProgram/TheCycle/LIBRARY/Vignette.png" sourceLastImported="1385573611" sourcePlatform="macintosh" externalFileCRC32="4101121944" externalFileSize="247552" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="Vignette.png" bitmapDataHRef="M 1 1384488086.dat" frameRight="49600" frameBottom="37680"/>
+          <DOMBitmapItem name="Vignette.png" itemID="52962990-000002a0" sourceExternalFilepath="/Users/shunghsiyu/Documents/Flash Projects/TheCycleProgram/TheCycle/LIBRARY/Vignette.png" sourceLastImported="1385664371" sourcePlatform="macintosh" externalFileCRC32="4101121944" externalFileSize="145441" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="Vignette.png" bitmapDataHRef="M 1 1384488086.dat" frameRight="39840" frameBottom="22400"/>
      </media>
      <symbols>
           <Include href="ChemLabel.xml" itemID="5283f1aa-000004fd" lastModified="1385495065"/>
@@ -8,7 +8,7 @@
           <Include href="CycleGroup.xml" itemID="5294b89d-000002b1" lastModified="1385564651"/>
           <Include href="Label.xml" itemID="5294ee51-00000353" lastModified="1385564708"/>
           <Include href="ModeQuitButton.xml" itemID="5296165f-0000026e" lastModified="1385577599"/>
-          <Include href="Vignette.xml" loadImmediate="false" itemID="5294b838-000002ac" lastModified="1385478200"/>
+          <Include href="Vignette.xml" loadImmediate="false" itemID="5294b838-000002ac" lastModified="1385664444"/>
      </symbols>
      <timelines>
           <DOMTimeline name="Scene 1">
@@ -16,22 +16,37 @@
                     <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
                          <frames>
                               <DOMFrame index="0" keyMode="9728">
+                                   <Actionscript>
+                                        <script><![CDATA[var input:String = "";
+input += "Kreb Cycle: Citrate,cis-Aconitate, D-Isocitrate, \u03B1-KetoGlutarate, Succinyl-CoA, Succinate, Fumarate, Malate, Oxaloacetate\n";
+input += "Arginine Cycle: Arginine, Omithine, Citrulline, Argininosuccinate\n";
+input += "Arginine Cycle: Arginine, Omithine, Citrulline, Argininosuccinate\n";
+input += "Arginine Cycle: Arginine, Omithine, Citrulline, Argininosuccinate\n";
+input += "Arginine Cycle: Arginine, Omithine, Citrulline, Argininosuccinate\n";
+input += "Arginine Cycle: Arginine, Omithine, Citrulline, Argininosuccinate\n";
+input += "Arginine Cycle: Arginine, Omithine, Citrulline, Argininosuccinate\n";
+input += "Arginine Cycle: Arginine, Omithine, Citrulline, Argininosuccinate\n";
+input += "Arginine Cycle: Arginine, Omithine, Citrulline, Argininosuccinate\n";
+input += "Calvin Cycle: Ribulose 1,5-bisphosphate, 3-phosphoglycerate, 1,3-bisphosphoglycerate, Glyceraldehyde 3-phosphate, Ribulose 5-phosphate\n";
+
+
+var cycleGroup:CycleGroup = new CycleGroup(input);
+cycleGroup.x = stage.width/2;
+cycleGroup.y = stage.height/2;
+this.addChild(cycleGroup);
+]]></script>
+                                   </Actionscript>
                                    <elements>
-                                        <DOMSymbolInstance libraryItemName="Vignette" name="vignette" selected="true" centerPoint3DX="640.15" centerPoint3DY="360.05">
+                                        <DOMSymbolInstance libraryItemName="Vignette" name="vignette" selected="true" centerPoint3DX="1880" centerPoint3DY="925.15">
                                              <matrix>
-                                                  <Matrix tx="-599.85" ty="-205.1"/>
+                                                  <Matrix tx="640" ty="360"/>
                                              </matrix>
                                              <transformationPoint>
                                                   <Point x="1240" y="565.15"/>
                                              </transformationPoint>
                                              <color>
-                                                  <Color alphaMultiplier="0.69140625"/>
+                                                  <Color alphaMultiplier="0.44140625"/>
                                              </color>
-                                        </DOMSymbolInstance>
-                                        <DOMSymbolInstance libraryItemName="CycleGroup" name="cycleGroup">
-                                             <transformationPoint>
-                                                  <Point/>
-                                             </transformationPoint>
                                         </DOMSymbolInstance>
                                    </elements>
                               </DOMFrame>
@@ -47,25 +62,25 @@
      </persistentData>
      <PrinterSettings platform="macintosh"/>
      <publishHistory>
-          <PublishItem publishSize="203087" publishTime="1385578606"/>
-          <PublishItem publishSize="203081" publishTime="1385578571"/>
-          <PublishItem publishSize="223861" publishTime="1385577942" publishDebug="true"/>
-          <PublishItem publishSize="223837" publishTime="1385577933" publishDebug="true"/>
-          <PublishItem publishSize="223849" publishTime="1385577885" publishDebug="true"/>
-          <PublishItem publishSize="223849" publishTime="1385577881" publishDebug="true"/>
-          <PublishItem publishSize="223868" publishTime="1385577670" publishDebug="true"/>
-          <PublishItem publishSize="223837" publishTime="1385576909" publishDebug="true"/>
-          <PublishItem publishSize="223819" publishTime="1385576860" publishDebug="true"/>
-          <PublishItem publishSize="223810" publishTime="1385576638" publishDebug="true"/>
-          <PublishItem publishSize="223825" publishTime="1385576611" publishDebug="true"/>
-          <PublishItem publishSize="223811" publishTime="1385576468" publishDebug="true"/>
-          <PublishItem publishSize="223814" publishTime="1385576464" publishDebug="true"/>
-          <PublishItem publishSize="223821" publishTime="1385576450" publishDebug="true"/>
-          <PublishItem publishSize="223812" publishTime="1385576444" publishDebug="true"/>
-          <PublishItem publishSize="223809" publishTime="1385576376" publishDebug="true"/>
-          <PublishItem publishSize="223814" publishTime="1385576281" publishDebug="true"/>
-          <PublishItem publishSize="223794" publishTime="1385576272" publishDebug="true"/>
-          <PublishItem publishSize="223803" publishTime="1385576188" publishDebug="true"/>
-          <PublishItem publishSize="223810" publishTime="1385576123" publishDebug="true"/>
+          <PublishItem publishSize="152330" publishTime="1385670026" publishDebug="true"/>
+          <PublishItem publishSize="152331" publishTime="1385669985" publishDebug="true"/>
+          <PublishItem publishSize="152329" publishTime="1385669940" publishDebug="true"/>
+          <PublishItem publishSize="152336" publishTime="1385669891" publishDebug="true"/>
+          <PublishItem publishSize="152311" publishTime="1385669805" publishDebug="true"/>
+          <PublishItem publishSize="152289" publishTime="1385669710" publishDebug="true"/>
+          <PublishItem publishSize="152277" publishTime="1385669557" publishDebug="true"/>
+          <PublishItem publishSize="152300" publishTime="1385669475" publishDebug="true"/>
+          <PublishItem publishSize="152162" publishTime="1385669213" publishDebug="true"/>
+          <PublishItem publishSize="152171" publishTime="1385669151" publishDebug="true"/>
+          <PublishItem publishSize="152139" publishTime="1385666770" publishDebug="true"/>
+          <PublishItem publishSize="152093" publishTime="1385666638" publishDebug="true"/>
+          <PublishItem publishSize="152047" publishTime="1385666374" publishDebug="true"/>
+          <PublishItem publishSize="152056" publishTime="1385666344" publishDebug="true"/>
+          <PublishItem publishSize="152069" publishTime="1385666306" publishDebug="true"/>
+          <PublishItem publishSize="152011" publishTime="1385666004" publishDebug="true"/>
+          <PublishItem publishSize="152063" publishTime="1385665567" publishDebug="true"/>
+          <PublishItem publishSize="152051" publishTime="1385665489" publishDebug="true"/>
+          <PublishItem publishSize="152038" publishTime="1385665416" publishDebug="true"/>
+          <PublishItem publishSize="152043" publishTime="1385665396" publishDebug="true"/>
      </publishHistory>
 </DOMDocument>

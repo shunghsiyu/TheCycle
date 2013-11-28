@@ -25,6 +25,7 @@
 		//Initialize the label after it is added to the stage
 		protected function initialize(e:Event):void {			
 			/* SHOULD BE CLEANED */
+			this.mouseChildren = false;
 			this.mouseEnabled = false;
 			//set up the cycle name label
 			labelNameField.text = labelName;

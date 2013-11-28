@@ -6,6 +6,7 @@ package  {
 	import flash.display.Shape;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
+	import flash.geom.Point;
 	import flash.text.TextField;
 	import flash.text.TextFieldAutoSize;
 	
@@ -69,7 +70,8 @@ package  {
 		private function startRotate(e:MouseEvent):void {
 			//Calculate the angle difference between the start of the cycle
 			// and the mouse
-			mouseAngleDiff = -this.rotation + MyFunctions.getAngle(this.stage.mouseX - this.x, this.stage.mouseY - this.y, 0, -1);
+			var thisGlobalPos:Point = this.parent.localToGlobal(new Point(this.x, this.y) );
+			mouseAngleDiff = -this.rotation + MyFunctions.getAngle(this.stage.mouseX - thisGlobalPos.x, this.stage.mouseY - thisGlobalPos.y, 0, -1);
 			lastX = this.stage.mouseX;
 			lastY = this.stage.mouseY;
 			this.addEventListener(Event.ENTER_FRAME, rotating);
@@ -82,16 +84,14 @@ package  {
 		//rotate the cycle when drag
 		//will be called by event listener
 		private function rotating(e:Event):void {
-			var vecAX:Number;
-			var vecAY:Number;
-			var vecBX:Number;
-			var vecBY:Number;
+			var vecA:Point;
+			var vecB:Point;
+			var thisGlobalPos:Point = this.parent.localToGlobal(new Point(this.x, this.y) );
 			var toTurn:Number = 0;
 			var toTurnEase:Number = 0;
 		
 			//vecA is the vector pointing from the center to the mouse
-			vecAX = (this.stage.mouseX - this.x);
-			vecAY = (this.stage.mouseY - this.y);
+			vecA = new Point(this.stage.mouseX - thisGlobalPos.x, this.stage.mouseY - thisGlobalPos.y);
 		
 			//vecB is the vector pointing from the center to the
 			// starting point of the cycle
@@ -99,12 +99,11 @@ package  {
 				lastX = this.stage.mouseX;//Give lastX&Y the position of mouse
 				lastY = this.stage.mouseY;// if they haven't been initialized
 			}
-			vecBX = (lastX - this.x);
-			vecBY = (lastY - this.y);
+			vecB = new Point(lastX - thisGlobalPos.x, lastY - thisGlobalPos.y);
 		
 			//Get the angel between vecA&B,
 			//which will be added
-			toTurn = MyFunctions.getAngle(vecAX,vecAY,vecBX,vecBY);
+			toTurn = MyFunctions.getAngle(vecA.x, vecA.y, vecB.x, vecB.y);
 		
 			//Easyease for the rotation:
 			toTurnEase = ((this.rotation + toTurn) - this.rotation)*0.2;
@@ -115,8 +114,8 @@ package  {
 			
 			//Update the last position of cycle to the current one
 			// for the next frame
-			lastX = this.x + Math.cos((-90+this.rotation+mouseAngleDiff)*Math.PI/180);
-			lastY = this.y + Math.sin((-90+this.rotation+mouseAngleDiff)*Math.PI/180);
+			lastX = thisGlobalPos.x + Math.cos((-90+this.rotation+mouseAngleDiff)*Math.PI/180);
+			lastY = thisGlobalPos.y + Math.sin((-90+this.rotation+mouseAngleDiff)*Math.PI/180);
 			
 			updateAfterRotate();
 		}
