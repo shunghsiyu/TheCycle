@@ -1,13 +1,129 @@
 <DOMDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" width="1280" height="720" frameRate="60" currentTimeline="1" xflVersion="2.2" creatorInfo="Adobe Flash Professional CS6" platform="Macintosh" versionInfo="Saved by Adobe Flash Macintosh 12.0 build 537" majorVersion="12" buildNumber="537" viewAngle3D="100.925968316201" vanishingPoint3DX="640" vanishingPoint3DY="360" nextSceneIdentifier="2" playOptionsPlayLoop="false" playOptionsPlayPages="false" playOptionsPlayFrameActions="false" autoSaveEnabled="true" autoSaveHasPrompted="true">
+     <folders>
+          <DOMFolderItem name="Component Assets" itemID="44e488a0-000016d6" isExpanded="true"/>
+          <DOMFolderItem name="Component Assets/_private" itemID="4573a4bc-000003c6"/>
+          <DOMFolderItem name="Component Assets/ScrollBarSkins" itemID="44ea2edf-000000a6"/>
+          <DOMFolderItem name="Component Assets/Shared" itemID="44f892ff-0000001e"/>
+     </folders>
      <media>
+          <DOMCompiledClipItem name="Component Assets/_private/ComponentShim" itemID="4d08cfa8-000001ee" linkageExportForAS="true" linkageClassName="fl.core.ComponentShim" sourceLastImported="1292423080" displayAsComponent="false" customIconID="0" actionscriptClass="fl.core.ComponentShim" swfScmHRef="kbx0udh422.swf" swfScmSourceFilename="C:\Users\jkamerer\AppData\Local\Adobe\Flash CS5.5\en_US\Configuration\TMPkavphdh40p..swf" persistLivePreview11="true" livePreview11ScmHRef="kbx0udh4221.swf" livePreview11ScmSourceFilename="C:\Users\jkamerer\AppData\Local\Adobe\Flash CS5.5\en_US\Configuration\TMPkavphdh40p..swf" editFrameIndex="1" requiredMinimumPlayerVersion="0" requiredMinimumASVersion="0" parametersAreLocked="true" swcPath="Component Assets/_private/ComponentShim.xml" rootSymbolLinkageID="fl.core.ComponentShim" playerVersion="9" actionscriptVersion="3" hashKey="k718tUOF1.A1OSpQnqdJJ0">
+               <classProperties><![CDATA[<component id="fl/core/ComponentShim" class="fl.core.ComponentShim" modified="1292423059130">
+<movieBounds xmin="0" xmax="0" ymin="0" ymax="0" />
+<classDefs>
+	<classDef id="fl.core.AccessibilityShim"/>
+	<classDef id="fl.controls.CheckBox"/>
+	<classDef id="fl.controls.LabelButton"/>
+	<classDef id="fl.controls.List"/>
+	<classDef id="fl.controls.ComboBox"/>
+	<classDef id="fl.controls.ProgressBarDirection"/>
+	<classDef id="fl.data.SimpleCollectionItem"/>
+	<classDef id="fl.controls.TextArea"/>
+	<classDef id="fl.display.ProLoaderInfo"/>
+	<classDef id="fl.controls.Slider"/>
+	<classDef id="fl.events.DataChangeEvent"/>
+	<classDef id="fl.accessibility.ComboBoxAccImpl"/>
+	<classDef id="fl.events.DataChangeType"/>
+	<classDef id="fl.accessibility.TileListAccImpl"/>
+	<classDef id="fl.accessibility.ButtonAccImpl"/>
+	<classDef id="fl.controls.BaseButton"/>
+	<classDef id="fl.core.UIComponent"/>
+	<classDef id="fl.controls.DataGrid"/>
+	<classDef id="fl.display.ProLoader"/>
+	<classDef id="fl.containers.BaseScrollPane"/>
+	<classDef id="fl.livepreview.LivePreviewParent"/>
+	<classDef id="fl.controls.Label"/>
+	<classDef id="fl.managers.IFocusManagerComponent"/>
+	<classDef id="fl.controls.UIScrollBar"/>
+	<classDef id="fl.controls.listClasses.ICellRenderer"/>
+	<classDef id="fl.controls.ColorPicker"/>
+	<classDef id="fl.controls.dataGridClasses.DataGridCellEditor"/>
+	<classDef id="fl.managers.FocusManager"/>
+	<classDef id="fl.events.ProLoaderRSLPreloaderSandboxEvent"/>
+	<classDef id="fl.events.DataGridEventReason"/>
+	<classDef id="fl.events.SliderEvent"/>
+	<classDef id="fl.events.SliderEventClickTarget"/>
+	<classDef id="fl.controls.progressBarClasses.IndeterminateBar"/>
+	<classDef id="fl.controls.listClasses.ListData"/>
+	<classDef id="fl.core.InvalidationType"/>
+	<classDef id="fl.controls.NumericStepper"/>
+	<classDef id="fl.controls.RadioButtonGroup"/>
+	<classDef id="fl.accessibility.LabelButtonAccImpl"/>
+	<classDef id="fl.containers.UILoader"/>
+	<classDef id="fl.events.ColorPickerEvent"/>
+	<classDef id="fl.controls.ButtonLabelPlacement"/>
+	<classDef id="fl.accessibility.CheckBoxAccImpl"/>
+	<classDef id="fl.controls.TileList"/>
+	<classDef id="fl.managers.StyleManager"/>
+	<classDef id="fl.controls.RadioButton"/>
+	<classDef id="fl.containers.ScrollPane"/>
+	<classDef id="fl.controls.listClasses.TileListData"/>
+	<classDef id="fl.events.InteractionInputType"/>
+	<classDef id="fl.controls.Button"/>
+	<classDef id="fl.core.ComponentShim"/>
+	<classDef id="fl.accessibility.UIComponentAccImpl"/>
+	<classDef id="fl.controls.SelectableList"/>
+	<classDef id="fl.events.ComponentEvent"/>
+	<classDef id="fl.accessibility.RadioButtonAccImpl"/>
+	<classDef id="fl.controls.listClasses.CellRenderer"/>
+	<classDef id="fl.managers.IFocusManagerGroup"/>
+	<classDef id="fl.controls.ScrollPolicy"/>
+	<classDef id="fl.controls.ProgressBar"/>
+	<classDef id="fl.controls.ScrollBar"/>
+	<classDef id="fl.controls.listClasses.ImageCell"/>
+	<classDef id="fl.managers.IFocusManager"/>
+	<classDef id="fl.controls.ProgressBarMode"/>
+	<classDef id="fl.accessibility.SelectableListAccImpl"/>
+	<classDef id="fl.controls.TextInput"/>
+	<classDef id="fl.events.ListEvent"/>
+	<classDef id="fl.accessibility.AccImpl"/>
+	<classDef id="fl.accessibility.DataGridAccImpl"/>
+	<classDef id="fl.events.ScrollEvent"/>
+	<classDef id="fl.controls.dataGridClasses.DataGridColumn"/>
+	<classDef id="fl.events.DataGridEvent"/>
+	<classDef id="fl.data.TileListCollectionItem"/>
+	<classDef id="fl.data.DataProvider"/>
+	<classDef id="fl.accessibility.ListAccImpl"/>
+	<classDef id="fl.controls.dataGridClasses.HeaderRenderer"/>
+	<classDef id="fl.controls.ScrollBarDirection"/>
+	<classDef id="fl.controls.SliderDirection"/>
+</classDefs>
+<class id="fl.core.ComponentShim" >
+	<method id="ComponentShim" isConstructor="true" isProperty="false">
+	</method>
+</class></component>
+]]></classProperties>
+               <customIcon>
+                    <CustomIcon rowByteCount="72" colorDepth="32" width="18" height="18" frameRight="360" frameBottom="360" isTransparent="true" href="kbx0udh4222.dat"/>
+               </customIcon>
+               <SwcItem name="fl.core.ComponentShim" version="1292423059" isTopLevel="true"/>
+          </DOMCompiledClipItem>
           <DOMBitmapItem name="Vignette.png" itemID="52962990-000002a0" sourceExternalFilepath="/Users/shunghsiyu/Documents/Flash Projects/TheCycleProgram/TheCycle/LIBRARY/Vignette.png" sourceLastImported="1385664371" sourcePlatform="macintosh" externalFileCRC32="4101121944" externalFileSize="145441" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="Vignette.png" bitmapDataHRef="M 1 1384488086.dat" frameRight="39840" frameBottom="22400"/>
      </media>
      <symbols>
           <Include href="ChemLabel.xml" itemID="5283f1aa-000004fd" lastModified="1385495065"/>
+          <Include href="Component Assets/_private/Component_avatar.xml" loadImmediate="false" itemID="44f89322-00000020" lastModified="1168286780"/>
+          <Include href="Component Assets/ScrollBarSkins/ScrollArrowDown_disabledSkin.xml" itemID="4399b48a-00008d0a" lastModified="1168289950"/>
+          <Include href="Component Assets/ScrollBarSkins/ScrollArrowDown_downSkin.xml" itemID="4399b4a4-00008e29" lastModified="1168289961"/>
+          <Include href="Component Assets/ScrollBarSkins/ScrollArrowDown_icon.xml" itemIcon="1" loadImmediate="false" itemID="456df1e4-00000190" lastModified="1168289966"/>
+          <Include href="Component Assets/ScrollBarSkins/ScrollArrowDown_overSkin.xml" itemID="4399c50b-00008f6e" lastModified="1168290195"/>
+          <Include href="Component Assets/ScrollBarSkins/ScrollArrowDown_upSkin.xml" itemID="4399c519-0000900f" lastModified="1168290217"/>
+          <Include href="Component Assets/ScrollBarSkins/ScrollArrowUp_disabledSkin.xml" itemID="4399b493-00008d74" lastModified="1168290230"/>
+          <Include href="Component Assets/ScrollBarSkins/ScrollArrowUp_downSkin.xml" itemID="4399c54a-00009130" lastModified="1168290244"/>
+          <Include href="Component Assets/ScrollBarSkins/ScrollArrowUp_icon.xml" itemIcon="1" loadImmediate="false" itemID="456df209-00000192" lastModified="1168290248"/>
+          <Include href="Component Assets/ScrollBarSkins/ScrollArrowUp_overSkin.xml" itemID="4399c55c-000091cd" lastModified="1168290260"/>
+          <Include href="Component Assets/ScrollBarSkins/ScrollArrowUp_upSkin.xml" itemID="4399c568-00009256" lastModified="1168290275"/>
+          <Include href="Component Assets/ScrollBarSkins/ScrollBar_thumbIcon.xml" itemID="442a68fb-00006a9d" lastModified="1164927281"/>
+          <Include href="Component Assets/ScrollBarSkins/ScrollThumb_downSkin.xml" itemID="4399c5a6-000092e7" lastModified="1168290280"/>
+          <Include href="Component Assets/ScrollBarSkins/ScrollThumb_overSkin.xml" itemID="4399c5b6-00009358" lastModified="1168290288"/>
+          <Include href="Component Assets/ScrollBarSkins/ScrollThumb_upSkin.xml" itemID="4399c5d1-000093e9" lastModified="1168290292"/>
+          <Include href="Component Assets/ScrollBarSkins/ScrollTrack_skin.xml" itemID="44fdb956-000002bc" lastModified="1168290301"/>
+          <Include href="Component Assets/Shared/arrowIcon.xml" itemIcon="1" loadImmediate="false" itemID="456df449-0000019f" lastModified="1168290350"/>
+          <Include href="Component Assets/Shared/focusRectSkin.xml" itemID="44d8b6f8-00000055" lastModified="1168290361"/>
           <Include href="Cycle.xml" itemID="52770114-00000524" lastModified="1385564644"/>
           <Include href="CycleGroup.xml" itemID="5294b89d-000002b1" lastModified="1385564651"/>
           <Include href="Label.xml" itemID="5294ee51-00000353" lastModified="1385564708"/>
-          <Include href="ModeQuitButton.xml" itemID="5296165f-0000026e" lastModified="1385577599"/>
+          <Include href="ModeQuitButton.xml" itemID="5296165f-0000026e" lastModified="1385766562"/>
+          <Include href="UIScrollBar.xml" itemID="44aaa686-00000064" lastModified="1292423118"/>
           <Include href="Vignette.xml" loadImmediate="false" itemID="5294b838-000002ac" lastModified="1385664444"/>
      </symbols>
      <timelines>
@@ -17,37 +133,100 @@
                          <frames>
                               <DOMFrame index="0" keyMode="9728">
                                    <Actionscript>
-                                        <script><![CDATA[var input:String = "";
-input += "Kreb Cycle: Citrate;cis-Aconitate; D-Isocitrate; \u03B1-KetoGlutarate; Succinyl-CoA; Succinate; Fumarate; Malate; Oxaloacetate\n";
-input += "Arginine Cycle 1: Arginine; Omithine; Citrulline; Argininosuccinate\n";
-input += "Arginine Cycle 2: Arginine; Omithine; Citrulline; Argininosuccinate\n";
-input += "Arginine Cycle 3: Arginine; Omithine; Citrulline; Argininosuccinate\n";
-input += "Arginine Cycle 4: Arginine; Omithine; Citrulline; Argininosuccinate\n";
-input += "Arginine Cycle 5: Arginine; Omithine; Citrulline; Argininosuccinate\n";
-input += "Arginine Cycle 6: Arginine; Omithine; Citrulline; Argininosuccinate\n";
-input += "Arginine Cycle 7: Arginine; Omithine; Citrulline; Argininosuccinate\n";
-input += "Arginine Cycle 8: Arginine; Omithine; Citrulline; Argininosuccinate\n";
+                                        <script><![CDATA[import fl.text.TLFTextField;
+import flash.events.MouseEvent;
+import fl.controls.UIScrollBar;
+import flash.display.Shape;
+
+var input:String = "";
+input += "Kreb Cycle: Citrate; cis-Aconitate; D-Isocitrate; \u03B1-KetoGlutarate; Succinyl-CoA; Succinate; Fumarate; Malate; Oxaloacetate\n\n";
+input += "Arginine Cycle 1: Arginine; Omithine; Citrulline; Argininosuccinate\n\n";
+input += "Arginine Cycle 2: Arginine; Omithine; Citrulline; Argininosuccinate\n\n";
+input += "Arginine Cycle 3: Arginine; Omithine; Citrulline; Argininosuccinate\n\n";
+input += "Arginine Cycle 4: Arginine; Omithine; Citrulline; Argininosuccinate\n\n";
+input += "Arginine Cycle 5: Arginine; Omithine; Citrulline; Argininosuccinate\n\n";
+input += "Arginine Cycle 6: Arginine; Omithine; Citrulline; Argininosuccinate\n\n";
+input += "Arginine Cycle 7: Arginine; Omithine; Citrulline; Argininosuccinate\n\n";
+input += "Arginine Cycle 8: Arginine; Omithine; Citrulline; Argininosuccinate\n\n";
 input += "Calvin Cycle: Ribulose 1,5-bisphosphate; 3-phosphoglycerate; 1,3-bisphosphoglycerate; Glyceraldehyde 3-phosphate; Ribulose 5-phosphate\n";
 
+inputField.text = input;
+var scrollBar:UIScrollBar = new UIScrollBar()
+scrollBar.scrollTarget =inputField;
+scrollBar.height = inputField.height;
+scrollBar.y = inputField.y;
+scrollBar.x = inputField.x - scrollBar.width;
+this.addChild(scrollBar);
 
-var cycleGroup:CycleGroup = new CycleGroup(input);
-cycleGroup.x = stage.width/2;
-cycleGroup.y = stage.height/2;
+var stagew:int = 1280;
+var stageh:int = 720;
+
+var done:ChemLabel = new ChemLabel("Done", 0x000000, true);
+done.x = 1200;
+done.y = 680;
+addChild(done);
+
+var edit:ChemLabel = new ChemLabel("Edit", 0x000000, true);
+edit.x = 1200;
+edit.y = 40;
+edit.visible = false;
+addChild(edit);
+
+done.addEventListener(MouseEvent.CLICK, createCycleGroup);
+edit.addEventListener(MouseEvent.CLICK, editCycleGroup);
+
+var cycleGroup:CycleGroup;
+
+done.visible = false;
+inputField.visible = false;
+scrollBar.visible = false;
+edit.visible = true;
+cycleGroup = new CycleGroup(inputField.text);
+cycleGroup.x = stagew/2;
+cycleGroup.y = stageh/2;
 this.addChild(cycleGroup);
-]]></script>
+
+function createCycleGroup(e:MouseEvent) {
+	done.visible = false;
+	inputField.visible = false;
+	scrollBar.visible = false;
+	edit.visible = true;
+	if (cycleGroup != null && this.contains(cycleGroup) ) removeChild(cycleGroup);
+	cycleGroup = new CycleGroup(inputField.text);
+	cycleGroup.x = stagew/2;
+	cycleGroup.y = stageh/2;
+	this.addChild(cycleGroup);
+}
+
+function editCycleGroup(e:MouseEvent) {
+	done.visible = true;
+	inputField.visible = true;
+	scrollBar.visible = true;
+	edit.visible = false;
+	removeChild(cycleGroup);
+}]]></script>
                                    </Actionscript>
                                    <elements>
-                                        <DOMSymbolInstance libraryItemName="Vignette" name="vignette" centerPoint3DX="1880" centerPoint3DY="925.15">
+                                        <DOMSymbolInstance libraryItemName="Vignette" name="vignette" selected="true" centerPoint3DX="640" centerPoint3DY="360">
                                              <matrix>
                                                   <Matrix tx="640" ty="360"/>
                                              </matrix>
                                              <transformationPoint>
-                                                  <Point x="1240" y="565.15"/>
+                                                  <Point x="1239.6" y="565.15"/>
                                              </transformationPoint>
                                              <color>
                                                   <Color alphaMultiplier="0.44140625"/>
                                              </color>
                                         </DOMSymbolInstance>
+                                        <DOMTLFText name="inputField" selected="true" top="-40" left="-40" right="17686" bottom="10960">
+                                             <matrix>
+                                                  <Matrix tx="198.85" ty="132.2"/>
+                                             </matrix>
+                                             <tlfFonts>
+                                                  <TLFFont platformName="Tahoma" psName="Tahoma"/>
+                                             </tlfFonts>
+                                             <markup><tlfTextObject type="Paragraph" editPolicy="readWrite" columnCount="auto" columnGap="20" verticalAlign="top" firstBaselineOffset="auto" paddingLeft="2" paddingTop="2" paddingRight="2" paddingBottom="2" background="false" backgroundColor="#ffffff" backgroundAlpha="1" border="false" borderColor="#000000" borderAlpha="1" borderWidth="1" paddingLock="false" multiline="true" antiAliasType="advanced" embedFonts="false" maxChars="0"><TextFlow lineBreak="toFit" locale="en_IL" whiteSpaceCollapse="preserve" version="2.0.0" xmlns="http://ns.adobe.com/textLayout/2008"><p direction="ltr" paragraphEndIndent="0" paragraphStartIndent="0" textAlign="start" textIndent="0"><span baselineShift="0" color="#000000" fontFamily="Tahoma" fontSize="25" fontStyle="normal" fontWeight="normal" kerning="auto" lineHeight="127.857143%" trackingRight="0.000000%">input</span></p></TextFlow></tlfTextObject></markup>
+                                        </DOMTLFText>
                                    </elements>
                               </DOMFrame>
                          </frames>
@@ -62,25 +241,107 @@ this.addChild(cycleGroup);
      </persistentData>
      <PrinterSettings platform="macintosh"/>
      <publishHistory>
-          <PublishItem publishSize="153047" publishTime="1385677495" publishDebug="true"/>
-          <PublishItem publishSize="153028" publishTime="1385677469" publishDebug="true"/>
-          <PublishItem publishSize="153038" publishTime="1385677320" publishDebug="true"/>
-          <PublishItem publishSize="153053" publishTime="1385677283" publishDebug="true"/>
-          <PublishItem publishSize="153009" publishTime="1385677115" publishDebug="true"/>
-          <PublishItem publishSize="153033" publishTime="1385677022" publishDebug="true"/>
-          <PublishItem publishSize="152978" publishTime="1385676908" publishDebug="true"/>
-          <PublishItem publishSize="152947" publishTime="1385676727" publishDebug="true"/>
-          <PublishItem publishSize="152950" publishTime="1385676632" publishDebug="true"/>
-          <PublishItem publishSize="152545" publishTime="1385672612" publishDebug="true"/>
-          <PublishItem publishSize="152556" publishTime="1385672549" publishDebug="true"/>
-          <PublishItem publishSize="152494" publishTime="1385672249" publishDebug="true"/>
-          <PublishItem publishSize="152559" publishTime="1385672091" publishDebug="true"/>
-          <PublishItem publishSize="152502" publishTime="1385671712" publishDebug="true"/>
-          <PublishItem publishSize="152312" publishTime="1385670992" publishDebug="true"/>
-          <PublishItem publishSize="152320" publishTime="1385670871" publishDebug="true"/>
-          <PublishItem publishSize="152304" publishTime="1385670535" publishDebug="true"/>
-          <PublishItem publishSize="152302" publishTime="1385670471" publishDebug="true"/>
-          <PublishItem publishSize="152316" publishTime="1385670372" publishDebug="true"/>
-          <PublishItem publishSize="152319" publishTime="1385670309" publishDebug="true"/>
+          <PublishItem publishSize="173205" publishTime="1385766624" publishDebug="true"/>
+          <PublishItem publishSize="173176" publishTime="1385766570" publishDebug="true"/>
+          <PublishItem publishSize="173189" publishTime="1385766535" publishDebug="true"/>
+          <PublishItem publishSize="173161" publishTime="1385766436" publishDebug="true"/>
+          <PublishItem publishSize="173159" publishTime="1385766378" publishDebug="true"/>
+          <PublishItem publishSize="173154" publishTime="1385766266" publishDebug="true"/>
+          <PublishItem publishSize="173148" publishTime="1385766233" publishDebug="true"/>
+          <PublishItem publishSize="173216" publishTime="1385766193" publishDebug="true"/>
+          <PublishItem publishSize="173205" publishTime="1385766133" publishDebug="true"/>
+          <PublishItem publishSize="173134" publishTime="1385766110" publishDebug="true"/>
+          <PublishItem publishSize="173137" publishTime="1385766055" publishDebug="true"/>
+          <PublishItem publishSize="173096" publishTime="1385765937" publishDebug="true"/>
+          <PublishItem publishSize="173434" publishTime="1385765916" publishDebug="true"/>
+          <PublishItem publishSize="173437" publishTime="1385765888" publishDebug="true"/>
+          <PublishItem publishSize="173451" publishTime="1385765859" publishDebug="true"/>
+          <PublishItem publishSize="173123" publishTime="1385765814" publishDebug="true"/>
+          <PublishItem publishSize="173108" publishTime="1385765784" publishDebug="true"/>
+          <PublishItem publishSize="173147" publishTime="1385765707" publishDebug="true"/>
+          <PublishItem publishSize="173457" publishTime="1385765664" publishDebug="true"/>
+          <PublishItem publishSize="173519" publishTime="1385765194" publishDebug="true"/>
      </publishHistory>
+     <swcCache>
+          <Swc hashKey="k718tUOF1.A1OSpQnqdJJ0" href="OP1LGX1M1J.swc">
+               <classDefinitions>
+                    <ClassDefinition value="fl.core.AccessibilityShim"/>
+                    <ClassDefinition value="fl.controls.CheckBox"/>
+                    <ClassDefinition value="fl.controls.LabelButton"/>
+                    <ClassDefinition value="fl.controls.List"/>
+                    <ClassDefinition value="fl.controls.ComboBox"/>
+                    <ClassDefinition value="fl.controls.ProgressBarDirection"/>
+                    <ClassDefinition value="fl.data.SimpleCollectionItem"/>
+                    <ClassDefinition value="fl.controls.TextArea"/>
+                    <ClassDefinition value="fl.display.ProLoaderInfo"/>
+                    <ClassDefinition value="fl.controls.Slider"/>
+                    <ClassDefinition value="fl.events.DataChangeEvent"/>
+                    <ClassDefinition value="fl.accessibility.ComboBoxAccImpl"/>
+                    <ClassDefinition value="fl.events.DataChangeType"/>
+                    <ClassDefinition value="fl.accessibility.TileListAccImpl"/>
+                    <ClassDefinition value="fl.accessibility.ButtonAccImpl"/>
+                    <ClassDefinition value="fl.controls.BaseButton"/>
+                    <ClassDefinition value="fl.core.UIComponent"/>
+                    <ClassDefinition value="fl.controls.DataGrid"/>
+                    <ClassDefinition value="fl.display.ProLoader"/>
+                    <ClassDefinition value="fl.containers.BaseScrollPane"/>
+                    <ClassDefinition value="fl.livepreview.LivePreviewParent"/>
+                    <ClassDefinition value="fl.controls.Label"/>
+                    <ClassDefinition value="fl.managers.IFocusManagerComponent"/>
+                    <ClassDefinition value="fl.controls.UIScrollBar"/>
+                    <ClassDefinition value="fl.controls.listClasses.ICellRenderer"/>
+                    <ClassDefinition value="fl.controls.ColorPicker"/>
+                    <ClassDefinition value="fl.controls.dataGridClasses.DataGridCellEditor"/>
+                    <ClassDefinition value="fl.managers.FocusManager"/>
+                    <ClassDefinition value="fl.events.ProLoaderRSLPreloaderSandboxEvent"/>
+                    <ClassDefinition value="fl.events.DataGridEventReason"/>
+                    <ClassDefinition value="fl.events.SliderEvent"/>
+                    <ClassDefinition value="fl.events.SliderEventClickTarget"/>
+                    <ClassDefinition value="fl.controls.progressBarClasses.IndeterminateBar"/>
+                    <ClassDefinition value="fl.controls.listClasses.ListData"/>
+                    <ClassDefinition value="fl.core.InvalidationType"/>
+                    <ClassDefinition value="fl.controls.NumericStepper"/>
+                    <ClassDefinition value="fl.controls.RadioButtonGroup"/>
+                    <ClassDefinition value="fl.accessibility.LabelButtonAccImpl"/>
+                    <ClassDefinition value="fl.containers.UILoader"/>
+                    <ClassDefinition value="fl.events.ColorPickerEvent"/>
+                    <ClassDefinition value="fl.controls.ButtonLabelPlacement"/>
+                    <ClassDefinition value="fl.accessibility.CheckBoxAccImpl"/>
+                    <ClassDefinition value="fl.controls.TileList"/>
+                    <ClassDefinition value="fl.managers.StyleManager"/>
+                    <ClassDefinition value="fl.controls.RadioButton"/>
+                    <ClassDefinition value="fl.containers.ScrollPane"/>
+                    <ClassDefinition value="fl.controls.listClasses.TileListData"/>
+                    <ClassDefinition value="fl.events.InteractionInputType"/>
+                    <ClassDefinition value="fl.controls.Button"/>
+                    <ClassDefinition value="fl.core.ComponentShim"/>
+                    <ClassDefinition value="fl.accessibility.UIComponentAccImpl"/>
+                    <ClassDefinition value="fl.controls.SelectableList"/>
+                    <ClassDefinition value="fl.events.ComponentEvent"/>
+                    <ClassDefinition value="fl.accessibility.RadioButtonAccImpl"/>
+                    <ClassDefinition value="fl.controls.listClasses.CellRenderer"/>
+                    <ClassDefinition value="fl.managers.IFocusManagerGroup"/>
+                    <ClassDefinition value="fl.controls.ScrollPolicy"/>
+                    <ClassDefinition value="fl.controls.ProgressBar"/>
+                    <ClassDefinition value="fl.controls.ScrollBar"/>
+                    <ClassDefinition value="fl.controls.listClasses.ImageCell"/>
+                    <ClassDefinition value="fl.managers.IFocusManager"/>
+                    <ClassDefinition value="fl.controls.ProgressBarMode"/>
+                    <ClassDefinition value="fl.accessibility.SelectableListAccImpl"/>
+                    <ClassDefinition value="fl.controls.TextInput"/>
+                    <ClassDefinition value="fl.events.ListEvent"/>
+                    <ClassDefinition value="fl.accessibility.AccImpl"/>
+                    <ClassDefinition value="fl.accessibility.DataGridAccImpl"/>
+                    <ClassDefinition value="fl.events.ScrollEvent"/>
+                    <ClassDefinition value="fl.controls.dataGridClasses.DataGridColumn"/>
+                    <ClassDefinition value="fl.events.DataGridEvent"/>
+                    <ClassDefinition value="fl.data.TileListCollectionItem"/>
+                    <ClassDefinition value="fl.data.DataProvider"/>
+                    <ClassDefinition value="fl.accessibility.ListAccImpl"/>
+                    <ClassDefinition value="fl.controls.dataGridClasses.HeaderRenderer"/>
+                    <ClassDefinition value="fl.controls.ScrollBarDirection"/>
+                    <ClassDefinition value="fl.controls.SliderDirection"/>
+               </classDefinitions>
+          </Swc>
+     </swcCache>
 </DOMDocument>

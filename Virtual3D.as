@@ -35,17 +35,23 @@ package
 			for(var i = 0; i < objectArray.length; i++) {
 				objectArray[i].object.x = objectArray[i].virtualX * Math.cos(rotationY*Math.PI/180) + objectArray[i].virtualZ * Math.sin(rotationY*Math.PI/180);
 				objectArray[i].object.y = objectArray[i].virtualY;
-				objectArray[i].zCoord = -objectArray[i].virtualX * Math.sin(rotationY*Math.PI/180) + objectArray[i].virtualZ * Math.cos(rotationY*Math.PI/180);
+				objectArray[i].zCoord = 1 * (-objectArray[i].virtualX * Math.sin(rotationY*Math.PI/180) + objectArray[i].virtualZ * Math.cos(rotationY*Math.PI/180) );
 				objectArray[i].object.scaleX = getScale(objectArray[i]);
 				objectArray[i].object.scaleY = getScale(objectArray[i]);
 			}
 			sortZ();
 		}
 
+		
+		//STILL NEED TO BE FIXED
 		private function getScale(_object):Number {
-			const MAX = 500;
-			var scale:Number = 0.2 + (_object.zCoord*Math.abs(_object.zCoord) )/(MAX*MAX);
-			if (scale > 1.5) scale = 1.5;
+			const MAX = CycleGroup.cycleGroupRadius * 0.85;
+			//var criticalScale:Number = 2 * MAX * Math.sin(Math.PI/objectArray.length) / Cycle.circleOuterRadius;
+			var criticalDist:Number = MAX * Math.cos(Math.PI/objectArray.length);
+			var scale:Number;
+			if (_object.zCoord > criticalDist) scale = 0.4 + 2*(_object.zCoord - criticalDist)/MAX;
+			else scale = 0.4 * ((_object.zCoord - criticalDist)/(MAX * 2) + 1);
+			if (scale > 2) scale = 2;
 			else if (scale < 0.05) scale = 0.05;
 			return scale;
 		}

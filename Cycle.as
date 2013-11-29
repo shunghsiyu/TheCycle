@@ -8,6 +8,7 @@ package  {
 	import flash.events.MouseEvent;
 	import flash.geom.Point;
 	import flash.text.TextField;
+	import flash.text.TextFormat;
 	import flash.text.TextFieldAutoSize;
 	
 	public class Cycle extends MovieClip {
@@ -38,6 +39,7 @@ package  {
 				addChild(chemLabels[i]);
 				chemLabels[i].x = (cycleWidth/2 - correction) *Math.cos((-90+i*(360/labelNames.length))*Math.PI/180);
 				chemLabels[i].y = (cycleHeight/2 - correction)*Math.sin((-90+i*(360/labelNames.length))*Math.PI/180);
+				chemLabels[i].cacheAsBitmap = true;
 			}
 			
 			//set whether the cycle can rotate or not according to the passed-in parameter

@@ -42,10 +42,10 @@
     <AlternateFilename>TheCycle.xfl_alternate.html</AlternateFilename>
     <UsingOwnAlternateFile>0</UsingOwnAlternateFile>
     <OwnAlternateFilename></OwnAlternateFilename>
-    <Width>1280</Width>
-    <Height>720</Height>
+    <Width>100</Width>
+    <Height>100</Height>
     <Align>0</Align>
-    <Units>0</Units>
+    <Units>2</Units>
     <Loop>1</Loop>
     <StartPaused>0</StartPaused>
     <Scale>0</Scale>
@@ -98,7 +98,7 @@
     <ExportSwc>0</ExportSwc>
     <ScriptStuckDelay>15</ScriptStuckDelay>
     <IncludeXMP>1</IncludeXMP>
-    <HardwareAcceleration>0</HardwareAcceleration>
+    <HardwareAcceleration>2</HardwareAcceleration>
     <AS3Flags>4102</AS3Flags>
     <DefaultLibraryLinkage>rsl</DefaultLibraryLinkage>
     <RSLPreloaderMethod>wrap</RSLPreloaderMethod>

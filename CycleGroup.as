@@ -8,14 +8,55 @@
 	
 	public class CycleGroup extends MovieClip
 	{
-		public function CycleGroup(_input:String) {
+		public function CycleGroup(_input:String, _is3DMode:Boolean = false) {
 			super();
 			input = _input;
+			isVirtual3D = _is3DMode;
+			if (isVirtual3D) virtual3D = new Virtual3D();
 			this.addEventListener(Event.ADDED_TO_STAGE, initialize, false, 0, true);
 		}
 		
 		public function initialize(e:Event) {
-			//Create the cycles
+			addCycles();
+			
+			//Adjust cycle posisiton and add to display list
+			for (var i:int = 0; i < cycleArray.length; i++) {
+				var correction:Number = 0.10*cycleGroupRadius;
+				if (isVirtual3D) virtual3D.addObject(cycleArray[i]
+											/* x= */, (cycleGroupRadius - correction) * Math.sin((-90+i * (360/cycleArray.length) )*Math.PI/180)
+											/* y= */, 0
+											/* z= */, (cycleGroupRadius - correction) * Math.cos((-90+i * (360/cycleArray.length) )*Math.PI/180)
+													);
+				else {
+					cycleArray[i].scaleX = 0.5;
+					cycleArray[i].scaleY = 0.5;
+					cycleArray[i].x = (1280 - 2*Cycle.circleOuterRadius*(1.2)*cycleArray[i].scaleX) * i/(cycleArray.length-1)
+									 - 640
+									 + Cycle.circleOuterRadius*(1.2)*cycleArray[i].scaleX;
+					cycleArray[i].y = 0;
+				}
+				addChild(cycleArray[i]);
+				cycleArray[i].cacheAsBitmap = true;
+			}
+			//Update the projection of the cycles
+			if (isVirtual3D) virtual3D.update();
+			
+			//Add listener for the switching between cycle mode and cycleGroup mode
+			this.addEventListener(MouseEvent.MOUSE_DOWN, switchMode, false, 1);
+
+			/*
+			this.addEventListener(MouseEvent.MOUSE_OVER, zoomIn, false, 2);
+			this.addEventListener(MouseEvent.MOUSE_OUT, zoomOut, false, 2);
+			*/
+
+			//Add listener for the CycleGroup instance to start or stop rotate
+			this.stage.addEventListener(MouseEvent.MOUSE_DOWN, startRotate, false, 0);
+			this.stage.addEventListener(MouseEvent.MOUSE_UP, stopRotate, false, 0);
+			
+			this.removeEventListener(Event.ADDED_TO_STAGE, initialize);
+		}
+		
+		private function addCycles():void {
 			var inputParser:InputParser = new InputParser(input);
 			var cycle:Cycle;
 			for(var i = 0; inputParser.hasNextElement() ; i++) {
@@ -23,23 +64,25 @@
 				cycle = new Cycle(inputParser.getElementName(), inputParser.getElementContent(), MyFunctions.genColor(i) );
 				cycleArray.push(cycle);
 			}
-			
-			//Adjust cycle posisiton and add to display list
-			for (var j:int = 0; j < cycleArray.length; j++) {
-				var correction:Number = 0.10*cycleGroupRadius;
-				virtual3D.addObject(cycleArray[j], (cycleGroupRadius - correction) * Math.sin((-90+j * (360/cycleArray.length) )*Math.PI/180), 0, (cycleGroupRadius - correction) * Math.cos((-90+j * (360/cycleArray.length) )*Math.PI/180) );
-				addChild(cycleArray[j]);
-			}
-			
-			virtual3D.update();
-			
-			this.addEventListener(MouseEvent.MOUSE_DOWN, turnOnCycle, false, 1);
-			this.stage.addEventListener(MouseEvent.MOUSE_DOWN, startRotate, false, 0);
-			this.stage.addEventListener(MouseEvent.MOUSE_UP, stopRotate, false, 0);
-			
-			this.removeEventListener(Event.ADDED_TO_STAGE, initialize);
 		}
-		
+
+		/*
+		private function zoomIn(e:MouseEvent):void {
+			var cycleOver:Cycle = e.target as Cycle;
+			if (cycleOver && !cycleMode) {
+				lastZoomCycleIndex = getChildIndex(cycleOver);
+				setChildIndex(cycleOver, numChildren-1);
+			}
+		}
+
+		private function zoomOut(e:MouseEvent):void {
+			var cycleOut:Cycle = e.target as Cycle;
+			if (cycleOut && !cycleMode) {
+				setChildIndex(cycleOut, lastZoomCycleIndex);
+			}
+		}
+		*/
+
 		private function startRotate(e:MouseEvent):void {
 			var quitButtonClicked:MovieClip = e.target as ModeQuitButton;
 			if (!cycleMode && !quitButtonClicked) {
@@ -52,66 +95,89 @@
 		}
 		
 		private function rotate(e:Event):void {
-			virtual3D.rotate(0, 1, 0);
+			if (isVirtual3D) virtual3D.rotate(0, -1, 0);
 		}
 		
-		private function turnOnCycle(e:MouseEvent):void {
-			var cycleClicked:MovieClip = e.target as Cycle;
+		private function switchMode(e:MouseEvent):void {
+			var cycleClicked:Cycle = e.target as Cycle;
 			var quitButtonClicked:MovieClip = e.target as ModeQuitButton;
 			if (quitButtonClicked) {
-				this.removeChild(quitButton);
-				for(var i = 0; i < cycleArray.length; i++) {
-					if (cycleArray[i] != cycleClicked) {
+				setCycleGroupMode();
+			}
+			else if (cycleClicked && !cycleMode) {
+				setCycleMode(cycleClicked);
+			}
+		}
+
+		private function setCycleGroupMode():void {
+			this.removeChild(quitButton);
+			cycleMode = false;
+
+			changeCycleGroupColor();
+
+			setChildIndex(lastActiveCycle, lastActiveCycleIndex);
+
+			cycleScale(lastActiveCycle, -cycleScaleUp);
+			
+			lastActiveCycle.setRotate(false);
+			lastActiveCycle = null;			
+		}
+
+		private function setCycleMode(cycleClicked:Cycle):void {
+			cycleMode = true;
+			lastActiveCycle = cycleClicked;
+			lastActiveCycleIndex = getChildIndex(cycleClicked);
+				
+			addQuitButton(cycleClicked);
+			
+			changeCycleGroupColor(cycleClicked);
+			
+			setChildIndex(cycleClicked, numChildren-1);
+
+			cycleScale(cycleClicked, cycleScaleUp);
+			
+			cycleClicked.setRotate(true);
+		}
+
+		private function cycleScale(targetCycle:Cycle, toScale:Number):void {
+			targetCycle.scaleX = targetCycle.scaleX + toScale;
+			targetCycle.scaleY = targetCycle.scaleY + toScale;
+		}
+
+		private function addQuitButton(cycleClicked):void {
+			quitButton.scaleX = cycleClicked.scaleX;
+			quitButton.scaleY = cycleClicked.scaleY;
+			quitButton.x = cycleClicked.x;
+			quitButton.y = cycleClicked.y;
+			quitButton.rotationY = cycleClicked.rotationY;
+			this.addChildAt(quitButton, numChildren);
+		}
+
+		private function changeCycleGroupColor(cycleClicked:Cycle = null):void {
+			for(var i = 0; i < cycleArray.length; i++) {
+				if (cycleArray[i] != cycleClicked) {
+					if (cycleMode) {
+						cycleArray[i].setColor( MyFunctions.changeColorByHSV(cycleArray[i].getColor(), 0, -95, -10) );
+						cycleArray[i].cycleNameLabel.setColor(0xAAAAAA);
+					}
+					else {
 						cycleArray[i].setColor( MyFunctions.genColor(i) );
 						cycleArray[i].cycleNameLabel.setColor(0x000000);
 					}
 				}
-				setChildIndex(lastActiveCycle, lastActiveCycleIndex);
-				lastActiveCycle.scaleX = lastActiveCycle.scaleX - cycleScaleUp;
-				lastActiveCycle.scaleY = lastActiveCycle.scaleY - cycleScaleUp;
-				lastActiveCycle.setRotate(false);
-				lastActiveCycle = null;
-				cycleMode = false;
-			}
-			else if (cycleClicked && lastActiveCycle == null) {
-				cycleMode = true;
-				
-				/* setChildIndex can later be removed */
-				lastActiveCycle = cycleClicked;
-				lastActiveCycleIndex = getChildIndex(cycleClicked);
-					
-				const scaleMutiplier:Number = 7;
-				const distanceCorrection:Number = 1.2;
-				quitButton.scaleX = cycleClicked.scaleX * scaleMutiplier;
-				quitButton.scaleY = cycleClicked.scaleY * scaleMutiplier;
-				quitButton.x = cycleClicked.x;
-				quitButton.y = cycleClicked.y;
-				quitButton.rotationY = cycleClicked.rotationY;
-				this.addChildAt(quitButton, numChildren);
-				
-				for(var j = 0; j < cycleArray.length; j++) {
-					if (cycleArray[j] != cycleClicked) {
-						cycleArray[j].setColor( MyFunctions.changeColorByHSV(cycleArray[j].getColor(), 0, -95, -10) );
-						cycleArray[j].cycleNameLabel.setColor(0xAAAAAA);
-					}
-				}
-				
-				setChildIndex(cycleClicked, numChildren-1);
-				cycleClicked.scaleX = cycleClicked.scaleX + cycleScaleUp;
-				cycleClicked.scaleY = cycleClicked.scaleY + cycleScaleUp;
-				cycleClicked.setRotate(true);
 			}
 		}
 		
-		public static const cycleGroupRadius:Number = 500;
+		/*TEST*/
+		private var isVirtual3D:Boolean = false;
+		public static const cycleGroupRadius:Number = 600;
 		public static const cycleScaleRate:Number = 0.5, cycleScaleUp:Number = 0.01;
-		private var virtual3D:Virtual3D = new Virtual3D();
+		private var virtual3D:Virtual3D;
 		private var cycleMode:Boolean = false;
 		private var input:String;
 		private var cycleArray:Array = new Array();
-		private var lastActiveCycle:MovieClip;
-		private var lastActiveCycleIndex:int;
-		private var quitButton:MovieClip = new ModeQuitButton();
+		private var lastActiveCycle:Cycle;
+		private var lastActiveCycleIndex:int, lastZoomCycleIndex:int;
+		private var quitButton:ModeQuitButton = new ModeQuitButton();
 	}
 }
-
