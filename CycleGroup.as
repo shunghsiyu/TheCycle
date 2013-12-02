@@ -2,6 +2,7 @@
 {
 	import flash.display.MovieClip;
 	import flash.events.Event;
+	import flash.events.KeyboardEvent;
 	import flash.events.MouseEvent;
 	import flash.geom.Point;
 	import flash.ui.Mouse;
@@ -43,7 +44,7 @@
 			
 			//Add listener for the switching between cycle mode and cycleGroup mode
 			this.addEventListener(MouseEvent.MOUSE_DOWN, switchMode, false, 1);
-
+			this.stage.addEventListener(KeyboardEvent.KEY_DOWN, on_KeyDown);
 			/*
 			this.addEventListener(MouseEvent.MOUSE_OVER, zoomIn, false, 2);
 			this.addEventListener(MouseEvent.MOUSE_OUT, zoomOut, false, 2);
@@ -56,6 +57,12 @@
 			this.removeEventListener(Event.ADDED_TO_STAGE, initialize);
 		}
 		
+		private function on_KeyDown(e:KeyboardEvent):void {
+ 			if (e.keyCode==81 && cycleMode) {
+        		setCycleGroupMode();
+		    }
+		}
+
 		private function addCycles():void {
 			var inputParser:InputParser = new InputParser(input);
 			var cycle:Cycle;
