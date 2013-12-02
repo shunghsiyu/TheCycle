@@ -105,7 +105,7 @@
 				setCycleGroupMode();
 			}
 			else if (cycleClicked && !cycleMode) {
-				setCycleMode(cycleClicked);
+				setCycleMode(cycleClicked, e);
 			}
 		}
 
@@ -123,7 +123,7 @@
 			lastActiveCycle = null;			
 		}
 
-		private function setCycleMode(cycleClicked:Cycle):void {
+		private function setCycleMode(cycleClicked:Cycle, e:MouseEvent):void {
 			cycleMode = true;
 			lastActiveCycle = cycleClicked;
 			lastActiveCycleIndex = getChildIndex(cycleClicked);
@@ -137,6 +137,7 @@
 			cycleScale(cycleClicked, cycleScaleUp);
 			
 			cycleClicked.setRotate(true);
+			cycleClicked.dispatchEvent(e);
 		}
 
 		private function cycleScale(targetCycle:Cycle, toScale:Number):void {
