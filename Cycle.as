@@ -7,7 +7,6 @@ package  {
 	import flash.text.TextField;
 	import flash.text.TextFormat;
 	import flash.text.TextFieldAutoSize;
-	import com.greensock.TweenMax;
 	
 	public class Cycle extends MovieClip {
 		
@@ -24,9 +23,6 @@ package  {
 
 		//Initialize cycle after it is added to the stage
 		public function initialize(e:Event):void {
-			//fade in
-			this.alpha = 0;
-			TweenMax.to(this, 1, {alpha:1});
 			
 			//Add this name of the cycle
 			cycleNameLabel = new Label(cycleName, 0x000000);
@@ -56,6 +52,7 @@ package  {
 				this.mouseChildren = true;
 				this.addEventListener(MouseEvent.MOUSE_DOWN, startRotate);
 				this.stage.addEventListener(MouseEvent.MOUSE_UP, stopRotate);
+				this.removeChild(transparentCircle);
 				for (var i:int = 0; i < chemLabels.length; i++) {
 					chemLabels[i].setActive(true);
 				}
@@ -64,6 +61,7 @@ package  {
 				this.mouseChildren = false;
 				this.removeEventListener(MouseEvent.MOUSE_DOWN, startRotate);
 				this.stage.removeEventListener(MouseEvent.MOUSE_UP, stopRotate);
+				this.addChildAt(transparentCircle, 0);
 				for (var j:int = 0; j < chemLabels.length; j++) {
 					chemLabels[i].setActive(false);
 				}
@@ -149,10 +147,17 @@ package  {
 		//draw the background circle
 		private function drawBGCircle(_outerRadius:Number, _innerRadius:Number):void {
 			circle.graphics.clear();
+			transparentCircle.graphics.clear();
+			//fill inner transparent circle
+			transparentCircle.graphics.beginFill(0xFFFFFF, 0.3);
+			transparentCircle.graphics.drawCircle(0, 0, circleInnerRadius+1);
+			transparentCircle.graphics.endFill();
 			circle.graphics.beginFill(color, 1);
 			circle.graphics.drawCircle(0, 0, circleOuterRadius);
 			circle.graphics.drawCircle(0, 0, circleInnerRadius);
-			this.addChildAt(circle, 0);
+			circle.graphics.endFill();
+			this.addChildAt(transparentCircle, 0);
+			this.addChildAt(circle, 1);
 		}
 		
 		public function getColor():uint {return color;}
@@ -176,6 +181,7 @@ package  {
 		private var mouseAngleDiff:Number;
 		//for drawing the background circle
 		private var circle:Shape = new Shape();	
+		private var transparentCircle:Shape = new Shape();	
 		//Variables for displaying the name of the cycle
 		public var cycleName:String;
 		public var cycleNameLabel:MovieClip;
