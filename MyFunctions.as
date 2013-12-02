@@ -7,6 +7,12 @@
 			//This is just a collection of static functions
 		}
 
+		public static function calBrightness(_color:uint):Number {
+			var rgb:Array = HexToRGB(_color);
+			var luma:Number = 0.2125*rgb[0] + 0.7154*rgb[1] + 0.0721*rgb[2];
+			return luma;
+		}
+
 		//Calculate the angle between vectorA and vectorB
 		public static function getAngle(_sentVecAX:Number, _sentVecAY:Number, _sentVecBX:Number = 1, _sentVecBY:Number = 0, _maxAngle:Number = 360):Number {
 			var formu1:Number;
