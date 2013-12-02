@@ -1,6 +1,6 @@
 ﻿package
 {
-	import flash.display.MovieClip;
+	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.events.KeyboardEvent;
 	import flash.events.MouseEvent;
@@ -9,7 +9,7 @@
 	import com.greensock.TweenMax;
 	import com.greensock.easing.*;
 	
-	public class CycleGroup extends MovieClip
+	public class CycleGroup extends Sprite
 	{
 		public function CycleGroup(_input:String, _is3DMode:Boolean = false) {
 			super();
@@ -93,7 +93,7 @@
 		*/
 
 		private function startRotate(e:MouseEvent):void {
-			var quitButtonClicked:MovieClip = e.target as ModeQuitButton;
+			var quitButtonClicked:ModeQuitButton = e.target as ModeQuitButton;
 			if (!cycleMode && !quitButtonClicked) {
 				this.addEventListener(Event.ENTER_FRAME, rotate);
 			}
@@ -109,7 +109,7 @@
 		
 		private function switchMode(e:MouseEvent):void {
 			var cycleClicked:Cycle = e.target as Cycle;
-			var quitButtonClicked:MovieClip = e.target as ModeQuitButton;
+			var quitButtonClicked:ModeQuitButton = e.target as ModeQuitButton;
 			if (quitButtonClicked) {
 				setCycleGroupMode();
 			}

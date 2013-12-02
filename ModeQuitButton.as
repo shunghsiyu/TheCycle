@@ -1,10 +1,10 @@
 package
 {
-	import flash.display.MovieClip;
+	import flash.display.Sprite;
 	import flash.display.Shape;
 	import flash.events.Event;
 
-	public class ModeQuitButton extends MovieClip
+	public class ModeQuitButton extends Sprite
 	{
 		public function ModeQuitButton()
 		{

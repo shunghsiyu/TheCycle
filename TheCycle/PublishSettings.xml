@@ -77,7 +77,7 @@
     <ActionScriptVersion>3</ActionScriptVersion>
     <PackageExportFrame>1</PackageExportFrame>
     <PackagePaths></PackagePaths>
-    <AS3PackagePaths>.;/Users/shunghsiyu/Documents/Flash Projects</AS3PackagePaths>
+    <AS3PackagePaths>.;/Users/shunghsiyu/Documents/Flash Projects;/Users/shunghsiyu/Documents/Flash Projects/Library</AS3PackagePaths>
     <AS3ConfigConst>CONFIG::FLASH_AUTHORING=&quot;true&quot;;</AS3ConfigConst>
     <DebuggingPermitted>0</DebuggingPermitted>
     <DebuggingPassword></DebuggingPassword>
@@ -88,7 +88,7 @@
     <StreamUse8kSampleRate>0</StreamUse8kSampleRate>
     <EventUse8kSampleRate>0</EventUse8kSampleRate>
     <UseNetwork>0</UseNetwork>
-    <DocumentClass></DocumentClass>
+    <DocumentClass>TheCycle</DocumentClass>
     <AS3Strict>2</AS3Strict>
     <AS3Coach>4</AS3Coach>
     <AS3AutoDeclare>4096</AS3AutoDeclare>
@@ -246,10 +246,10 @@
     <AlternateFilename>TheCycle.xfl_alternate.html</AlternateFilename>
     <UsingOwnAlternateFile>0</UsingOwnAlternateFile>
     <OwnAlternateFilename></OwnAlternateFilename>
-    <Width>1280</Width>
-    <Height>720</Height>
+    <Width>100</Width>
+    <Height>100</Height>
     <Align>0</Align>
-    <Units>0</Units>
+    <Units>2</Units>
     <Loop>1</Loop>
     <StartPaused>0</StartPaused>
     <Scale>0</Scale>
@@ -281,7 +281,7 @@
     <ActionScriptVersion>3</ActionScriptVersion>
     <PackageExportFrame>1</PackageExportFrame>
     <PackagePaths></PackagePaths>
-    <AS3PackagePaths>.;/Users/shunghsiyu/Documents/Flash Projects</AS3PackagePaths>
+    <AS3PackagePaths>.;/Users/shunghsiyu/Documents/Flash Projects;/Users/shunghsiyu/Documents/Flash Projects/Library</AS3PackagePaths>
     <AS3ConfigConst>CONFIG::FLASH_AUTHORING=&quot;true&quot;;</AS3ConfigConst>
     <DebuggingPermitted>1</DebuggingPermitted>
     <DebuggingPassword></DebuggingPassword>
@@ -302,7 +302,7 @@
     <ExportSwc>0</ExportSwc>
     <ScriptStuckDelay>15</ScriptStuckDelay>
     <IncludeXMP>1</IncludeXMP>
-    <HardwareAcceleration>0</HardwareAcceleration>
+    <HardwareAcceleration>2</HardwareAcceleration>
     <AS3Flags>4102</AS3Flags>
     <DefaultLibraryLinkage>rsl</DefaultLibraryLinkage>
     <RSLPreloaderMethod>wrap</RSLPreloaderMethod>

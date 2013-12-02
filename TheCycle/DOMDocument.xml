@@ -97,7 +97,7 @@
                </customIcon>
                <SwcItem name="fl.core.ComponentShim" version="1292423059" isTopLevel="true"/>
           </DOMCompiledClipItem>
-          <DOMBitmapItem name="Vignette.png" itemID="52962990-000002a0" sourceExternalFilepath="/Users/shunghsiyu/Documents/Flash Projects/TheCycleProgram/TheCycle/LIBRARY/Vignette.png" sourceLastImported="1385664371" sourcePlatform="macintosh" externalFileCRC32="4101121944" externalFileSize="145441" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="Vignette.png" bitmapDataHRef="M 1 1384488086.dat" frameRight="39840" frameBottom="22400"/>
+          <DOMBitmapItem name="Vignette.png" itemID="52962990-000002a0" sourceExternalFilepath="/Users/shunghsiyu/Documents/Flash Projects/TheCycleProgram/TheCycle/LIBRARY/Vignette.png" sourceLastImported="1385946593" sourcePlatform="macintosh" externalFileCRC32="4101121944" externalFileSize="145441" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="Vignette.png" bitmapDataHRef="M 1 1384488086.dat" frameRight="39840" frameBottom="22400"/>
      </media>
      <symbols>
           <Include href="ChemLabel.xml" itemID="5283f1aa-000004fd" lastModified="1385495065"/>
@@ -137,6 +137,7 @@
 import flash.events.MouseEvent;
 import fl.controls.UIScrollBar;
 import flash.display.Shape;
+import com.greensock.TweenMax;
 
 var input:String = "";
 input += "Kreb Cycle: Citrate; cis-Aconitate; D-Isocitrate; \u03B1-KetoGlutarate; Succinyl-CoA; Succinate; Fumarate; Malate; Oxaloacetate\n\n";
@@ -177,8 +178,11 @@ edit.addEventListener(MouseEvent.CLICK, editCycleGroup);
 
 var cycleGroup:CycleGroup;
 
+done.alpha = 0
 done.visible = false;
+inputField.alpha = 0;
 inputField.visible = false;
+scrollBar.alpha = 0;
 scrollBar.visible = false;
 edit.visible = true;
 cycleGroup = new CycleGroup(inputField.text);
@@ -187,27 +191,46 @@ cycleGroup.y = stageh/2;
 this.addChild(cycleGroup);
 
 function createCycleGroup(e:MouseEvent) {
+	TweenMax.to(done, 0.5, {alpha: 0});
+	TweenMax.to(inputField, 0.5, {alpha: 0});
+	TweenMax.to(scrollBar, 0.5, {alpha: 0, onComplete:onComplete1});
+	
+	if (cycleGroup != null && this.contains(cycleGroup) ) removeChild(cycleGroup);
+	cycleGroup = new CycleGroup(inputField.text, true);
+	cycleGroup.x = stagew/2;
+	cycleGroup.y = stageh/2;
+	cycleGroup.alpha = 0;
+	this.addChild(cycleGroup);
+	edit.visible = true;
+	TweenMax.to(cycleGroup, 0.3, {alpha: 1, delay: 0.3});
+	TweenMax.to(edit, 0.3, {alpha: 1, delay: 0.3});
+}
+
+function onComplete1():void {
 	done.visible = false;
 	inputField.visible = false;
 	scrollBar.visible = false;
-	edit.visible = true;
-	if (cycleGroup != null && this.contains(cycleGroup) ) removeChild(cycleGroup);
-	cycleGroup = new CycleGroup(inputField.text);
-	cycleGroup.x = stagew/2;
-	cycleGroup.y = stageh/2;
-	this.addChild(cycleGroup);
 }
 
 function editCycleGroup(e:MouseEvent) {
+	TweenMax.to(edit, 0.3, {alpha: 0});
+	TweenMax.to(cycleGroup, 0.3, {alpha: 0, onComplete:onComplete2});
+	
 	done.visible = true;
 	inputField.visible = true;
 	scrollBar.visible = true;
+	TweenMax.to(done, 0.3, {alpha: 1, delay: 0.3});
+	TweenMax.to(inputField, 0.3, {alpha: 1, delay: 0.3});
+	TweenMax.to(scrollBar, 0.3, {alpha: 1, delay: 0.3});
+}
+
+function onComplete2():void {
 	edit.visible = false;
-	removeChild(cycleGroup);
+	this.removeChild(cycleGroup);
 }]]></script>
                                    </Actionscript>
                                    <elements>
-                                        <DOMSymbolInstance libraryItemName="Vignette" name="vignette" selected="true" centerPoint3DX="640" centerPoint3DY="360">
+                                        <DOMSymbolInstance libraryItemName="Vignette" name="vignette" centerPoint3DX="640" centerPoint3DY="360">
                                              <matrix>
                                                   <Matrix tx="640" ty="360"/>
                                              </matrix>
@@ -218,14 +241,14 @@ function editCycleGroup(e:MouseEvent) {
                                                   <Color alphaMultiplier="0.44140625"/>
                                              </color>
                                         </DOMSymbolInstance>
-                                        <DOMTLFText name="inputField" selected="true" top="-40" left="-40" right="17686" bottom="10960">
+                                        <DOMTLFText name="inputField" top="-40" left="-40" right="17686" bottom="10960">
                                              <matrix>
                                                   <Matrix tx="198.85" ty="132.2"/>
                                              </matrix>
                                              <tlfFonts>
                                                   <TLFFont platformName="Tahoma" psName="Tahoma"/>
                                              </tlfFonts>
-                                             <markup><tlfTextObject type="Paragraph" editPolicy="readWrite" columnCount="auto" columnGap="20" verticalAlign="top" firstBaselineOffset="auto" paddingLeft="2" paddingTop="2" paddingRight="2" paddingBottom="2" background="false" backgroundColor="#ffffff" backgroundAlpha="1" border="false" borderColor="#000000" borderAlpha="1" borderWidth="1" paddingLock="false" multiline="true" antiAliasType="advanced" embedFonts="false" maxChars="0"><TextFlow lineBreak="toFit" locale="en_IL" whiteSpaceCollapse="preserve" version="2.0.0" xmlns="http://ns.adobe.com/textLayout/2008"><p direction="ltr" paragraphEndIndent="0" paragraphStartIndent="0" textAlign="start" textIndent="0"><span baselineShift="0" color="#000000" fontFamily="Tahoma" fontSize="25" fontStyle="normal" fontWeight="normal" kerning="auto" lineHeight="127.857143%" trackingRight="0.000000%">input</span></p></TextFlow></tlfTextObject></markup>
+                                             <markup><tlfTextObject type="Paragraph" editPolicy="readWrite" columnCount="auto" columnGap="20" verticalAlign="top" firstBaselineOffset="auto" paddingLeft="2" paddingTop="2" paddingRight="2" paddingBottom="2" background="false" backgroundColor="#ffffff" backgroundAlpha="1" border="false" borderColor="#000000" borderAlpha="1" borderWidth="1" paddingLock="false" multiline="true" antiAliasType="advanced" embedFonts="false" maxChars="0"><TextFlow lineBreak="toFit" locale="en_IL" whiteSpaceCollapse="preserve" version="2.0.0" xmlns="http://ns.adobe.com/textLayout/2008"><p direction="ltr" paragraphEndIndent="0" paragraphStartIndent="0" textAlign="start" textIndent="0"><span baselineShift="0" color="#000000" fontFamily="Tahoma" fontSize="25" fontStyle="normal" fontWeight="normal" kerning="auto" lineHeight="127.857143%" textAlpha="1" trackingRight="0.000000%">input</span></p></TextFlow></tlfTextObject></markup>
                                         </DOMTLFText>
                                    </elements>
                               </DOMFrame>
@@ -241,26 +264,26 @@ function editCycleGroup(e:MouseEvent) {
      </persistentData>
      <PrinterSettings platform="macintosh"/>
      <publishHistory>
-          <PublishItem publishSize="173205" publishTime="1385766624" publishDebug="true"/>
-          <PublishItem publishSize="173176" publishTime="1385766570" publishDebug="true"/>
-          <PublishItem publishSize="173189" publishTime="1385766535" publishDebug="true"/>
-          <PublishItem publishSize="173161" publishTime="1385766436" publishDebug="true"/>
-          <PublishItem publishSize="173159" publishTime="1385766378" publishDebug="true"/>
-          <PublishItem publishSize="173154" publishTime="1385766266" publishDebug="true"/>
-          <PublishItem publishSize="173148" publishTime="1385766233" publishDebug="true"/>
-          <PublishItem publishSize="173216" publishTime="1385766193" publishDebug="true"/>
-          <PublishItem publishSize="173205" publishTime="1385766133" publishDebug="true"/>
-          <PublishItem publishSize="173134" publishTime="1385766110" publishDebug="true"/>
-          <PublishItem publishSize="173137" publishTime="1385766055" publishDebug="true"/>
-          <PublishItem publishSize="173096" publishTime="1385765937" publishDebug="true"/>
-          <PublishItem publishSize="173434" publishTime="1385765916" publishDebug="true"/>
-          <PublishItem publishSize="173437" publishTime="1385765888" publishDebug="true"/>
-          <PublishItem publishSize="173451" publishTime="1385765859" publishDebug="true"/>
-          <PublishItem publishSize="173123" publishTime="1385765814" publishDebug="true"/>
-          <PublishItem publishSize="173108" publishTime="1385765784" publishDebug="true"/>
-          <PublishItem publishSize="173147" publishTime="1385765707" publishDebug="true"/>
-          <PublishItem publishSize="173457" publishTime="1385765664" publishDebug="true"/>
-          <PublishItem publishSize="173519" publishTime="1385765194" publishDebug="true"/>
+          <PublishItem publishSize="209643" publishTime="1385996649" publishDebug="true"/>
+          <PublishItem publishSize="209618" publishTime="1385996323" publishDebug="true"/>
+          <PublishItem publishSize="209546" publishTime="1385996148" publishDebug="true"/>
+          <PublishItem publishSize="209585" publishTime="1385995675" publishDebug="true"/>
+          <PublishItem publishSize="209553" publishTime="1385995657" publishDebug="true"/>
+          <PublishItem publishSize="209928" publishTime="1385995429" publishDebug="true"/>
+          <PublishItem publishSize="209932" publishTime="1385995416" publishDebug="true"/>
+          <PublishItem publishSize="209914" publishTime="1385995354" publishDebug="true"/>
+          <PublishItem publishSize="209902" publishTime="1385995341" publishDebug="true"/>
+          <PublishItem publishSize="209901" publishTime="1385995240" publishDebug="true"/>
+          <PublishItem publishSize="209914" publishTime="1385995225" publishDebug="true"/>
+          <PublishItem publishSize="209947" publishTime="1385995166" publishDebug="true"/>
+          <PublishItem publishSize="209929" publishTime="1385995151" publishDebug="true"/>
+          <PublishItem publishSize="209954" publishTime="1385995011" publishDebug="true"/>
+          <PublishItem publishSize="209909" publishTime="1385994996" publishDebug="true"/>
+          <PublishItem publishSize="209897" publishTime="1385994964" publishDebug="true"/>
+          <PublishItem publishSize="209939" publishTime="1385994467" publishDebug="true"/>
+          <PublishItem publishSize="209885" publishTime="1385994024" publishDebug="true"/>
+          <PublishItem publishSize="209963" publishTime="1385993854" publishDebug="true"/>
+          <PublishItem publishSize="209845" publishTime="1385960057" publishDebug="true"/>
      </publishHistory>
      <swcCache>
           <Swc hashKey="k718tUOF1.A1OSpQnqdJJ0" href="OP1LGX1M1J.swc">

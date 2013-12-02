@@ -1,8 +1,7 @@
 ﻿package  {
 	
 	import fl.text.TLFTextField;
-	
-	import flash.display.MovieClip;
+	import flash.display.Sprite;
 	import flash.display.Shape;
 	import flash.display.Stage;
 	import flash.events.Event;
@@ -11,7 +10,7 @@
 	import flash.text.TextFormat;
 	import flash.text.TextFormatAlign;
 	
-	public class Label extends MovieClip {
+	public class Label extends Sprite {
 		
 		public function Label(_labelName:String, _color:uint = 0x000000) {
 			// constructor code

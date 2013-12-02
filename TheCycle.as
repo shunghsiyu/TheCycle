@@ -1,14 +1,1 @@
-package
-{
-	import flash.display.Sprite;
-	import flash.events.Event;
-	
-	public class TheCycle extends Sprite
-	{
-		public function TheCycle()
-		{
-			
-		}
-
-	}
-}
+﻿package{	import flash.display.MovieClip;	import flash.events.Event;		public class TheCycle extends MovieClip	{		public function TheCycle()		{					}	}}

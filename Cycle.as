@@ -1,5 +1,5 @@
 package  {
-	import flash.display.MovieClip;
+	import flash.display.Sprite;
 	import flash.display.Shape;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
@@ -8,7 +8,7 @@ package  {
 	import flash.text.TextFormat;
 	import flash.text.TextFieldAutoSize;
 	
-	public class Cycle extends MovieClip {
+	public class Cycle extends Sprite {
 		
 		public function Cycle(_cycleName:String, _names:Array = null,  _color:uint = 0x0077F9, _canRotate:Boolean = false) {
 			// constructor code
@@ -30,7 +30,7 @@ package  {
 			
 			//Add the ChemLabel
 			for (var i:int = 0, cycleWidth:int = circleOuterRadius*2, cycleHeight:int = circleOuterRadius*2; i < labelNames.length; i++) {
-				var chemLabel:MovieClip = new ChemLabel(labelNames[i], color);
+				var chemLabel:ChemLabel = new ChemLabel(labelNames[i], color);
 				var correction:Number = 0.10*(cycleWidth+cycleHeight)/4;
 				chemLabels.push(chemLabel);
 				addChild(chemLabels[i]);
@@ -184,7 +184,7 @@ package  {
 		private var transparentCircle:Shape = new Shape();	
 		//Variables for displaying the name of the cycle
 		public var cycleName:String;
-		public var cycleNameLabel:MovieClip;
+		public var cycleNameLabel:Label;
 	}
 	
 }
