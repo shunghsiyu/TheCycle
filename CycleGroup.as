@@ -6,6 +6,8 @@
 	import flash.events.MouseEvent;
 	import flash.geom.Point;
 	import flash.ui.Mouse;
+	import com.greensock.TweenMax;
+	import com.greensock.easing.*;
 	
 	public class CycleGroup extends MovieClip
 	{
@@ -162,14 +164,18 @@
 		}
 
 		private function changeCycleGroupColor(cycleClicked:Cycle = null):void {
+			var targetColor:uint;
+			var brightnessToGo:Number;
 			for(var i = 0; i < cycleArray.length; i++) {
 				if (cycleArray[i] != cycleClicked) {
 					if (cycleMode) {
-						cycleArray[i].setColor( MyFunctions.changeColorByHSV(cycleArray[i].getColor(), 0, -95, -10) );
+						brightnessToGo = 1 + (dimBrightness - MyFunctions.calBrightness(cycleArray[i].getColor()) )/100;
+						TweenMax.to(cycleArray[i], 0.3, {colorMatrixFilter:{amount:1, saturation: 0.1, brightness:brightnessToGo}});
+						/*TO FIX -- NOT ALL LABELS GO TO THE SAME BRIGHTNESS! */
 						cycleArray[i].cycleNameLabel.setColor(0xAAAAAA);
 					}
 					else {
-						cycleArray[i].setColor( MyFunctions.genColor(i) );
+						TweenMax.to(cycleArray[i], 0.3, {colorMatrixFilter:{amount:1, saturation:1, brightness: 1}});
 						cycleArray[i].cycleNameLabel.setColor(0x000000);
 					}
 				}
@@ -177,7 +183,8 @@
 		}
 		
 		/*TEST*/
-		private var isVirtual3D:Boolean = false;
+		private var isVirtual3D:Boolean;
+		private static const dimBrightness:Number = 200;
 		public static const cycleGroupRadius:Number = 600;
 		public static const cycleScaleRate:Number = 0.5, cycleScaleUp:Number = 0.01;
 		private var virtual3D:Virtual3D;
