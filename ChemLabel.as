@@ -5,6 +5,7 @@
 	import flash.display.Stage;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
+	import com.greensock.TweenMax;
 	
 	public class ChemLabel extends Label {
 		
@@ -29,83 +30,27 @@
 		
 		public function setActive(_enable:Boolean):void {
 			if (_enable) {
-				this.addEventListener(MouseEvent.MOUSE_DOWN, on_MouseDown, false, 0, true);
-				this.stage.addEventListener(MouseEvent.MOUSE_UP, on_MouseUp, false, 0, true);
-				this.addEventListener(MouseEvent.MOUSE_OVER, onMouseOver, false, 0, true);
+				this.addEventListener(MouseEvent.ROLL_OVER, onRollOver, false, 0, true);
 			}
 			else {
-				if (this.hasEventListener(MouseEvent.MOUSE_DOWN) ) this.removeEventListener(MouseEvent.MOUSE_DOWN, on_MouseDown);
-				/*MIGHT CAUSE TROUBLE*/
-				if (this.stage.hasEventListener(MouseEvent.MOUSE_UP) ) this.stage.removeEventListener(MouseEvent.MOUSE_UP, on_MouseUp);
-				if (this.hasEventListener(MouseEvent.MOUSE_OVER) ) this.removeEventListener(MouseEvent.MOUSE_OVER, onMouseOver);
+				if (this.hasEventListener(MouseEvent.ROLL_OVER) ) this.removeEventListener(MouseEvent.ROLL_OVER, onRollOver);
+				if (this.hasEventListener(MouseEvent.ROLL_OUT) ) this.removeEventListener(MouseEvent.ROLL_OUT, onRollOut);
+				if (this.scaleX != 1) TweenMax.to(this, 0.3, {scaleX: 1, scaleY: 1, overwrite: 1});
 			}
 		}
 		
 		//scale up when mouse is over the label
-		private function onMouseOver(e:MouseEvent):void {
-			if (!scaling && !mouseIsDown) {
-				scaling = true;
-				this.addEventListener(Event.ENTER_FRAME, scaleUp, false, 0 ,true);
-			}
+		private function onRollOver(e:MouseEvent):void {
+			TweenMax.to(this, 0.3, {scaleX: 1+scaleMax, scaleY: 1+scaleMax, overwrite: 1});
+			this.removeEventListener(MouseEvent.ROLL_OVER, onRollOver);
+			this.addEventListener(MouseEvent.ROLL_OUT, onRollOut, false, 0, true);
 		}
 		
 		//scale down when mouse leaves the label
-		/* NEED TO BE FIXED */
-		private function onMouseOut(e:MouseEvent):void {
-			if (!scaling) {
-				scaling = true;
-				this.addEventListener(Event.ENTER_FRAME, scaleDown, false, 0 ,true);
-			}
-		}
-		
-		//prevent mouse from scaling up when the cycle is dragged
-		/* CAN BE MODIFIED TO SAFE MEMORY */
-		private function on_MouseDown(e:MouseEvent):void {
-			mouseIsDown = true;
-		}
-		
-		private function on_MouseUp(e:MouseEvent):void {
-			mouseIsDown = false;
-		}
-		
-		//Scale up the label
-		private function scaleUp(e:Event):void {
-			this.adjustScale(scaleRate, 1+scaleMax);
-		}
-		
-		//Scale down the label
-		private function scaleDown(e:Event):void {
-			this.adjustScale(-scaleRate, 1);
-		}
-		
-		//Scale the label according to the input parameter
-		private function adjustScale(_changeAmount:Number, _limit:Number):void {
-			if (_changeAmount > 0)
-				if (this.scaleX >= _limit) {
-					this.removeEventListener(Event.ENTER_FRAME, scaleUp);
-					this.removeEventListener(MouseEvent.MOUSE_OVER, onMouseOver);
-					this.addEventListener(MouseEvent.MOUSE_OUT, onMouseOut, false, 0, true);
-					scaling = false;
-					return;
-				}
-			if (_changeAmount < 0)
-				if (this.scaleX <= _limit) {
-					this.removeEventListener(Event.ENTER_FRAME, scaleDown);
-					this.removeEventListener(MouseEvent.MOUSE_OUT, onMouseOut);
-					this.addEventListener(MouseEvent.MOUSE_OVER, onMouseOver, false, 0, true);
-					scaling = false;
-					return;
-				}
-			if (_changeAmount == 0) {
-				this.removeEventListener(Event.ENTER_FRAME, scaleUp);
-				this.removeEventListener(Event.ENTER_FRAME, scaleDown);
-				scaling = false;
-				trace("_changeAmount can't be zero");
-				return;
-			}
-			
-			this.scaleX = this.scaleX + _changeAmount;
-			this.scaleY = this.scaleY + _changeAmount;
+		private function onRollOut(e:MouseEvent):void {
+			TweenMax.to(this, 0.3, {scaleX: 1, scaleY: 1, overwrite: 1});
+			this.removeEventListener(MouseEvent.ROLL_OUT, onRollOut);
+			this.addEventListener(MouseEvent.ROLL_OVER, onRollOver, false, 0, true);
 		}
 		
 		override protected function drawBG():void {
