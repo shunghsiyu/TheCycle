@@ -1,7 +1,4 @@
 package  {
-	
-	import fl.motion.Color;
-	
 	import flash.display.MovieClip;
 	import flash.display.Shape;
 	import flash.events.Event;
@@ -10,6 +7,7 @@ package  {
 	import flash.text.TextField;
 	import flash.text.TextFormat;
 	import flash.text.TextFieldAutoSize;
+	import com.greensock.TweenMax;
 	
 	public class Cycle extends MovieClip {
 		
@@ -26,6 +24,9 @@ package  {
 
 		//Initialize cycle after it is added to the stage
 		public function initialize(e:Event):void {
+			//fade in
+			this.alpha = 0;
+			TweenMax.to(this, 1, {alpha:1});
 			
 			//Add this name of the cycle
 			cycleNameLabel = new Label(cycleName, 0x000000);
@@ -33,7 +34,7 @@ package  {
 			
 			//Add the ChemLabel
 			for (var i:int = 0, cycleWidth:int = circleOuterRadius*2, cycleHeight:int = circleOuterRadius*2; i < labelNames.length; i++) {
-				var chemLabel:MovieClip = new ChemLabel(labelNames[i], getLabelColor());
+				var chemLabel:MovieClip = new ChemLabel(labelNames[i], color);
 				var correction:Number = 0.10*(cycleWidth+cycleHeight)/4;
 				chemLabels.push(chemLabel);
 				addChild(chemLabels[i]);
@@ -129,19 +130,13 @@ package  {
 				chemLabels[i].rotation = -this.rotation;
 			}
 		}
-
-		//get the color that the labels should be set to 
-		//according to the color of this cycle
-		private function getLabelColor():uint {
-			return MyFunctions.changeColorByHSV(color, -25, -30, -2);
-		}
 		
 		//change the color of this cycle and its labels
 		public function setColor(_color:uint):void {
 			color = _color;
 			//cycleNameLabel.setColor(color);
 			for (var i:int = 0; i < chemLabels.length; i++) {
-				chemLabels[i].setColor(getLabelColor());
+				chemLabels[i].setColor(color);
 			}
 			drawBG();
 		}
