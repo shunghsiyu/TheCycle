@@ -97,7 +97,7 @@
                </customIcon>
                <SwcItem name="fl.core.ComponentShim" version="1292423059" isTopLevel="true"/>
           </DOMCompiledClipItem>
-          <DOMBitmapItem name="Vignette.png" itemID="52962990-000002a0" sourceExternalFilepath="/Users/shunghsiyu/Documents/Flash Projects/TheCycleProgram/TheCycle/LIBRARY/Vignette.png" sourceLastImported="1385946593" sourcePlatform="macintosh" externalFileCRC32="4101121944" externalFileSize="145441" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="Vignette.png" bitmapDataHRef="M 1 1384488086.dat" frameRight="39840" frameBottom="22400"/>
+          <DOMBitmapItem name="Vignette.png" itemID="52962990-000002a0" sourceLastImported="1385946593" sourcePlatform="macintosh" externalFileCRC32="4101121944" externalFileSize="145441" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="Vignette.png" bitmapDataHRef="M 1 1384488086.dat" frameRight="39840" frameBottom="22400"/>
      </media>
      <symbols>
           <Include href="ChemLabel.xml" itemID="5283f1aa-000004fd" lastModified="1385495065"/>
@@ -259,7 +259,7 @@ function onComplete2():void {
      </timelines>
      <persistentData>
           <PD n="CreateJSToolkit_data" v="version&#xA;0.1&#xA;libraryPath&#xA;libs/&#xA;createjsNS&#xA;createjs&#xA;exportHTML&#xA;true&#xA;frameBounds&#xA;false&#xA;includeHiddenLayers&#xA;true&#xA;preview&#xA;true&#xA;imagesPath&#xA;images/&#xA;soundsPath&#xA;sounds/&#xA;compactPaths&#xA;true&#xA;imagesNS&#xA;images&#xA;exportSounds&#xA;true&#xA;exportLibs&#xA;true&#xA;exportImages&#xA;true&#xA;hostedLibs&#xA;true&#xA;outputPath&#xA;./CreatJS/&#xA;libNS&#xA;lib"/>
-          <PD n="DartToolkit_data" v="version&#xA;0.1&#xA;exportImages&#xA;true&#xA;exportSounds&#xA;true&#xA;libNS&#xA;lib&#xA;maxPng&#xA;1024&#xA;soundsPath&#xA;sounds/&#xA;imagesNS&#xA;images&#xA;imagesPath&#xA;images/&#xA;libraryPath&#xA;libs/&#xA;webNS&#xA;web&#xA;preview&#xA;true&#xA;includeHiddenLayers&#xA;true&#xA;outputPath&#xA;./&#xA;compactPaths&#xA;true&#xA;autoAtlas&#xA;true&#xA;&#xA;undefined&#xA;exportHTML&#xA;true&#xA;maxAtlas&#xA;2048"/>
+          <PD n="DartToolkit_data" v="version&#xA;0.1&#xA;exportHTML&#xA;true&#xA;&#xA;undefined&#xA;maxPng&#xA;1024&#xA;exportSounds&#xA;true&#xA;outputPath&#xA;./ToolkitForDart/&#xA;imagesNS&#xA;images&#xA;maxAtlas&#xA;2048&#xA;libNS&#xA;lib&#xA;autoAtlas&#xA;true&#xA;webNS&#xA;web&#xA;soundsPath&#xA;sounds/&#xA;exportImages&#xA;true&#xA;preview&#xA;true&#xA;imagesPath&#xA;images/&#xA;libraryPath&#xA;libs/&#xA;includeHiddenLayers&#xA;true&#xA;compactPaths&#xA;true"/>
           <PD n="CreateJSToolkit_timelinedata" v="version&#xA;0.1&#xA;loop&#xA;false"/>
      </persistentData>
      <PrinterSettings platform="macintosh"/>

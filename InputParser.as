@@ -5,8 +5,10 @@
 		public function InputParser(_input:String) {
 			//Constructor
 			input = _input + "\n";
-			var newlines:RegExp = /;?\n+/gi;
-			input = input.replace(newlines, "\n");
+			var firstblanklines:RegExp = /^\n*/i;
+			var multilines:RegExp = /;?\n+/gi;
+			input = input.replace(firstblanklines, "");
+			input = input.replace(multilines, "\n");
 			startPos = 0;
 			endPos = 0;
 		}

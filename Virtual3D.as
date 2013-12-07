@@ -13,7 +13,7 @@ package
 			rotationZ = 0;
 		}
 		
-		public function addObject(_object:DisplayObject, _virtualX, _virtualY, _virtualZ) {
+		public function addObject(_object:DisplayObject, _virtualX:Number, _virtualY:Number, _virtualZ:Number) {
 			objectArray.push({object: _object, virtualX: _virtualX, virtualY: _virtualY, virtualZ: _virtualZ, zCoord: 0});
 		}
 		
