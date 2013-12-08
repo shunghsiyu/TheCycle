@@ -71,13 +71,11 @@
 			TweenMax.to(scrollBar, 0.5, {alpha: 0, onComplete:onComplete1});
 			
 			if (cycleGroup != null && this.contains(cycleGroup) ) removeChild(cycleGroup);
-			cycleGroup = new CycleGroup(inputField.text, true);
+			cycleGroup = new CycleGroup(inputField.text, false);
 			cycleGroup.x = STAGEW/2;
 			cycleGroup.y = STAGEH/2;
-			cycleGroup.alpha = 0;
 			this.addChild(cycleGroup);
 			edit.visible = true;
-			TweenMax.to(cycleGroup, 0.3, {alpha: 1, delay: 0.3});
 			TweenMax.to(edit, 0.3, {alpha: 1, delay: 0.3});
 		}
 
@@ -89,19 +87,14 @@
 
 		private function editCycleGroup(e:MouseEvent):void {
 			TweenMax.to(edit, 0.3, {alpha: 0});
-			TweenMax.to(cycleGroup, 0.3, {alpha: 0, onComplete:onComplete2});
-			
+			edit.visible = false;
+			this.removeChild(cycleGroup);
 			done.visible = true;
 			inputField.visible = true;
 			scrollBar.visible = true;
 			TweenMax.to(done, 0.3, {alpha: 1, delay: 0.3});
 			TweenMax.to(inputField, 0.3, {alpha: 1, delay: 0.3});
 			TweenMax.to(scrollBar, 0.3, {alpha: 1, delay: 0.3});
-		}
-
-		private function onComplete2():void {
-			edit.visible = false;
-			this.removeChild(cycleGroup);
 		}
 
 		private var scrollBar:UIScrollBar;

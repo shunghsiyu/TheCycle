@@ -144,14 +144,14 @@
                                                   <Color alphaMultiplier="0.44140625"/>
                                              </color>
                                         </DOMSymbolInstance>
-                                        <DOMTLFText name="inputField" top="-40" left="-40" right="17686" bottom="10960">
+                                        <DOMTLFText name="inputField" selected="true" top="-40" left="-40" right="17686" bottom="10960">
                                              <matrix>
                                                   <Matrix tx="198.85" ty="132.2"/>
                                              </matrix>
                                              <tlfFonts>
                                                   <TLFFont platformName="Tahoma" psName="Tahoma"/>
                                              </tlfFonts>
-                                             <markup><tlfTextObject type="Paragraph" editPolicy="readWrite" columnCount="auto" columnGap="20" verticalAlign="top" firstBaselineOffset="auto" paddingLeft="2" paddingTop="2" paddingRight="2" paddingBottom="2" background="false" backgroundColor="#ffffff" backgroundAlpha="1" border="false" borderColor="#000000" borderAlpha="1" borderWidth="1" paddingLock="false" multiline="true" antiAliasType="advanced" embedFonts="false" maxChars="0"><TextFlow lineBreak="toFit" locale="en_IL" whiteSpaceCollapse="preserve" version="2.0.0" xmlns="http://ns.adobe.com/textLayout/2008"><p direction="ltr" paragraphEndIndent="0" paragraphStartIndent="0" textAlign="start" textIndent="0"><span baselineShift="0" color="#000000" fontFamily="Tahoma" fontSize="25" fontStyle="normal" fontWeight="normal" kerning="auto" lineHeight="127.857143%" textAlpha="1" trackingRight="0.000000%">input</span></p></TextFlow></tlfTextObject></markup>
+                                             <markup><tlfTextObject type="Paragraph" editPolicy="readWrite" columnCount="auto" columnGap="20" verticalAlign="top" firstBaselineOffset="auto" paddingLeft="2" paddingTop="2" paddingRight="2" paddingBottom="2" background="false" backgroundColor="#ffffff" backgroundAlpha="1" border="false" borderColor="#000000" borderAlpha="1" borderWidth="1" paddingLock="false" multiline="true" antiAliasType="normal" embedFonts="false" maxChars="0"><TextFlow lineBreak="toFit" locale="en_IL" whiteSpaceCollapse="preserve" version="2.0.0" xmlns="http://ns.adobe.com/textLayout/2008"><p direction="ltr" paragraphEndIndent="0" paragraphStartIndent="0" textAlign="start" textIndent="0"><span baselineShift="0" color="#000000" fontFamily="Tahoma" fontSize="25" fontStyle="normal" fontWeight="normal" kerning="auto" lineHeight="148.400000%" trackingRight="0.000000%">input</span></p></TextFlow></tlfTextObject></markup>
                                         </DOMTLFText>
                                    </elements>
                               </DOMFrame>
@@ -167,6 +167,8 @@
      </persistentData>
      <PrinterSettings platform="macintosh"/>
      <publishHistory>
+          <PublishItem publishSize="209470" publishTime="1386468318" publishDebug="true"/>
+          <PublishItem publishSize="209616" publishTime="1386468138" publishDebug="true"/>
           <PublishItem publishSize="209643" publishTime="1385996649" publishDebug="true"/>
           <PublishItem publishSize="209618" publishTime="1385996323" publishDebug="true"/>
           <PublishItem publishSize="209546" publishTime="1385996148" publishDebug="true"/>
@@ -185,8 +187,6 @@
           <PublishItem publishSize="209897" publishTime="1385994964" publishDebug="true"/>
           <PublishItem publishSize="209939" publishTime="1385994467" publishDebug="true"/>
           <PublishItem publishSize="209885" publishTime="1385994024" publishDebug="true"/>
-          <PublishItem publishSize="209963" publishTime="1385993854" publishDebug="true"/>
-          <PublishItem publishSize="209845" publishTime="1385960057" publishDebug="true"/>
      </publishHistory>
      <swcCache>
           <Swc hashKey="k718tUOF1.A1OSpQnqdJJ0" href="OP1LGX1M1J.swc">

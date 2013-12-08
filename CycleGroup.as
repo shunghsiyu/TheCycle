@@ -4,6 +4,8 @@
 	import flash.events.Event;
 	import flash.events.KeyboardEvent;
 	import flash.events.MouseEvent;
+	import flash.events.TimerEvent;
+	import flash.utils.Timer;
 	import flash.geom.Point;
 	import flash.ui.Mouse;
 	import com.greensock.TweenMax;
@@ -11,10 +13,14 @@
 	
 	public class CycleGroup extends Sprite
 	{
+		public static const cycleGroupRadius:Number = 600;
+		public static const cycleScaleRate:Number = 0.5, cycleScaleUp:Number = 0.01;
+
 		public function CycleGroup(_input:String, _is3DMode:Boolean = false) {
 			super();
 			input = _input;
 			isVirtual3D = _is3DMode;
+			quitButton = new ModeQuitButton();
 			if (isVirtual3D) virtual3D = new Virtual3D();
 			this.addEventListener(Event.ADDED_TO_STAGE, initialize, false, 0, true);
 		}
@@ -22,25 +28,12 @@
 		public function initialize(e:Event) {
 			addCycles();
 			
+			cycleCount = 0;
+			timer = new Timer(addCycleInterval, cycleArray.length);
+			timer.addEventListener(TimerEvent.TIMER, pauseAndAddToList);
+			timer.start();
 			//Adjust cycle posisiton and add to display list
-			for (var i:int = 0; i < cycleArray.length; i++) {
-				var correction:Number = 0.10*cycleGroupRadius;
-				if (isVirtual3D) virtual3D.addObject(cycleArray[i]
-											/* x= */, (cycleGroupRadius - correction) * Math.sin((-90+i * (360/cycleArray.length) )*Math.PI/180)
-											/* y= */, 0
-											/* z= */, (cycleGroupRadius - correction) * Math.cos((-90+i * (360/cycleArray.length) )*Math.PI/180)
-													);
-				else {
-					cycleArray[i].scaleX = 0.5;
-					cycleArray[i].scaleY = 0.5;
-					cycleArray[i].x = (1280 - 2*Cycle.circleOuterRadius*(1.2)*cycleArray[i].scaleX) * i/(cycleArray.length-1)
-									 - 640
-									 + Cycle.circleOuterRadius*(1.2)*cycleArray[i].scaleX;
-					cycleArray[i].y = 0;
-				}
-				addChild(cycleArray[i]);
-				cycleArray[i].cacheAsBitmap = true;
-			}
+			
 			//Update the projection of the cycles
 			if (isVirtual3D) virtual3D.update();
 			
@@ -73,6 +66,40 @@
 				cycle = new Cycle(inputParser.getElementName(), inputParser.getElementContent(), MyFunctions.genColor(i) );
 				cycleArray.push(cycle);
 			}
+		}
+
+		private function pauseAndAddToList(e:TimerEvent):void {
+			var correction:Number = 0.10*cycleGroupRadius;
+			var tweenX:Number = 100, tweenY:Number = 0, tweenScale:Number = 0.0;
+			var tweenTime:Number = 0.5;
+			if (isVirtual3D) virtual3D.addObject(cycleArray[cycleCount],
+										/* x= */ (cycleGroupRadius - correction) * Math.sin((-90+cycleCount * (360/cycleArray.length) )*Math.PI/180),
+										/* y= */ 0,
+										/* z= */ (cycleGroupRadius - correction) * Math.cos((-90+cycleCount * (360/cycleArray.length) )*Math.PI/180)
+												);
+			else {
+				cycleArray[cycleCount].alpha = 0;
+				cycleArray[cycleCount].scaleX = 0.5 - tweenScale;
+				cycleArray[cycleCount].scaleY = 0.5 - tweenScale;
+				cycleArray[cycleCount].x = (1280 - 2*Cycle.circleOuterRadius*(1.2)*cycleArray[cycleCount].scaleX) * cycleCount/(cycleArray.length-1)
+								 - 640
+								 + Cycle.circleOuterRadius*(1.2)*cycleArray[cycleCount].scaleX
+								 - tweenX;
+				cycleArray[cycleCount].y = 0 - tweenY;
+				TweenMax.to(cycleArray[cycleCount], tweenTime, 
+					{
+						alpha: 1,
+						x: cycleArray[cycleCount].x + tweenX,
+						y: cycleArray[cycleCount].y + tweenY,
+						scaleX: cycleArray[cycleCount].scaleX + tweenScale,
+						scaleY: cycleArray[cycleCount].scaleY + tweenScale,
+						delay: 0.3,
+						ease: Cubic.easeOut
+					});
+			}
+			addChild(cycleArray[cycleCount]);
+			cycleArray[cycleCount].cacheAsBitmap = true;
+			cycleCount++;
 		}
 
 		/*
@@ -182,17 +209,16 @@
 			}
 		}
 		
-		/*TEST*/
-		private var isVirtual3D:Boolean;
-		private static const dimBrightness:Number = 200;
-		public static const cycleGroupRadius:Number = 600;
-		public static const cycleScaleRate:Number = 0.5, cycleScaleUp:Number = 0.01;
-		private var virtual3D:Virtual3D;
+		private var cycleCount:int = 0;
+		private const addCycleInterval:Number = 100;
+		private var timer:Timer;
+		private var isVirtual3D:Boolean, virtual3D:Virtual3D;
+		private static const dimBrightness:Number = 200;		
 		private var cycleMode:Boolean = false;
 		private var input:String;
 		private var cycleArray:Array = new Array();
 		private var lastActiveCycle:Cycle;
 		private var lastActiveCycleIndex:int, lastZoomCycleIndex:int;
-		private var quitButton:ModeQuitButton = new ModeQuitButton();
+		private var quitButton:ModeQuitButton;
 	}
 }
