@@ -5,8 +5,8 @@
             xmlns:xmp="http://ns.adobe.com/xap/1.0/">
          <xmp:CreatorTool>Adobe Flash Professional CS6 - build 537</xmp:CreatorTool>
          <xmp:CreateDate>2013-11-03T20:26:35-05:00</xmp:CreateDate>
-         <xmp:MetadataDate>2013-12-08T18:52:57-05:00</xmp:MetadataDate>
-         <xmp:ModifyDate>2013-12-08T18:52:57-05:00</xmp:ModifyDate>
+         <xmp:MetadataDate>2013-12-07T20:57:01-05:00</xmp:MetadataDate>
+         <xmp:ModifyDate>2013-12-07T20:57:01-05:00</xmp:ModifyDate>
       </rdf:Description>
       <rdf:Description rdf:about=""
             xmlns:dc="http://purl.org/dc/elements/1.1/">
@@ -16,7 +16,7 @@
             xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/"
             xmlns:stEvt="http://ns.adobe.com/xap/1.0/sType/ResourceEvent#"
             xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#">
-         <xmpMM:InstanceID>xmp.iid:01801174072068118C14D5567D5EA42E</xmpMM:InstanceID>
+         <xmpMM:InstanceID>xmp.iid:ED7F1174072068118C14EB66DF9BF66C</xmpMM:InstanceID>
          <xmpMM:DocumentID>xmp.did:F87F1174072068118083C890BBA1CFF1</xmpMM:DocumentID>
          <xmpMM:OriginalDocumentID>xmp.did:FA7F11740720681180838DD8491D18F6</xmpMM:OriginalDocumentID>
          <xmpMM:History>
@@ -251,12 +251,6 @@
                <rdf:li rdf:parseType="Resource">
                   <stEvt:action>created</stEvt:action>
                   <stEvt:instanceID>xmp.iid:ED7F1174072068118C14EB66DF9BF66C</stEvt:instanceID>
-                  <stEvt:when>2013-11-03T20:26:35-05:00</stEvt:when>
-                  <stEvt:softwareAgent>Adobe Flash Professional CS6 - build 537</stEvt:softwareAgent>
-               </rdf:li>
-               <rdf:li rdf:parseType="Resource">
-                  <stEvt:action>created</stEvt:action>
-                  <stEvt:instanceID>xmp.iid:01801174072068118C14D5567D5EA42E</stEvt:instanceID>
                   <stEvt:when>2013-11-03T20:26:35-05:00</stEvt:when>
                   <stEvt:softwareAgent>Adobe Flash Professional CS6 - build 537</stEvt:softwareAgent>
                </rdf:li>
