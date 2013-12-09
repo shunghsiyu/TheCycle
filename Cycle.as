@@ -36,7 +36,6 @@ package  {
 				addChild(chemLabels[i]);
 				chemLabels[i].x = (cycleWidth/2 - correction) *Math.cos((-90+i*(360/labelNames.length))*Math.PI/180);
 				chemLabels[i].y = (cycleHeight/2 - correction)*Math.sin((-90+i*(360/labelNames.length))*Math.PI/180);
-				chemLabels[i].cacheAsBitmap = true;
 			}
 			
 			//set whether the cycle can rotate or not according to the passed-in parameter

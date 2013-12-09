@@ -45,8 +45,16 @@
 									 + Cycle.circleOuterRadius*(1.2)*cycleArray[cycleCount].scaleX
 									 - tweenX;
 					cycleArray[cycleCount].y = 0 - tweenY;
+					cycleArray[cycleCount].rotation = 0 - tweenRotation;
 				}
+				/* TEST */
+				var reflection:Reflection = Reflection.addReflection(cycleArray[cycleCount],false, 0.3);
+				this.addChildAt(reflection, 0)
+				reflection.alpha = 0;
+				reflection.x += tweenX;
+				reflectionArray.push(reflection);
 			}
+
 			cycleCount = 0;
 			timer = new Timer(addCycleInterval, cycleArray.length);
 			timer.addEventListener(TimerEvent.TIMER, pauseAndAddToList);
@@ -64,8 +72,8 @@
 			//Add listener for the switching between cycle mode and cycleGroup mode
 			this.addEventListener(MouseEvent.MOUSE_DOWN, switchMode, false, 1);
 			this.stage.addEventListener(KeyboardEvent.KEY_DOWN, on_KeyDown);
-			/*
-			this.addEventListener(MouseEvent.MOUSE_OVER, zoomIn, false, 2);
+			
+			/*this.addEventListener(MouseEvent.MOUSE_OVER, zoomIn, false, 2);
 			this.addEventListener(MouseEvent.MOUSE_OUT, zoomOut, false, 2);
 			*/
 
@@ -91,6 +99,7 @@
 		}
 
 		private function pauseAndAddToList(e:TimerEvent):void {
+			addChild(cycleArray[cycleCount]);
 			TweenMax.to(cycleArray[cycleCount], tweenTime, 
 				{
 					alpha: 1,
@@ -98,11 +107,16 @@
 					y: cycleArray[cycleCount].y + tweenY,
 					scaleX: cycleArray[cycleCount].scaleX + tweenScale,
 					scaleY: cycleArray[cycleCount].scaleY + tweenScale,
+					rotation: cycleArray[cycleCount].rotation + tweenRotation,
 					delay: 0.3,
 					ease: Cubic.easeOut
 				});
-			addChild(cycleArray[cycleCount]);
-			cycleArray[cycleCount].cacheAsBitmap = true;
+			addChildAt(reflectionArray[cycleCount], 0);
+			TweenMax.to(reflectionArray[cycleCount], tweenTime,
+				{
+					alpha: 1,
+					delay: 0.3
+				});
 			cycleCount++;
 			if (cycleCount >= cycleArray.length) {
 				addListeners();
@@ -124,8 +138,8 @@
 			if (cycleOut && !cycleMode) {
 				setChildIndex(cycleOut, lastZoomCycleIndex);
 			}
-		}
-		*/
+		}*/
+		
 
 		private function startRotate(e:MouseEvent):void {
 			var quitButtonClicked:ModeQuitButton = e.target as ModeQuitButton;
@@ -206,18 +220,30 @@
 					if (cycleMode) {
 						brightnessToGo = 1 + (dimBrightness - MyFunctions.calBrightness(cycleArray[i].getColor()) )/100;
 						TweenMax.to(cycleArray[i], 0.3, {colorMatrixFilter:{amount:1, saturation: 0.1, brightness:brightnessToGo}});
+						TweenMax.to(reflectionArray[i], 0.3, {colorMatrixFilter:{amount:1, saturation: 0.1, brightness:brightnessToGo}});
 						/*TO FIX -- NOT ALL LABELS GO TO THE SAME BRIGHTNESS! */
 						cycleArray[i].cycleNameLabel.setColor(0xAAAAAA);
 					}
 					else {
 						TweenMax.to(cycleArray[i], 0.3, {colorMatrixFilter:{amount:1, saturation:1, brightness: 1}});
+						TweenMax.to(reflectionArray[i], 0.3, {colorMatrixFilter:{amount:1, saturation:1, brightness: 1}});
 						cycleArray[i].cycleNameLabel.setColor(0x000000);
 					}
 				}
 			}
 		}
+
+		public function removeAllCycles():void {
+			while (this.numChildren > 0) {
+    			this.removeChildAt(0);
+			}
+			this.removeEventListener(MouseEvent.MOUSE_DOWN, switchMode);
+			this.stage.removeEventListener(KeyboardEvent.KEY_DOWN, on_KeyDown);
+			this.stage.removeEventListener(MouseEvent.MOUSE_DOWN, startRotate);
+			this.stage.removeEventListener(MouseEvent.MOUSE_UP, stopRotate);
+		}
 		
-		private const tweenX:Number = 100, tweenY:Number = 0, tweenScale:Number = 0.0, tweenTime:Number = 0.5;
+		private const tweenX:Number = 100, tweenY:Number = 0, tweenScale:Number = 0.0, tweenTime:Number = 0.5, tweenRotation:Number = 20;
 		private var initialized:Boolean;
 		private var cycleCount:int = 0;
 		private const addCycleInterval:Number = 100;
@@ -227,6 +253,7 @@
 		private var cycleMode:Boolean = false;
 		private var input:String;
 		private var cycleArray:Array = new Array();
+		private var reflectionArray:Array = new Array();
 		private var lastActiveCycle:Cycle;
 		private var lastActiveCycleIndex:int, lastZoomCycleIndex:int;
 		private var quitButton:ModeQuitButton;

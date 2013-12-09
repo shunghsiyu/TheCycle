@@ -1,12 +1,16 @@
 ﻿package
 {
-	import flash.display.MovieClip;
-	import flash.events.Event;
-	import fl.text.TLFTextField;
-	import flash.events.MouseEvent;
-	import fl.controls.UIScrollBar;
-	import flash.display.Shape;
 	import com.greensock.TweenMax;
+	import fl.controls.UIScrollBar;
+	import fl.text.TLFTextField;
+	import flash.display.Bitmap;
+	import flash.display.BitmapData;
+	import flash.display.MovieClip;
+	import flash.display.Shape;
+	import flash.events.Event;
+	import flash.events.MouseEvent;
+	import flash.geom.Matrix;
+
 	
 	public class TheCycle extends MovieClip
 	{
@@ -40,7 +44,7 @@
 
 			done = new ChemLabel("Done", 0x000000, true);
 			done.x = 1200;
-			done.y = 680;
+			done.y = 630;
 			addChild(done);
 
 			edit = new ChemLabel("Edit", 0x000000, true);
@@ -52,6 +56,11 @@
 			done.addEventListener(MouseEvent.CLICK, createCycleGroup);
 			edit.addEventListener(MouseEvent.CLICK, editCycleGroup);
 
+			//var reflection:Reflection = Reflection.addReflection(edit);
+			//edit.addChildAt(reflection, 0);
+			var reflection:Reflection = Reflection.addReflection(done);
+			done.addChildAt(reflection, 0);
+			
 			done.alpha = 0
 			done.visible = false;
 			inputField.alpha = 0;
