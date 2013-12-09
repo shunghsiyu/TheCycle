@@ -2,6 +2,7 @@
      <folders>
           <DOMFolderItem name="Component Assets" itemID="44e488a0-000016d6" isExpanded="true"/>
           <DOMFolderItem name="Component Assets/_private" itemID="4573a4bc-000003c6"/>
+          <DOMFolderItem name="Component Assets/CheckBoxSkins" itemID="44c9141c-00000113"/>
           <DOMFolderItem name="Component Assets/ScrollBarSkins" itemID="44ea2edf-000000a6"/>
           <DOMFolderItem name="Component Assets/Shared" itemID="44f892ff-0000001e"/>
      </folders>
@@ -97,11 +98,21 @@
                </customIcon>
                <SwcItem name="fl.core.ComponentShim" version="1292423059" isTopLevel="true"/>
           </DOMCompiledClipItem>
-          <DOMBitmapItem name="Vignette.png" itemID="52962990-000002a0" sourceLastImported="1385946593" sourcePlatform="macintosh" externalFileCRC32="4101121944" externalFileSize="145441" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="Vignette.png" bitmapDataHRef="M 1 1384488086.dat" frameRight="39840" frameBottom="22400"/>
+          <DOMBitmapItem name="Vignette.png" itemID="52962990-000002a0" sourceLastImported="1386605217" sourcePlatform="macintosh" externalFileCRC32="4101121944" externalFileSize="145441" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="Vignette.png" bitmapDataHRef="M 1 1384488086.dat" frameRight="39840" frameBottom="22400"/>
      </media>
      <symbols>
+          <Include href="CheckBox.xml" itemID="44b19f0d-00000018" lastModified="1292423117"/>
           <Include href="ChemLabel.xml" itemID="5283f1aa-000004fd" lastModified="1385495065"/>
           <Include href="Component Assets/_private/Component_avatar.xml" loadImmediate="false" itemID="44f89322-00000020" lastModified="1168286780"/>
+          <Include href="Component Assets/CheckBoxSkins/CheckBox_disabledIcon.xml" itemID="43970702-00000af1" lastModified="1168287061"/>
+          <Include href="Component Assets/CheckBoxSkins/CheckBox_downIcon.xml" itemID="43970784-00000be6" lastModified="1168287071"/>
+          <Include href="Component Assets/CheckBoxSkins/CheckBox_overIcon.xml" itemID="4397078d-00000c43" lastModified="1168287083"/>
+          <Include href="Component Assets/CheckBoxSkins/CheckBox_selectedDisabledIcon.xml" itemID="439706ef-00000a94" lastModified="1168287108"/>
+          <Include href="Component Assets/CheckBoxSkins/CheckBox_selectedDownIcon.xml" itemID="439707a8-00000d0d" lastModified="1168287121"/>
+          <Include href="Component Assets/CheckBoxSkins/CheckBox_selectedIcon.xml" loadImmediate="false" itemID="456df3a1-0000019b" lastModified="1168287126"/>
+          <Include href="Component Assets/CheckBoxSkins/CheckBox_selectedOverIcon.xml" itemID="43970af6-00000e3a" lastModified="1168287139"/>
+          <Include href="Component Assets/CheckBoxSkins/CheckBox_selectedUpIcon.xml" itemID="43970b00-00000e9b" lastModified="1168287153"/>
+          <Include href="Component Assets/CheckBoxSkins/CheckBox_upIcon.xml" itemID="4397079e-00000cac" lastModified="1168287165"/>
           <Include href="Component Assets/ScrollBarSkins/ScrollArrowDown_disabledSkin.xml" itemID="4399b48a-00008d0a" lastModified="1168289950"/>
           <Include href="Component Assets/ScrollBarSkins/ScrollArrowDown_downSkin.xml" itemID="4399b4a4-00008e29" lastModified="1168289961"/>
           <Include href="Component Assets/ScrollBarSkins/ScrollArrowDown_icon.xml" itemIcon="1" loadImmediate="false" itemID="456df1e4-00000190" lastModified="1168289966"/>
@@ -123,6 +134,7 @@
           <Include href="CycleGroup.xml" itemID="5294b89d-000002b1" lastModified="1385564651"/>
           <Include href="Label.xml" itemID="5294ee51-00000353" lastModified="1385564708"/>
           <Include href="ModeQuitButton.xml" itemID="5296165f-0000026e" lastModified="1385766562"/>
+          <Include href="TextBox.xml" itemID="52a5ebb1-00000469" lastModified="1386606461"/>
           <Include href="UIScrollBar.xml" itemID="44aaa686-00000064" lastModified="1292423118"/>
           <Include href="Vignette.xml" loadImmediate="false" itemID="5294b838-000002ac" lastModified="1385664444"/>
      </symbols>
@@ -144,15 +156,14 @@
                                                   <Color alphaMultiplier="0.44140625"/>
                                              </color>
                                         </DOMSymbolInstance>
-                                        <DOMTLFText name="inputField" selected="true" top="-40" left="-40" right="17686" bottom="10960">
+                                        <DOMSymbolInstance libraryItemName="TextBox" name="textBox" selected="true" centerPoint3DX="640" centerPoint3DY="307">
                                              <matrix>
-                                                  <Matrix tx="198.85" ty="132.2"/>
+                                                  <Matrix tx="195.9" ty="30.7"/>
                                              </matrix>
-                                             <tlfFonts>
-                                                  <TLFFont platformName="Tahoma" psName="Tahoma"/>
-                                             </tlfFonts>
-                                             <markup><tlfTextObject type="Paragraph" editPolicy="readWrite" columnCount="auto" columnGap="20" verticalAlign="top" firstBaselineOffset="auto" paddingLeft="2" paddingTop="2" paddingRight="2" paddingBottom="2" background="false" backgroundColor="#ffffff" backgroundAlpha="1" border="false" borderColor="#000000" borderAlpha="1" borderWidth="1" paddingLock="false" multiline="true" antiAliasType="normal" embedFonts="false" maxChars="0"><TextFlow lineBreak="toFit" locale="en_IL" whiteSpaceCollapse="preserve" version="2.0.0" xmlns="http://ns.adobe.com/textLayout/2008"><p direction="ltr" paragraphEndIndent="0" paragraphStartIndent="0" textAlign="start" textIndent="0"><span baselineShift="0" color="#000000" fontFamily="Tahoma" fontSize="25" fontStyle="normal" fontWeight="normal" kerning="auto" lineHeight="148.400000%" trackingRight="0.000000%">input</span></p></TextFlow></tlfTextObject></markup>
-                                        </DOMTLFText>
+                                             <transformationPoint>
+                                                  <Point x="443.6" y="275.65"/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
                                    </elements>
                               </DOMFrame>
                          </frames>
@@ -167,6 +178,18 @@
      </persistentData>
      <PrinterSettings platform="macintosh"/>
      <publishHistory>
+          <PublishItem publishSize="227328" publishTime="1386606328" publishDebug="true"/>
+          <PublishItem publishSize="227229" publishTime="1386606277" publishDebug="true"/>
+          <PublishItem publishSize="227300" publishTime="1386606232" publishDebug="true"/>
+          <PublishItem publishSize="227289" publishTime="1386606153" publishDebug="true"/>
+          <PublishItem publishSize="227180" publishTime="1386606086" publishDebug="true"/>
+          <PublishItem publishSize="227155" publishTime="1386605967" publishDebug="true"/>
+          <PublishItem publishSize="227181" publishTime="1386605925" publishDebug="true"/>
+          <PublishItem publishSize="227102" publishTime="1386605735" publishDebug="true"/>
+          <PublishItem publishSize="227095" publishTime="1386605675" publishDebug="true"/>
+          <PublishItem publishSize="226969" publishTime="1386605392" publishDebug="true"/>
+          <PublishItem publishSize="211325" publishTime="1386605319" publishDebug="true"/>
+          <PublishItem publishSize="210026" publishTime="1386605236" publishDebug="true"/>
           <PublishItem publishSize="209470" publishTime="1386468318" publishDebug="true"/>
           <PublishItem publishSize="209616" publishTime="1386468138" publishDebug="true"/>
           <PublishItem publishSize="209643" publishTime="1385996649" publishDebug="true"/>
@@ -175,18 +198,6 @@
           <PublishItem publishSize="209585" publishTime="1385995675" publishDebug="true"/>
           <PublishItem publishSize="209553" publishTime="1385995657" publishDebug="true"/>
           <PublishItem publishSize="209928" publishTime="1385995429" publishDebug="true"/>
-          <PublishItem publishSize="209932" publishTime="1385995416" publishDebug="true"/>
-          <PublishItem publishSize="209914" publishTime="1385995354" publishDebug="true"/>
-          <PublishItem publishSize="209902" publishTime="1385995341" publishDebug="true"/>
-          <PublishItem publishSize="209901" publishTime="1385995240" publishDebug="true"/>
-          <PublishItem publishSize="209914" publishTime="1385995225" publishDebug="true"/>
-          <PublishItem publishSize="209947" publishTime="1385995166" publishDebug="true"/>
-          <PublishItem publishSize="209929" publishTime="1385995151" publishDebug="true"/>
-          <PublishItem publishSize="209954" publishTime="1385995011" publishDebug="true"/>
-          <PublishItem publishSize="209909" publishTime="1385994996" publishDebug="true"/>
-          <PublishItem publishSize="209897" publishTime="1385994964" publishDebug="true"/>
-          <PublishItem publishSize="209939" publishTime="1385994467" publishDebug="true"/>
-          <PublishItem publishSize="209885" publishTime="1385994024" publishDebug="true"/>
      </publishHistory>
      <swcCache>
           <Swc hashKey="k718tUOF1.A1OSpQnqdJJ0" href="OP1LGX1M1J.swc">

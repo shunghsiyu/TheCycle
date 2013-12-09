@@ -34,13 +34,13 @@
 			input += "Arginine Cycle 8: Arginine; Omithine; Citrulline; Argininosuccinate\n\n";
 			input += "Calvin Cycle: Ribulose 1,5-bisphosphate; 3-phosphoglycerate; 1,3-bisphosphoglycerate; Glyceraldehyde 3-phosphate; Ribulose 5-phosphate\n";
 
-			inputField.text = input;
+			textBox.inputField.text = input;
 			scrollBar = new UIScrollBar()
-			scrollBar.scrollTarget =inputField;
-			scrollBar.height = inputField.height;
-			scrollBar.y = inputField.y;
-			scrollBar.x = inputField.x - scrollBar.width;
-			this.addChild(scrollBar);
+			scrollBar.scrollTarget =textBox.inputField;
+			scrollBar.height = textBox.inputField.height;
+			scrollBar.y = textBox.inputField.y;
+			scrollBar.x = textBox.inputField.x - scrollBar.width;
+			textBox.addChild(scrollBar);
 
 			done = new ChemLabel("Done", 0x000000, true);
 			done.x = 1200;
@@ -63,12 +63,10 @@
 			
 			done.alpha = 0
 			done.visible = false;
-			inputField.alpha = 0;
-			inputField.visible = false;
-			scrollBar.alpha = 0;
-			scrollBar.visible = false;
+			textBox.alpha = 0;
+			textBox.visible = false;
 			edit.visible = true;
-			cycleGroup = new CycleGroup(inputField.text);
+			cycleGroup = new CycleGroup(textBox.inputField.text, textBox.virtual3DToggle.selected);
 			cycleGroup.x = STAGEW/2;
 			cycleGroup.y = STAGEH/2;
 			this.addChild(cycleGroup);
@@ -76,11 +74,10 @@
 
 		private function createCycleGroup(e:MouseEvent):void {
 			TweenMax.to(done, 0.5, {alpha: 0});
-			TweenMax.to(inputField, 0.5, {alpha: 0});
-			TweenMax.to(scrollBar, 0.5, {alpha: 0, onComplete:onComplete1});
+			TweenMax.to(textBox, 0.5, {alpha: 0, onComplete:onComplete1});
 			
 			if (cycleGroup != null && this.contains(cycleGroup) ) removeChild(cycleGroup);
-			cycleGroup = new CycleGroup(inputField.text, false);
+			cycleGroup = new CycleGroup(textBox.inputField.text, textBox.virtual3DToggle.selected);
 			cycleGroup.x = STAGEW/2;
 			cycleGroup.y = STAGEH/2;
 			this.addChild(cycleGroup);
@@ -90,8 +87,7 @@
 
 		private function onComplete1():void {
 			done.visible = false;
-			inputField.visible = false;
-			scrollBar.visible = false;
+			textBox.visible = false;
 		}
 
 		private function editCycleGroup(e:MouseEvent):void {
@@ -99,11 +95,9 @@
 			edit.visible = false;
 			this.removeChild(cycleGroup);
 			done.visible = true;
-			inputField.visible = true;
-			scrollBar.visible = true;
+			textBox.visible = true;
 			TweenMax.to(done, 0.3, {alpha: 1, delay: 0.3});
-			TweenMax.to(inputField, 0.3, {alpha: 1, delay: 0.3});
-			TweenMax.to(scrollBar, 0.3, {alpha: 1, delay: 0.3});
+			TweenMax.to(textBox, 0.3, {alpha: 1, delay: 0.3});
 		}
 
 		private var scrollBar:UIScrollBar;

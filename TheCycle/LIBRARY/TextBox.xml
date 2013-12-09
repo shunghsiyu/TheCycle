@@ -1,0 +1,58 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="TextBox" itemID="52a5ebb1-00000469" linkageExportForAS="true" linkageClassName="TextBox" lastModified="1386606461" lastUniqueIdentifier="2">
+  <timeline>
+    <DOMTimeline name="TextBox">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMTLFText name="inputField" top="-40" left="-40" right="17686" bottom="10960" matrix3D="1 0 0 0 0 1 0 0 0 0 1 0 -3918 -2578 0 1" centerPoint3DX="444.1" centerPoint3DY="276.3">
+                  <matrix>
+                    <Matrix tx="198.85" ty="132.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="247.25" y="244.3"/>
+                  </transformationPoint>
+                  <tlfFonts>
+                    <TLFFont platformName="Tahoma" psName="Tahoma"/>
+                  </tlfFonts>
+                  <markup><tlfTextObject type="Paragraph" editPolicy="readWrite" columnCount="auto" columnGap="20" verticalAlign="top" firstBaselineOffset="auto" paddingLeft="2" paddingTop="2" paddingRight="2" paddingBottom="2" background="false" backgroundColor="#ffffff" backgroundAlpha="1" border="false" borderColor="#000000" borderAlpha="1" borderWidth="1" paddingLock="false" multiline="true" antiAliasType="normal" embedFonts="false" maxChars="0"><TextFlow lineBreak="toFit" locale="en_IL" whiteSpaceCollapse="preserve" version="2.0.0" xmlns="http://ns.adobe.com/textLayout/2008"><p direction="ltr" paragraphEndIndent="0" paragraphStartIndent="0" textAlign="start" textIndent="0"><span baselineShift="0" color="#000000" fontFamily="Tahoma" fontSize="25" fontStyle="normal" fontWeight="normal" kerning="auto" lineHeight="148.400000%" trackingRight="0.000000%">input</span></p></TextFlow></tlfTextObject></markup>
+                  <filters>
+                    <DropShadowFilter angle="46.0000011383648" blurX="6" blurY="6" distance="9" strength="0.2"/>
+                  </filters>
+                </DOMTLFText>
+                <DOMComponentInstance libraryItemName="CheckBox" name="virtual3DToggle" selected="true" centerPoint3DX="-72.5" centerPoint3DY="12" uniqueID="2">
+                  <matrix>
+                    <Matrix tx="-122.5" ty="1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50" y="11"/>
+                  </transformationPoint>
+                  <dataBindingXML><![CDATA[<component metaDataFetched='true' schemaUrl='' schemaOperation='' sceneRootLabel='Scene 1' oldCopiedComponentPath='1.2'>
+</component>
+]]></dataBindingXML>
+                  <parametersAsXML><![CDATA[   <property id="enabled">
+      <Inspectable name="enabled" variable="enabled" category="" verbose="1" defaultValue="true" type="Boolean"/>
+   </property>
+   <property id="label">
+      <Inspectable name="label" variable="label" category="" verbose="0" defaultValue="3D Mode" type="String"/>
+   </property>
+   <property id="labelPlacement">
+      <Inspectable name="labelPlacement" variable="labelPlacement" category="" verbose="0" defaultValue="top" enumeration="left,right,top,bottom" type="List"/>
+   </property>
+   <property id="selected">
+      <Inspectable name="selected" variable="selected" category="" verbose="0" defaultValue="false" type="Boolean"/>
+   </property>
+   <property id="visible">
+      <Inspectable name="visible" variable="visible" category="" verbose="1" defaultValue="true" type="Boolean"/>
+   </property>
+]]></parametersAsXML>
+                </DOMComponentInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>
