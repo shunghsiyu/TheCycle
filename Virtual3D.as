@@ -38,6 +38,8 @@ package
 				objectArray[i].zCoord = 1 * (-objectArray[i].virtualX * Math.sin(rotationY*Math.PI/180) + objectArray[i].virtualZ * Math.cos(rotationY*Math.PI/180) );
 				objectArray[i].object.scaleX = getScale(objectArray[i]);
 				objectArray[i].object.scaleY = getScale(objectArray[i]);
+				
+				objectArray[i].object.visible = true;
 			}
 			sortZ();
 		}

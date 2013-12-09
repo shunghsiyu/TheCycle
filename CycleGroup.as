@@ -22,7 +22,13 @@
 			isVirtual3D = _is3DMode;
 			initialized = false;
 			quitButton = new ModeQuitButton();
-			if (isVirtual3D) virtual3D = new Virtual3D();
+			if (isVirtual3D) {
+				virtual3D = new Virtual3D();
+				tweenX = 0; tweenY = 0; tweenScale = 0.0; tweenTime = 0.01; tweenRotation = 0;
+			}
+			else {
+				tweenX = 100; tweenY = 0; tweenScale = 0.0; tweenTime = 0.5; tweenRotation = 20;
+			}
 			this.addEventListener(Event.ADDED_TO_STAGE, initialize, false, 0, true);
 		}
 		
@@ -63,7 +69,7 @@
 			//Adjust cycle posisiton and add to display list
 			
 			//Update the projection of the cycles
-			if (isVirtual3D) virtual3D.update();
+			
 			
 			this.removeEventListener(Event.ADDED_TO_STAGE, initialize);
 		}
@@ -100,27 +106,33 @@
 
 		private function pauseAndAddToList(e:TimerEvent):void {
 			addChild(cycleArray[cycleCount]);
-			TweenMax.to(cycleArray[cycleCount], tweenTime, 
-				{
-					alpha: 1,
-					x: cycleArray[cycleCount].x + tweenX,
-					y: cycleArray[cycleCount].y + tweenY,
-					scaleX: cycleArray[cycleCount].scaleX + tweenScale,
-					scaleY: cycleArray[cycleCount].scaleY + tweenScale,
-					rotation: cycleArray[cycleCount].rotation + tweenRotation,
-					delay: 0.3,
-					ease: Cubic.easeOut
-				});
-			addChildAt(reflectionArray[cycleCount], 0);
-			TweenMax.to(reflectionArray[cycleCount], tweenTime,
-				{
-					alpha: 1,
-					delay: 0.3
-				});
+			if (isVirtual3D) {
+				cycleArray[cycleCount].visible = false;
+			}
+			else {
+					TweenMax.to(cycleArray[cycleCount], tweenTime, 
+					{
+						alpha: 1,
+						x: cycleArray[cycleCount].x + tweenX,
+						y: cycleArray[cycleCount].y + tweenY,
+						scaleX: cycleArray[cycleCount].scaleX + tweenScale,
+						scaleY: cycleArray[cycleCount].scaleY + tweenScale,
+						rotation: cycleArray[cycleCount].rotation + tweenRotation,
+						delay: 0.3,
+						ease: Cubic.easeOut
+					});
+				addChildAt(reflectionArray[cycleCount], 0);
+				TweenMax.to(reflectionArray[cycleCount], tweenTime,
+					{
+						alpha: 1,
+						delay: 0.3
+					});
+			}
 			cycleCount++;
 			if (cycleCount >= cycleArray.length) {
 				addListeners();
 				initialized = true;
+				if (isVirtual3D) virtual3D.update();
 			}
 		}
 
@@ -243,7 +255,7 @@
 			this.stage.removeEventListener(MouseEvent.MOUSE_UP, stopRotate);
 		}
 		
-		private const tweenX:Number = 100, tweenY:Number = 0, tweenScale:Number = 0.0, tweenTime:Number = 0.5, tweenRotation:Number = 20;
+		private var tweenX:Number = 100, tweenY:Number = 0, tweenScale:Number = 0.0, tweenTime:Number = 0.5, tweenRotation:Number = 20;
 		private var initialized:Boolean;
 		private var cycleCount:int = 0;
 		private const addCycleInterval:Number = 100;
